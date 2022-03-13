@@ -1,6 +1,7 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -14,9 +15,9 @@
 <body class="container-fluid font-monospace">
 	<div class="row"> 
 		<div class="align-self-center p-5 col-12 col-md-6">
-			<a class="navbar-brand fw-bold fs-2" href="#"> <h1>YouVideo</h1> </a>
+			<a class="navbar-brand fw-bold fs-2" href="#"><h1>YouVideo</h1></a>
 			<br/>
-			<img alt="" src="../ASM/Bootstrap/images/login.svg" width="500">
+			<img alt="" src="../Bootstrap/images/login.svg" width="500" />
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<form >
