@@ -35,7 +35,7 @@
 							<li><a class="dropdown-item" href="#">My account</a></li>
 							<li><a class="dropdown-item" href="#">Change password</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="/ASM/logout">Log out</a></li>
+							<li><a class="dropdown-item" href="/ASM/login">Log out</a></li>
 						</ul></li>
 				</ul>
 				<form class="d-flex">

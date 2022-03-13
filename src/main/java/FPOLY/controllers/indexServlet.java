@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class indexControllers
  */
-@WebServlet({"/index","/home","/history","/login"})
-public class indexControllers extends HttpServlet {
+@WebServlet({"/index","/home","/history","/login","/signup","/blogs"})
+public class indexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public indexControllers() {
+    public indexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,8 +27,13 @@ public class indexControllers extends HttpServlet {
     		request.setAttribute("view","/views/home.jsp");
     	} else if(uri.contains("/ASM/history")) {
     		request.setAttribute("view","/views/history.jsp");
-    	}
-//		request.setAttribute("view", "/views/subindex.jsp");
+    	} else if(uri.contains("/ASM/login")) {
+    		request.setAttribute("view","/views/login.jsp");
+    	}  else if(uri.contains("/ASM/signup")) {
+    		request.setAttribute("view","/views/signup.jsp");
+    	} else if(uri.contains("/ASM/blogs")) {
+    		request.setAttribute("view","/views/blogs.jsp");
+    	} 
     	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

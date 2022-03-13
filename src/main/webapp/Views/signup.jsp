@@ -2,7 +2,7 @@
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#"> <h1>YouVideo</h1> </a>
 			<br/>
-			<img alt="" src="../Bootstrap/images/login.svg" width="500" >
+			<img alt="" src="../ASM/Bootstrap/images/login.svg" width="500" >
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<form >
