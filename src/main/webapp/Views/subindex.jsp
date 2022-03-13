@@ -1,19 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%-- Library bootstrap --%>
-	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="../Bootstrap/images/logo.png"
-	type="image/x-icon">
-<title>YouVideo</title>
-</head>
-<body class="container-fluid font-monospace">
-	<%-- Header --%>
-	<%@include file="header.jsp" %>
 	<%-- Slider --%>
 	<div class="row bg-white mt-5">
 		<div id="carouselExampleInterval" class="carousel slide"
@@ -185,9 +169,3 @@
 			</div>
 		</div>
 	</div>
-
-	<%-- Footer --%>
-	<%@include file="footer.jsp" %>
-	<%-- Library bootstrap --%>
-</body>
-</html>

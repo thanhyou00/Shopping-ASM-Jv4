@@ -12,22 +12,22 @@
 					</svg>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<a class="navbar-brand fw-bold fs-4" href="#">
+				<a class="navbar-brand fw-bold fs-4" href="/ASM/">
 					<h1>YouVideo</h1>
 				</a>
 				<ul class="navbar-nav me-auto mt-2 px-5 mb-lg-0 text-uppercase">
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">Home</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/home">Home</a></li>
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">Favourites</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/favourites">Favourites</a></li>
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">About</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/about">About</a></li>
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">Services</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/services">Services</a></li>
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">Blogs</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/blogs">Blogs</a></li>
 					<li class="nav-item"><a
-						class="nav-link text-secondary fw-bold" href="#">History</a></li>
+						class="nav-link text-secondary fw-bold" href="/ASM/history">History</a></li>
 					<li class="nav-item dropdown">
 					<a class="nav-link text-secondary fw-bold dropdown-toggle" role="button" href="#" id="accDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 					Account</a>
@@ -35,7 +35,7 @@
 							<li><a class="dropdown-item" href="#">My account</a></li>
 							<li><a class="dropdown-item" href="#">Change password</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">Log out</a></li>
+							<li><a class="dropdown-item" href="/ASM/logout">Log out</a></li>
 						</ul></li>
 				</ul>
 				<form class="d-flex">

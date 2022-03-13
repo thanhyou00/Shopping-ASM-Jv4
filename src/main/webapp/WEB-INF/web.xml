@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<display-name>ASM</display-name>
+	<display-name>trucnvph17923</display-name>
 
 	<session-config>
 		<tracking-mode>COOKIE</tracking-mode>
