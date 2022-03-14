@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class indexControllers
  */
-@WebServlet({"/index","/home","/history","/login","/signup","/blogs"})
+@WebServlet({"/index","/home","/history","/login","/signup","/blogs","/detail"})
 public class indexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,6 +33,8 @@ public class indexServlet extends HttpServlet {
     		request.setAttribute("view","/views/signup.jsp");
     	} else if(uri.contains("/ASM/blogs")) {
     		request.setAttribute("view","/views/blogs.jsp");
+    	} else if(uri.contains("/ASM/detail")) {
+    		request.setAttribute("view","/views/details.jsp");
     	} 
     	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

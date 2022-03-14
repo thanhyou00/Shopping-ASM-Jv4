@@ -1,5 +1,5 @@
 	<%-- Header --%>
-	<nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top shadow-sm rounded">
 		<div class="container-fluid">
 			<button class="navbar-toggler bg-primary mt-3" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"

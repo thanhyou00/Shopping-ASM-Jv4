@@ -17,9 +17,9 @@
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#"><h1>YouVideo</h1></a>
 			<br/>
-			<img alt="" src="../Bootstrap/images/login.svg" width="500" />
+			<img alt="" src="http://localhost:8080/ASM/Bootstrap/images/login.svg" width="500" />
 		</div>
-		<div class="align-self-center p-5 col-12 col-md-6">
+		<div class="align-self-center p-5 col-12 col-md-6 mt-5">
 			<form >
 			<h1>Login</h1>
 				<div class="form-group">
@@ -34,7 +34,7 @@
 							id="flexCheckDefault"> <label class="form-check-label fw-bold"
 							for="flexCheckDefault"> Remember me </label>
 					</div>
-					<div class="col-6 text-primary text-end" role="button">
+					<div class="col-6 text-primary text-end " role="button">
 						<p>Forgot password ?</p>
 					</div>
 					</div>
