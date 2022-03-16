@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class indexControllers
  */
-@WebServlet({"/index","/home","/history","/login","/signup","/blogs","/detail"})
-public class indexServlet extends HttpServlet {
+@WebServlet({"/start","/home","/history","/login","/signup","/blogs","/detail"})
+public class layoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public indexServlet() {
+    public layoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
     	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String uri = request.getRequestURI();
-    	if(uri.contains("/ASM/index")) {
+    	if(uri.contains("/ASM/start")) {
     		request.setAttribute("view","/views/subindex.jsp");
     	} else if(uri.contains("/ASM/home")) {
     		request.setAttribute("view","/views/home.jsp");
@@ -40,7 +40,7 @@ public class indexServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPOST");
+
 	}
 
 }

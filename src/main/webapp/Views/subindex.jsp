@@ -7,14 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="/views/bootstrap.jsp"%>
-<link rel="shortcut icon" href="../Bootstrap/images/logo.png"
+<link rel="shortcut icon" href="/public/images/logo.png"
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>
 <body class="container font-monospace">
 	<div class="row mt-5">
 		<div class="col-6 text-center">
-			<img alt="" src="http://localhost:8080/ASM/Bootstrap/images/banner.svg" class="img-fluid">
+			<img alt="" src="/ASM/public/images/banner.svg" class="img-fluid">
 		</div>
 		<div class="col-6 text-end align-self-center">
 			<h1>Welcome my videos</h1>

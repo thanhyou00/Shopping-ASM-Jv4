@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%-- Library bootstrap --%>
 <%@include file="/views/bootstrap.jsp"%>
-<link rel="shortcut icon" href="../ASM/Bootstrap/images/logo.png"
+<link rel="shortcut icon" href="/ASM/public/images/logo.png"
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>
@@ -18,7 +18,7 @@
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#">
 				<h1>YouVideo</h1>
-			</a> <br /> <img alt="" src="../ASM/Bootstrap/images/login.svg"
+			</a> <br /> <img alt="" src="/ASM/public/images/login.svg"
 				width="500">
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">

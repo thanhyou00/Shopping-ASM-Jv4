@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="../ASM/Bootstrap/images/logo.png"
+<link rel="shortcut icon" href="/ASM/public/images/logo.png"
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>
@@ -20,7 +20,7 @@
 			data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active p-3" data-bs-interval="10000">
-					<img src="../Bootstrap/images/slider01.svg" class="d-block w-100"
+					<img src="/ASM/public/images/slider01.svg" class="d-block w-100"
 						height="500px" alt="slider01">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 1</h5>
@@ -29,7 +29,7 @@
 					</div>
 				</div>
 				<div class="carousel-item p-3" data-bs-interval="2000">
-					<img src="../Bootstrap/images/slider02.svg" class="d-block w-100"
+					<img src="/ASM/public/images/slider02.svg" class="d-block w-100"
 						height="500px" alt="slider02">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 2</h5>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="carousel-item p-3">
-					<img src="../Bootstrap/images/slider03.svg" class="d-block w-100"
+					<img src="/ASM/public/images/slider03.svg" class="d-block w-100"
 						height="500px" alt="slider03">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 3</h5>
