@@ -18,10 +18,8 @@
 				<div class="p-4">
 					<a class="fw-bold fs-1 text-center text-decoration-none" href="#"><h1>YouVideo</h1></a>
 				</div>
-				<hr />
 				<div class="bg-light">
 					<div class="list-group text-start">
-						<h5 class="list-group-item list-group-item-action border-0 active">MAIN</h5>
 						<a href="#" class="list-group-item list-group-item-action border-0">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
   							<path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
@@ -90,8 +88,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<h1>Hello</h1>
+			<div class="row p-4">
+				<div class="container-fluid">
+					<%-- views --%>
+					<jsp:include page="/views/admin/dashboard.jsp" />
+				</div>
 			</div>
 		</div>
 	</div>
