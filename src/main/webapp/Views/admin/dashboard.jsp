@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-  <h3 class="mt-3">Top 8 contribute</h3>
+  <h3 class="mt-3">Top contribute</h3>
   <hr/>
   <div class="row table-responsive border border-2">
   		<table class="table table-hover">
@@ -119,24 +119,24 @@
 					<td>Akaba</td>
 					<td>aka@gmail.com</td>
 					<td>Delete</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>	
-				<tr>
-					<td>8</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>																									
+				</tr>																								
 			</tbody>
 		</table>
-  </div>
+	<div class="row">
+		<div class="col-6 d-flex justify-content-start align-items-center text-secondary">Showing 5 out of 25 entries</div>
+		<div class="col-6 d-flex justify-content-end">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">Next</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
   
   
   

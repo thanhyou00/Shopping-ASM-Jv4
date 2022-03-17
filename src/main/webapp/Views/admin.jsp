@@ -91,7 +91,7 @@
 			<div class="row p-4">
 				<div class="container-fluid">
 					<%-- views --%>
-					<jsp:include page="/views/admin/dashboard.jsp" />
+					<jsp:include page="/views/admin/videos.jsp" />
 				</div>
 			</div>
 		</div>
