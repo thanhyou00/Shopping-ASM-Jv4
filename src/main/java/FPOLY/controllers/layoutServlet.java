@@ -10,14 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class indexControllers
  */
-@WebServlet({
-			"/start",
-			"/history",
-			"/login",
-			"/signup",
-			"/blogs",
-			"/detail",
-		})
+@WebServlet({"/start"})
 public class layoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

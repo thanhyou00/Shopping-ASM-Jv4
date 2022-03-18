@@ -20,12 +20,11 @@ public class adminServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("demo", "Oke done:))");
 		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 }

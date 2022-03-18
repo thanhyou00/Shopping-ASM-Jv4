@@ -1,3 +1,7 @@
+|<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+<fmt:setLocale value="vi" scope="request"/>
+<fmt:setBundle basename="global" scope="request"/>
+	
 	<%-- Header --%>
 	<nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top shadow-sm rounded" style="padding: 0">
 		<div class="container-fluid">
@@ -33,11 +37,11 @@
 					role="button" href="#" id="langDropdown" data-bs-toggle="dropdown"
 					aria-expanded="false"> Language</a>
 					<ul class="dropdown-menu" aria-labelledby="langDropdown">
-						<li><a class="dropdown-item" href="#"> English <span><img
+						<li><a class="dropdown-item" href="?lang=en"> English <span><img
 									src="/ASM/public/images/uk-flag.png"
 									width="24px" height="24px" /></span>
 						</a></li>
-						<li><a class="dropdown-item" href="#"> Vietnamese <span><img
+						<li><a class="dropdown-item" href="?lang=vi"> Vietnamese <span><img
 									src="/ASM/public/images/vn-flag.png"
 									width="24px" height="24px" /></span>
 						</a></li>

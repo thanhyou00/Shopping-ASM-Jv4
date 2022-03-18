@@ -8,26 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class historyServlet
+ * Servlet implementation class blogsServlet
  */
-@WebServlet("/history")
-public class historyServlet extends HttpServlet {
+@WebServlet("/blogs")
+public class blogsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public historyServlet() {
+    public blogsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/history.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/blogs.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/history.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/blogs.jsp").forward(request, response);
 	}
 
 }
