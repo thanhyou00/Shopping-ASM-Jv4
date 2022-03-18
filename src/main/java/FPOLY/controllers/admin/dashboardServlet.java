@@ -18,11 +18,12 @@ public class dashboardServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin/dashboard.jsp").forward(request, response);
+		request.setAttribute("viewAdmin","/views/admin/dashboard.jsp");
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin/dashboard.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 }

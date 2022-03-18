@@ -18,11 +18,12 @@ public class blogServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin/blog.jsp").forward(request, response);
+		request.setAttribute("viewAdmin","/views/admin/blog.jsp");
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin/blog.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
 }
