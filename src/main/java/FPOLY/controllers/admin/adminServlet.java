@@ -20,12 +20,7 @@ public class adminServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uri = request.getRequestURI();
-    	if(uri.contains("/ASM/admin")) {
-    		request.setAttribute("viewAdmin","/views/admin/blog.jsp");
-    	} else if(uri.contains("/ASM/dashboard")) {
-    		request.setAttribute("viewAdmin","/views/admin/dashboard.jsp");    		
-    	}
+		request.setAttribute("viewAdmin","/views/admin/blog.jsp");
 		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 
