@@ -20,19 +20,18 @@
 			<img alt="" src="/ASM/public/images/login.svg" width="500" />
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6 mt-5">
-			<form >
+			<form action="./login" method="post">
 			<h1>Login</h1>
 				<div class="form-group">
 					<label class="fw-bold">Username</label>
-					<input class="form-control mb-2 mt-1 rounded-pill" type="text">
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="username" value="${ username }">
 					<label class="fw-bold">Password</label>
-					<input class="form-control mb-2 mt-1 rounded-pill" type="password">
+					<input class="form-control mb-2 mt-1 rounded-pill" type="password" name="password" value="${ password }">
 					
 					<div class="row p-2">
 					<div class="form-check col-6">
-						<input class="form-check-input" type="checkbox" value=""
-							id="flexCheckDefault"> <label class="form-check-label fw-bold"
-							for="flexCheckDefault"> Remember me </label>
+						<input class="form-check-input" type="checkbox" name="remember" /> 
+						<label class="form-check-label fw-bold" for="flexCheckDefault"> Remember me </label>
 					</div>
 					<div class="col-6 text-primary text-end " role="button">
 						<p>Forgot password ?</p>
@@ -40,7 +39,7 @@
 					</div>
 					
 					<div class="row px-3 mt-5">
-						<button type="button" class="btn btn-primary rounded-pill">LOG IN</button>
+						<button type="submit" class="btn btn-primary rounded-pill">LOG IN</button>
 					</div> <br/>
 					<div class="row text-center">
 						<p class="fw-bold">	Or login with</p>
