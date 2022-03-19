@@ -23,7 +23,7 @@
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/home">Home</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/favourites">Favourites</a></li>
+					href="/ASM/favourite">Favourites</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/about">About</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
@@ -58,11 +58,11 @@
   							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 						</svg>
 						trucnvph17923</a>
-						<ul class="dropdown-menu px-4" aria-labelledby="accDropdown">
+						<ul class="dropdown-menu px-2" aria-labelledby="accDropdown">
 							<li><a class="dropdown-item" href="#">My account</a></li>
 							<li><a class="dropdown-item" href="#">Change password</a></li>
 							<li><a class="dropdown-item" href="#">Forgot password</a></li>
-							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="/ASM/feedback">Feedback</a></li>
 							<li><a class="dropdown-item" href="/ASM/login">Log out</a></li>
 						</ul></li>
 				</ul>

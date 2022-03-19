@@ -15,7 +15,7 @@
 	<%-- Header --%>
 	<%@include file="header.jsp"%>
 	<div class="row bg-light mt-5 p-5">
-		<h4 class="mb-5">History</h4>
+		<h4 class="mb-5">Favourites</h4>
 		<div class="col-5">
 			<div class="card mb-3">
 				<div class="row g-0">
