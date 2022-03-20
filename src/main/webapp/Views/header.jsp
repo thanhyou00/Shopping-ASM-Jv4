@@ -1,6 +1,3 @@
-|<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
-<fmt:setLocale value="vi" scope="request"/>
-<fmt:setBundle basename="global" scope="request"/>
 	
 	<%-- Header --%>
 	<nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top shadow-sm rounded" style="padding: 0">
@@ -21,21 +18,21 @@
 				</a>
 			<ul class="navbar-nav me-auto mt-2 px-5 text-uppercase">
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/home">Home</a></li>
+					href="/ASM/home"> <fmt:message key="menu.home"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/favourite">Favourites</a></li>
+					href="/ASM/favourite"> <fmt:message key="menu.favourite"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/about">About</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/services">Services</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/blogs">Blogs</a></li>
+					href="/ASM/blogs"> <fmt:message key="menu.blog"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/history">History</a></li>
+					href="/ASM/history"> <fmt:message key="menu.history"></fmt:message> </a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link text-secondary fw-bold dropdown-toggle"
 					role="button" href="#" id="langDropdown" data-bs-toggle="dropdown"
-					aria-expanded="false"> Language</a>
+					aria-expanded="false"> <fmt:message key="menu.language"></fmt:message> </a>
 					<ul class="dropdown-menu" aria-labelledby="langDropdown">
 						<li><a class="dropdown-item" href="?lang=en"> English <span><img
 									src="/ASM/public/images/uk-flag.png"

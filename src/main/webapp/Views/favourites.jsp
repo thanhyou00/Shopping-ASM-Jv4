@@ -11,7 +11,7 @@
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>
-<body class="container">
+<body class="container-fluid font-monospace">
 	<%-- Header --%>
 	<%@include file="header.jsp"%>
 	<div class="row bg-light mt-5 p-5">

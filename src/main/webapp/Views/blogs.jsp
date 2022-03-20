@@ -15,7 +15,6 @@
 	<%-- Header --%>
 	<%@include file="header.jsp" %>
 	<%-- Posts --%>
-	
 	<div class="row bg-white p-5 mt-5">
 	<h3>Blogs</h3>
 		<div class="col-8 p-4">
