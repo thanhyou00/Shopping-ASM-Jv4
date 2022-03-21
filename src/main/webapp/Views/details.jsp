@@ -14,8 +14,25 @@
 	<%@include file="bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logo.svg" type="image/x-icon">
 
-<title>YouVideo</title>
+<title>FEntertainment</title>
 </head>
+<style>
+	
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track { 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: gray;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0abde3;
+}
+	
+</style>
 <body class="container-fluid font-monospace">
 	<%-- Header --%>
 	<%@include file="header.jsp"%>

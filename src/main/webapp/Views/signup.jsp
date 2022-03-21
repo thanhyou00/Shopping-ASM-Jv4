@@ -11,15 +11,14 @@
 <%@include file="/views/bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logo.svg"
 	type="image/x-icon">
-<title>YouVideo</title>
+<title>FEntertainment</title>
 </head>
 <body class="container-fluid font-monospace">
 	<div class="row">
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#">
-				<h1>YouVideo</h1>
-			</a> <br /> <img alt="" src="/ASM/public/images/login.svg"
-				width="500">
+				<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg">
+			</a> 
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<form>
@@ -36,7 +35,7 @@
 					<label class="fw-bold">Email</label> <input
 						class="form-control mb-2 mt-1 rounded-pill" type="email">
 					<div class="row text-end text-primary">
-						<p role="button">Log in now</p>
+						<a href="/ASM/login" class="text-decoration-none">Log in now ?</a>
 					</div>
 					<div class="row px-3 mt-4">
 						<button type="button" class="btn btn-primary rounded-pill">SIGN
