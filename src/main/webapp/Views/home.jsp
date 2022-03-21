@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.png"
+<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>

@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/detail")
-public class detailServlet extends HttpServlet {
+public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public detailServlet() {
+    public DetailServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -14,7 +14,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 				<a class="navbar-brand fw-bold fs-4" href="/ASM/start">
-					<h1>YouVideo</h1>
+					<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg" width="50px" height="50px">
 				</a>
 			<ul class="navbar-nav me-auto mt-2 px-5 text-uppercase">
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
@@ -22,7 +22,7 @@
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/favourite"> <fmt:message key="menu.favourite"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/about">About</a></li>
+					href="/ASM/feedback"><fmt:message key="menu.feedback"></fmt:message></a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/services">Services</a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
@@ -56,11 +56,10 @@
 						</svg>
 						trucnvph17923</a>
 						<ul class="dropdown-menu px-2" aria-labelledby="accDropdown">
-							<li><a class="dropdown-item" href="#">My account</a></li>
-							<li><a class="dropdown-item" href="#">Change password</a></li>
-							<li><a class="dropdown-item" href="#">Forgot password</a></li>
-							<li><a class="dropdown-item" href="/ASM/feedback">Feedback</a></li>
-							<li><a class="dropdown-item" href="/ASM/login">Log out</a></li>
+							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
+							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
+							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
+							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
 						</ul></li>
 				</ul>
 			</form>

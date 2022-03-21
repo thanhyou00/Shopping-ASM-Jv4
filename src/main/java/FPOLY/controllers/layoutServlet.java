@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/start")
-public class layoutServlet extends HttpServlet {
+public class LayoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public layoutServlet() {
+    public LayoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

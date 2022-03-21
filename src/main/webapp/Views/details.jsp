@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+
+<fmt:setLocale value="${param.lang}" />
+<fmt:setBundle basename="FPOLY.i18n.global" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="/ASM/public/images/logo.svg" type="image/x-icon">
 
 <title>YouVideo</title>
 </head>

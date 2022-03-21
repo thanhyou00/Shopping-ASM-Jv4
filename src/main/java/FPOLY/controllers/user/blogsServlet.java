@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class blogsServlet
  */
 @WebServlet("/blogs")
-public class blogsServlet extends HttpServlet {
+public class BlogsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public blogsServlet() {
+    public BlogsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

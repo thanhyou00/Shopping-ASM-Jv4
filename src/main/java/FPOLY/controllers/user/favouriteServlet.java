@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class favouriteServlet
  */
 @WebServlet("/favourite")
-public class favouriteServlet extends HttpServlet {
+public class FavouriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public favouriteServlet() {
+    public FavouriteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

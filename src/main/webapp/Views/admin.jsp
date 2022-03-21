@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%-- Library bootstrap --%>
 <%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.png"
+<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
 	type="image/x-icon">
 <title>YouVideo</title>
 </head>
@@ -16,7 +16,9 @@
 		<div class="col-2 shadow-sm rounded bg-light" style="height: 100vh; overflow: auto;">
 			<div class="accordion accordion-flush" id="accordionFlushExample">
 				<div class="p-4">
-					<a class="fw-bold fs-1 text-center text-decoration-none" href="#"><h1>YouVideo</h1></a>
+					<a class="fw-bold fs-1 text-center text-decoration-none" href="#">
+						<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg">
+					</a>
 				</div>
 				<div class="bg-light">
 					<div class="list-group text-start">
