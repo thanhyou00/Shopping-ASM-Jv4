@@ -10,7 +10,7 @@
 	<%@include file="/views/bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
-<title>FEntertainment</title>
+<title>Fashion</title>
 </head>
 <body class="container-fluid font-monospace">
 	<div class="row"> 

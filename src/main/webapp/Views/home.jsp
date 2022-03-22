@@ -14,7 +14,7 @@
 	<%@include file="bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
-<title>FEntertainment</title>
+<title>Fashion</title>
 </head>
 <style>
 	
@@ -103,10 +103,11 @@
 		<div class="row pt-5">
 			<div class="col-4 align-self-center">
 				<select class="form-select" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
+					<option selected>-- Type --</option>
+					<option value="1">Nike</option>
+					<option value="2">Adidas</option>
+					<option value="3">Converse</option>
+					<option value="4">Sneaker</option>
 				</select>
 			</div>
 			<div class="col-8 align-self-center">

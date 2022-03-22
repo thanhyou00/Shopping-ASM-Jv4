@@ -14,7 +14,7 @@
 	<%@include file="bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
-<title>FEntertainment</title>
+<title>Fashion</title>
 </head>
 <style>
 	

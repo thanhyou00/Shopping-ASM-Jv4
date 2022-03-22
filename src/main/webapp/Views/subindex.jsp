@@ -9,15 +9,15 @@
 	<%@include file="/views/bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
-<title>FEntertainment</title>
+<title>Fashion</title>
 </head>
-<body class="container font-monospace">
+<body class="container-fluid font-monospace">
 	<div class="row mt-5">
 		<div class="col-6 text-center">
-			<img alt="" src="/ASM/public/images/banner.svg" class="img-fluid">
+			<img alt="banner" src="/ASM/public/images/banner.png" class="img-fluid">
 		</div>
-		<div class="col-6 text-end align-self-center">
-			<h1>Welcome my videos</h1>
+		<div class="col-6 text-end align-self-center px-5">
+			<h1>Welcome my website</h1>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 		<button type="button" class="btn btn-primary rounded-pill">
 			<a href="/ASM/login" class="text-white text-decoration-none">GET STARTED</a>
