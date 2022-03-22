@@ -114,7 +114,7 @@
 
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
 			<div class="col">
-				<div class="card h-100 border-0">
+				<div class="card h-100 border-0 shadow rounded">
 					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
 						alt="...">
 					<div class="card-body">
@@ -137,7 +137,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0">
+				<div class="card h-100 border-0 shadow rounded">
 					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
 						alt="...">
 					<div class="card-body">
@@ -160,7 +160,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0">
+				<div class="card h-100 border-0 shadow rounded">
 					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
 						alt="...">
 					<div class="card-body">
@@ -182,7 +182,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0">
+				<div class="card h-100 border-0 shadow rounded">
 					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
 						alt="...">
 					<div class="card-body">

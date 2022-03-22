@@ -39,7 +39,7 @@
 	<div class="row bg-light mt-5 p-5">
 		<h4 class="mb-5">Favourites</h4>
 		<div class="col-5">
-			<div class="card mb-3">
+			<div class="card mb-3 shadow-sm rounded">
 				<div class="row g-0">
 					<div class="col-md-5 d-flex justify-content-center">
 						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card mb-3">
+			<div class="card mb-3 shadow-sm rounded">
 				<div class="row g-0">
 					<div class="col-md-5 d-flex justify-content-center">
 						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
@@ -89,7 +89,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card mb-3">
+			<div class="card mb-3 shadow-sm rounded">
 				<div class="row g-0">
 					<div class="col-md-5 d-flex justify-content-center">
 						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
@@ -114,7 +114,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card mb-3">
+			<div class="card mb-3 shadow-sm rounded">
 				<div class="row g-0">
 					<div class="col-md-5 d-flex justify-content-center">
 						<img src="https://www.fillmurray.com/640/360" class="img-fluid"

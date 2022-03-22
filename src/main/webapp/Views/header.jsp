@@ -57,13 +57,60 @@
 						trucnvph17923</a>
 						<ul class="dropdown-menu px-2" aria-labelledby="accDropdown">
 							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
-							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
-							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
+							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
+							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
 							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
 						</ul></li>
 				</ul>
+				
 			</form>
 		</div>
 		</div>
 	</nav>
 	<br />
+	
+<!-- Modal change password -->
+<div class="modal fade" id="passwordModal" tabindex="-1"
+	aria-labelledby="passwordModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="passwordModalLabel">Change password</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<label class="form-label">Old password</label>
+				<input type="password" class="form-control" />
+				<label class="form-label">New password</label>
+				<input type="password" class="form-control" />
+			    <label class="form-label">Confirm new password</label>
+				<input type="password" class="form-control" />
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal forgot password -->
+<div class="modal fade" id="forgotModal" tabindex="-1"
+	aria-labelledby="forgotModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="forgotModalLabel">Forgot password</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<label class="form-label">Email</label>
+				<input type="email" class="form-control" /> <br/>
+				<div class="row px-2"><button type="button" class="btn btn-primary">Verify</button></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

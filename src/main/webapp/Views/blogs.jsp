@@ -42,7 +42,7 @@
 		<div class="col-8 p-4">
 			<div class="row row-cols-1 row-cols-md-2 g-4">
 				<div class="col">
-					<div class="card">
+					<div class="card shadow rounded">
 						<img src="https://www.fillmurray.com/640/360" class="card-img-top img-fluid" 
 							alt="...">
 						<div class="card-body">
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<div class="card">
+					<div class="card shadow rounded">
 						<img src="https://www.fillmurray.com/640/360" class="card-img-top img-fluid" 
 							alt="...">
 						<div class="card-body">
@@ -66,7 +66,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<div class="card">
+					<div class="card shadow rounded">
 						<img src="https://www.fillmurray.com/640/360" class="card-img-top img-fluid" 
 							alt="...">
 						<div class="card-body">
@@ -77,7 +77,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<div class="card">
+					<div class="card shadow rounded">
 						<img src="https://www.fillmurray.com/640/360" class="card-img-top img-fluid" 
 							alt="...">
 						<div class="card-body">
@@ -98,7 +98,7 @@
 					aria-label="Search">
 				<button class="btn btn-primary rounded-pill" type="submit">Search</button>
 			</form>
-			<ol class="list-group list-group-numbered mt-4 rounded-3">
+			<ol class="list-group list-group-numbered mt-4 rounded-3 shadow">
 				<li
 					class="list-group-item d-flex justify-content-between align-items-start">
 					<div class="ms-2 me-auto">
