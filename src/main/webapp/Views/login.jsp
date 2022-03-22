@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="/views/bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
+<link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
 <title>FEntertainment</title>
 </head>
@@ -16,7 +16,7 @@
 	<div class="row"> 
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#">
-				<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg">
+				<img alt="logo" class="img-fluid" src="/ASM/public/images/logomain.svg">
 			</a>
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6 mt-5">

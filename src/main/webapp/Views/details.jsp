@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.svg" type="image/x-icon">
+<link rel="shortcut icon" href="/ASM/public/images/logomain.svg" type="image/x-icon">
 
 <title>FEntertainment</title>
 </head>
@@ -39,12 +39,9 @@
 	<div class="row mt-5 p-5 bg-white">
 		<div class="row">
 			<div class="col-12 col-xl-8">
-				<iframe width="100%" height="500px"
-					src="https://www.youtube-nocookie.com/embed/UJg1w9pbNvo"
-					title="YouTube video player" frameborder="1"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
-					</iframe>
+				<iframe width="100%" height="500" src="https://www.youtube.com/embed/${ urlVideo }" 
+				title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+				encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<h3 class="mt-3">Ttile video</h3>
 					<div class="row mt-4">
 					<div class="col-12 col-xl-8"></div>

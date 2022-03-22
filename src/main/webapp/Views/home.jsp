@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
+<link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
 <title>FEntertainment</title>
 </head>
@@ -31,6 +31,16 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: #0abde3;
 }
+.scale {
+	transition: transform 1s;
+}
+.scale:hover {
+	transform: scale(1.05);
+}
+
+.text-red {
+	color: red;
+}
 	
 </style>
 <body class="container-fluid font-monospace">
@@ -42,8 +52,8 @@
 			data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active p-3" data-bs-interval="10000">
-					<img src="/ASM/public/images/slider01.svg" class="d-block w-100"
-						height="500px" alt="slider01">
+					<img src="/ASM/public/images/banner01.png" class="d-block w-100"
+						height="600px" alt="slider01">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 1</h5>
 						<p>Some representative placeholder content for the second
@@ -51,8 +61,8 @@
 					</div>
 				</div>
 				<div class="carousel-item p-3" data-bs-interval="2000">
-					<img src="/ASM/public/images/slider02.svg" class="d-block w-100"
-						height="500px" alt="slider02">
+					<img src="/ASM/public/images/banner02.png" class="d-block w-100"
+						height="600px" alt="slider02">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 2</h5>
 						<p>Some representative placeholder content for the second
@@ -60,8 +70,8 @@
 					</div>
 				</div>
 				<div class="carousel-item p-3">
-					<img src="/ASM/public/images/slider03.svg" class="d-block w-100"
-						height="500px" alt="slider03">
+					<img src="/ASM/public/images/banner03.png" class="d-block w-100"
+						height="600px" alt="slider03">
 					<div class="carousel-caption d-none d-md-block text-dark">
 						<h5>Second slide label 3</h5>
 						<p>Some representative placeholder content for the second
@@ -89,7 +99,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="container-fluid bg-light mt-5">
+	<div class="container mt-5">
 		<div class="row pt-5">
 			<div class="col-4 align-self-center">
 				<select class="form-select" aria-label="Default select example">
@@ -114,14 +124,12 @@
 
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
 			<div class="col">
-				<div class="card h-100 border-0 shadow rounded">
-					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
-						alt="...">
+				<div class="card h-90 border-0 shadow rounded" style="min-height: 30rem">
+					<img src="https://giayxshop.vn/wp-content/uploads/2021/04/z2437535556835_fec0d759c28542683684d8da8826f2e5-scaled.jpg" class="card-img-top scale"
+						alt="product">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text
-							below as a natural lead-in to additional content. This content is
-							a little bit longer.</p>
+						<h5 class="card-title">Nike Jordan 1 Low Xanh Dương REP</h5>
+						<p class="card-text text-red fs-5 fw-bold">550.000 VNĐ</p>
 					</div>
 					<div class="card-footer">
 						<button type="button" class="btn btn-primary w-100">
@@ -131,20 +139,18 @@
   							<path
 									d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
 						</svg>
-							<a href="/ASM/detail" class="text-white text-decoration-none">Watch now</a>
+							<a href="/ASM/detail" class="text-white text-decoration-none">Buy now</a>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0 shadow rounded">
-					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
+				<div class="card h-90 border-0 shadow rounded" style="min-height: 30rem">
+					<img src="https://giayxshop.vn/wp-content/uploads/2018/12/xoa-phong-154-1.jpg" class="card-img-top scale"
 						alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text
-							below as a natural lead-in to additional content. This content is
-							a little bit longer.</p>
+						<h5 class="card-title">Giày Thể Thao XSPORT Van.s Old Skool Cá Mập</h5>
+						<p class="card-text text-red fs-5 fw-bold">1250.000 VNĐ</p>
 					</div>
 					<div class="card-footer">
 						<button type="button" class="btn btn-primary w-100">
@@ -154,19 +160,18 @@
   							<path
 									d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
 						</svg>
-							<a href="/ASM/detail" class="text-white text-decoration-none">Watch now</a>
+							<a href="/ASM/detail" class="text-white text-decoration-none">Buy now</a>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0 shadow rounded">
-					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
+				<div class="card h-90 border-0 shadow rounded" style="min-height: 30rem">
+					<img src="https://giayxshop.vn/wp-content/uploads/2021/12/z3006364581361_1d378ab773e3261915d279d3d012a718.jpg" class="card-img-top scale"
 						alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This card has supporting text below as a
-							natural lead-in to additional content.</p>
+						<h5 class="card-title">Nike Jordan 1 Low Xanh Dương Vạch Đen REP</h5>
+						<p class="card-text text-red fs-5 fw-bold">850.000 VNĐ</p>
 					</div>
 					<div class="card-footer">
 						<button type="button" class="btn btn-primary w-100">
@@ -176,21 +181,18 @@
   							<path
 									d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
 						</svg>
-							<a href="/ASM/detail" class="text-white text-decoration-none">Watch now</a>
+							<a href="/ASM/detail" class="text-white text-decoration-none">Buy now</a>
 						</button>
 					</div>
 				</div>
 			</div>
 			<div class="col">
-				<div class="card h-100 border-0 shadow rounded">
-					<img src="https://www.fillmurray.com/640/360" class="card-img-top"
+				<div class="card h-90 border-0 shadow rounded" style="min-height: 30rem">
+					<img src="https://giayxshop.vn/wp-content/uploads/2020/09/z2077558321688_9048fd5ff5d1734365f111e2e3134040.jpg" class="card-img-top scale"
 						alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text
-							below as a natural lead-in to additional content. This card has
-							even longer content than the first to show that equal height
-							action.</p>
+						<h5 class="card-title">Giày Thể Thao XSPORT A102</h5>
+						<p class="card-text text-red fs-5 fw-bold">450.000 VNĐ</p>
 					</div>
 					<div class="card-footer">
 						<button type="button" class="btn btn-primary w-100">
@@ -200,7 +202,7 @@
   							<path
 									d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
 						</svg>
-							<a href="/ASM/detail" class="text-white text-decoration-none">Watch now</a>
+							<a href="/ASM/detail" class="text-white text-decoration-none">Buy now</a>
 						</button>
 					</div>
 				</div>

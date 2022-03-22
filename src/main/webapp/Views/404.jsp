@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <%-- Library bootstrap --%>
 <%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
+<link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
 	type="image/x-icon">
 <title>404 Not found</title>
 </head>

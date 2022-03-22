@@ -18,6 +18,8 @@ public class DetailServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String urlVideo = "https://youtu.be/-nfS6myBTPs".substring(17);
+		request.setAttribute("urlVideo", urlVideo);
 		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
 	}
 
