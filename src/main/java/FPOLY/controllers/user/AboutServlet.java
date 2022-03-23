@@ -7,21 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/history")
-public class HistoryServlet extends HttpServlet {
+@WebServlet("/about")
+public class AboutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public HistoryServlet() {
+    public AboutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/history.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/about.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/history.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/about.jsp").forward(request, response);
 	}
 
 }

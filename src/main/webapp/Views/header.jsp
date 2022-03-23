@@ -28,11 +28,19 @@
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
 					href="/ASM/blogs"> <fmt:message key="menu.blog"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-secondary fw-bold"
-					href="/ASM/history"> <fmt:message key="menu.history"></fmt:message> </a></li>
+					href="/ASM/about"> <fmt:message key="menu.about"></fmt:message> </a></li>
 				<li class="nav-item dropdown"><a
-					class="nav-link text-secondary fw-bold dropdown-toggle"
+					class="nav-link text-secondary fw-bold"
 					role="button" href="#" id="langDropdown" data-bs-toggle="dropdown"
-					aria-expanded="false"> <fmt:message key="menu.language"></fmt:message> </a>
+					aria-expanded="false"> 
+					<fmt:message key="menu.language"></fmt:message> 
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+  							<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+  							<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+						</svg>
+					</span>
+					</a>
 					<ul class="dropdown-menu" aria-labelledby="langDropdown">
 						<li><a class="dropdown-item" href="?lang=en"> English <span><img
 									src="/ASM/public/images/uk-flag.png"
@@ -46,28 +54,38 @@
 			</ul>
 			<form class="d-flex mx-5">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
-					<li class="nav-item dropdown"><a
-						class="nav-link text-secondary fw-bold dropdown-toggle"
+							
+				<li class="dropdown m-2">
+				<span class="badge rounded-pill bg-danger">6</span>
+				<span role="button" id="dropdownCart" data-bs-toggle="dropdown" aria-expanded="false">
+    				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  						<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+					</svg>
+  				</span>
+				  <ul class="dropdown-menu px-2 mt-3" aria-labelledby="dropdownCart">
+				    <li><a class="dropdown-item" href="#">Action</a></li>
+				    <li><a class="dropdown-item" href="#">Another action</a></li>
+				    <li><a class="dropdown-item" href="#">Something else here</a></li>
+				  </ul>
+				</li>
+				
+				<li class="nav-item dropdown" style="margin-right: 180px">
+					<a class="nav-link text-secondary fw-bold"
 						role="button" href="#" id="accDropdown" data-bs-toggle="dropdown"
 						aria-expanded="false">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+						<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 						</svg>
-						trucnvph17923</a>
-						<ul class="dropdown-menu px-2" aria-labelledby="accDropdown">
+						</a>
+						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">
 							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
 							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
 							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
 							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
-						</ul></li>
+						</ul>
+				</li>
 				</ul>
-				<div class="mx-2">
-				  <span class="badge rounded-pill bg-danger">6</span>
-					<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-  						<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-					</svg>
-				</div>
 			</form>
 		</div>
 		</div>
@@ -119,3 +137,10 @@
 		</div>
 	</div>
 </div>
+
+  <script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+  </script>

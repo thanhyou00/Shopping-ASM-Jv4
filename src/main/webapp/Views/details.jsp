@@ -13,6 +13,8 @@
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
 <link rel="shortcut icon" href="/ASM/public/images/logomain.svg" type="image/x-icon">
+<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+
 
 <title>Fashion</title>
 </head>
@@ -43,6 +45,42 @@
 .text-red {
 	color: red;
 }
+
+div.stars {
+  display: inline-block;
+}
+ 
+input.star { display: none; }
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 30px;
+  color: #444;
+  transition: all .2s;
+}
+ 
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+ 
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+ 
+input.star-1:checked ~ label.star:before { color: #F62; }
+ 
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+ 
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+
 	
 </style>
 <body class="container-fluid font-monospace">
@@ -68,9 +106,55 @@
 				<p>Chất liệu cao cấp, bền đẹp theo thời gian. Thiết kế thời trang. Kiểu dáng phong cách. Độ bền cao. Dễ phối đồ.</p>
 				<h5 class="fw-bold">Màu sắc : Blue</h5> 
 				<h5 class="fw-bold">Kích thước : </h5>
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+						<input type="radio" class="btn-check" name="btnradio" id="xs" autocomplete="off" checked> 
+						<label class="btn btn-outline-dark mx-2" for="xs">XS</label> 
+						
+						<input type="radio" class="btn-check" name="btnradio" id="s" autocomplete="off"> 
+						<label class="btn btn-outline-dark mx-2" for="s">S</label> 
+						
+						<input type="radio" class="btn-check" name="btnradio" id="m" autocomplete="off"> 
+						<label class="btn btn-outline-dark mx-2" for="m">M</label>
+						
+						<input type="radio" class="btn-check" name="btnradio" id="l" autocomplete="off"> 
+						<label class="btn btn-outline-dark mx-2" for="l">L</label>
+						
+						<input type="radio" class="btn-check" name="btnradio" id="xl" autocomplete="off"> 
+						<label class="btn btn-outline-dark mx-2" for="xl">XL</label>
+				</div>
+				<h5 class="fw-bold mt-2">Số lượng : </h5>
+				<input type="number" class="form-control" min="1"/>
+				<h5 class="fw-bold mt-2">Đơn giá : </h5>
 				<p class="card-text text-red fs-5 fw-bold">550.000 VNĐ</p>
+				
+				<div class="row px-3"><button class="btn btn-dark">Thêm vào giỏ hàng</button></div>
+				<div class="row px-3 mt-3"><button class="btn btn-dark">Mua ngay</button></div>
 			</div>
 	</div>
+	<div class="row p-5 bg-light">
+		<h4>Chi tiết sản phẩm</h4>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<div class="row">
+			<div class="col-6">
+			<h4>Đánh giá</h4>
+			<div class="stars">
+				<input class="star star-5" id="star-5" type="radio" name="star"/>
+				<label class="star star-5" for="star-5"></label>
+				<input class="star star-4" id="star-4" type="radio" name="star"/>
+				<label class="star star-4" for="star-4"></label>
+				<input class="star star-3" id="star-3" type="radio" name="star"/>
+				<label class="star star-3" for="star-3"></label>
+				<input class="star star-2" id="star-2" type="radio" name="star"/>
+				<label class="star star-2" for="star-2"></label>
+				<input class="star star-1" id="star-1" type="radio" name="star"/>
+				<label class="star star-1" for="star-1"></label>
+			</div>
+			</div>
+		</div>
+		
 	</div>
+	</div>
+	<%-- Footer --%>
+	<%@include file="footer.jsp" %>
 </body>
 </html>
