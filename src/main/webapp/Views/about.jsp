@@ -35,123 +35,43 @@
 </style>
 <body class="container-fluid font-monospace">
 	<%-- Header --%>
-	<%@include file="header.jsp"%>
-	<div class="row bg-light mt-5 p-5">
-		<h4 class="mb-5">History</h4>
-		<div class="col-5">
-			<div class="card mb-3 shadow-sm rounded">
-				<div class="row g-0">
-					<div class="col-md-5 d-flex justify-content-center">
-						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
-							alt="..." height="100%">
-					</div>
-					<div class="col-md-7">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-							<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-  									<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-  									<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-							</svg>
-								120.000
-						    </span>
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Delete</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-3 shadow-sm rounded">
-				<div class="row g-0">
-					<div class="col-md-5 d-flex justify-content-center">
-						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
-							alt="..." height="100%">
-					</div>
-					<div class="col-md-7">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-							<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-  									<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-  									<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-							</svg>
-								120.000
-						    </span>
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Delete</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-3 shadow-sm rounded">
-				<div class="row g-0">
-					<div class="col-md-5 d-flex justify-content-center">
-						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
-							alt="..." height="100%">
-					</div>
-					<div class="col-md-7">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-							<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-  									<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-  									<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-							</svg>
-								120.000
-						    </span>
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Delete</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-3 shadow-sm rounded">
-				<div class="row g-0">
-					<div class="col-md-5 d-flex justify-content-center">
-						<img src="https://www.fillmurray.com/640/360" class="img-fluid"
-							alt="..." height="100%">
-					</div>
-					<div class="col-md-7">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-							<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-  									<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-  									<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-							</svg>
-								120.000
-						    </span>
-							</p>
-							<p class="card-text">
-								<small class="text-muted">Delete</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+	<%@include file="header.jsp"%> <br/>
+	<div class="row mt-5">
+		<img alt="about" src="/ASM/public/images/about_us.png">
+	</div>
+	<div class="text-center mt-5"> <h2>ABOUT US</h2> </div>
+	<div class="row px-5 mt-5">
+		<div class="col-7">
+			<h5>What is Lorem Ipsum?</h5>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
+			PageMaker including versions of Lorem Ipsum.</p>
+			
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+			industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+			scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+			electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+			Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
+			PageMaker including versions of Lorem Ipsum.</p>
 		</div>
-		<div class="col-7 d-flex align-items-start">
-			<nav class="navbar navbar-light">
-					<div class="container">
-					<h4 class="mx-3">Search your video</h4>
-						<form class="d-flex">
-							<input style="padding-right: 100px" class="form-control me-2"
-								type="search" placeholder="Search..." aria-label="Search">
-							<button class="btn btn-primary" type="submit">Search</button>
-						</form>
-					</div>
-			</nav>
+		<div class="col-5">
+			<img alt="" src="/ASM/public/images/man.png" class="" width="100%" height="400px" style="object-fit: contain;">
 		</div>
 	</div>
+	
+	<%-- Footer --%>
+	<%@include file="footer.jsp" %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -7,27 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class favouriteServlet
- */
-@WebServlet("/favourite")
-public class FavouriteServlet extends HttpServlet {
+@WebServlet("/sales")
+public class SaleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FavouriteServlet() {
+    public SaleServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/favourites.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/sale.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/favourites.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/sale.jsp").forward(request, response);
 	}
 
 }
