@@ -90,7 +90,9 @@
 				    </li>				    
 				    <hr/>
 				    <div class="row px-3">
-				    	<button class="btn btn-primary">See now !</button>
+				    	<button class="btn btn-primary">
+				    		<a href="/ASM/cart" class="text-decoration-none text-white">See now !</a>
+				    	</button>
 				    </div>
 				  </ul>
 				</li>
@@ -99,10 +101,7 @@
 					<a class="nav-link text-black fw-bold"
 						role="button" href="#" id="accDropdown" data-bs-toggle="dropdown"
 						aria-expanded="false">
-						<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-  							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-  							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-						</svg>
+							<img alt="avt" src="/ASM/public/images/avt.jpg" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
 						</a>
 						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">
 							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>

@@ -41,6 +41,14 @@
 .text-red {
 	color: red;
 }
+
+.ell {
+    display: inline-block;
+    width: 110px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
 	
 </style>
 <body class="container-fluid font-monospace">
