@@ -7,9 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class homeServlet
- */
+import FPOLY.dao.ProductDAO;
+
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,10 +18,9 @@ public class HomeServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ProductDAO DAO = new ProductDAO();
+		request.setAttribute("list", DAO.findAll());
 		request.getRequestDispatcher("/views/home.jsp").forward(request, response);
 	}
 

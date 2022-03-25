@@ -8,17 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/admin/blog")
-public class BlogServlet extends HttpServlet {
+@WebServlet("/admin/users")
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public BlogServlet() {
+    public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("viewAdmin","/views/admin/blog.jsp");
+		request.setAttribute("viewAdmin","/views/admin/user.jsp");
 		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
 	}
 

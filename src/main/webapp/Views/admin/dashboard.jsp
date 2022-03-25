@@ -21,7 +21,7 @@
       <div class="p-3 border bg-white rounded-3">
       		<div class="row">
       			<div class="col-8">
-      				<p>Total video</p>
+      				<p>Total shoes</p>
       				<span class="text-primary">120.000</span>
       			</div>
       			<div class="col-4 d-flex justify-content-center align-items-center">
@@ -37,7 +37,7 @@
       <div class="p-3 border bg-white rounded-3">
       		<div class="row">
       			<div class="col-8">
-      				<p>Total post</p>
+      				<p>Total money</p>
       				<span class="text-primary">120.000</span>
       			</div>
       			<div class="col-4 d-flex justify-content-center align-items-center">
@@ -52,7 +52,7 @@
       <div class="p-3 border bg-white rounded-3">
       		<div class="row">
       			<div class="col-8">
-      				<p>Total user</p>
+      				<p>Total feedback</p>
       				<span class="text-primary">120.000</span>
       			</div>
       			<div class="col-4 d-flex justify-content-center align-items-center">
