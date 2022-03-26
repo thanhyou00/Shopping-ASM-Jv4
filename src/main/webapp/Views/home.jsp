@@ -107,56 +107,77 @@
 			</button>
 		</div>
 	</div>
-	<div class="container mt-5">
-		<div class="row pt-5">
-			<div class="col-4 align-self-center">
-				<select class="form-select" aria-label="Default select example">
-					<option selected>-- Type --</option>
-					<option value="1">Nike</option>
-					<option value="2">Adidas</option>
-					<option value="3">Converse</option>
-					<option value="4">Sneaker</option>
-				</select>
-			</div>
-			<div class="col-8 align-self-center">
-				<nav class="navbar navbar-light">
-					<div class="container-fluid">
-						<form class="d-flex">
-							<input style="padding-right: 100px" class="form-control me-2"
-								type="search" placeholder="Search..." aria-label="Search">
-							<button class="btn btn-primary" type="submit">Search</button>
-						</form>
-					</div>
-				</nav>
-			</div>
+	<div class="container-fluid mt-5">
+		<div class="row">
+		<div class="col-3 mt-5 px-5">
+		<nav class="navbar navbar-light">
+				<form class="d-flex">
+					<input style="padding-right: 100px" class="form-control me-2"
+						type="search" placeholder="Search..." aria-label="Search">
+					<button class="btn btn-primary" type="submit">Search</button>
+				</form>
+		</nav>
+		<br/>
+		<p class="fw-bold fs-5">Danh mục sản phẩm</p>
+		<ul class="list-group text-uppercase border shadow-sm">
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày nam</a>
+		  </li>
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày nữ</a>
+		  </li>
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày adidas</a>
+		  </li>
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày nike</a>
+		  </li>
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày vans</a>
+		  </li>
+		  <li class="list-group-item border-0">
+		  	<a href="#" class="text-black text-decoration-none">Giày đôi</a>
+		  </li>
+		</ul>
 		</div>
-
+		<div class="col-9">
+		<h4 class="fw-bold">Sản phẩm mới nhất</h4>
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
 		<c:forEach var="item" items="${list}">
 			<div class="col">
-				<div class="card h-90 border-0 shadow rounded" style="min-height: 30rem">
+				<div class="card h-90 border-0 shadow rounded" style="min-height: 26rem">
 					<img src="${ item.image }" class="card-img-top scale"
 						alt="${ item.descriptions }">
 					<div class="card-body">
-						<h5 class="card-title">${ item.name }</h5>
-						<p class="card-text text-red fs-5 fw-bold">${item.price } VNĐ</p>
+						<h5 class="card-title">
+							<a href="/ASM/detail" class="text-black text-decoration-none">${ item.name }</a>
+						</h5>
 					</div>
-					<div class="card-footer">
-						<button type="button" class="btn btn-primary w-100">
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-								fill="currentColor" class="bi bi-caret-right"
-								viewBox="0 0 16 16">
-  							<path
-									d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
-						</svg>
-							<a href="/ASM/detail" class="text-white text-decoration-none">Buy now</a>
-						</button>
+					<div class="card-footer bg-white">
+						<p class="card-text text-red fs-5 fw-bold">${item.price } VNĐ</p>
 					</div>
 				</div>
 			</div>
 			</c:forEach>
 		</div>
-		
+		<br/>
+		<div class="row mt-5">
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item disabled">
+			      <a class="page-link">Previous</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#">Next</a>
+			    </li>
+			  </ul>
+			</nav>
+		</div>
+		</div>
+		</div>
 	</div>
 	<%-- Footer --%>
 	<%@include file="footer.jsp" %>
