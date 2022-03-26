@@ -10,10 +10,22 @@ import FPOLY.utils.JpaUtils;
 
 public class ProductDAO {
 	
-	private EntityManager em = JpaUtils.getEntityManager(); 
+	private EntityManager em;
 	
-	public List<Product> findAll(){
-		TypedQuery<Product> query = em.createNamedQuery("Product.findAll", Product.class);
-		return query.getResultList();
+	public ProductDAO() {
+		this.em = JpaUtils.getEntityManager(); 
+	}
+	
+	public List<Product> findAll() throws Exception{
+		try {
+			this.em.getTransaction().begin();
+			TypedQuery<Product> query = em.createNamedQuery("Product.findAll", Product.class);
+			this.em.getTransaction().commit();
+			return query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.em.getTransaction().rollback();
+			throw e;
+		}
 	}
 }

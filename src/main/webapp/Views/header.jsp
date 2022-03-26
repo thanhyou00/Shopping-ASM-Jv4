@@ -13,8 +13,8 @@
 					</svg>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<a class="navbar-brand fw-bold fs-4" href="/ASM/start">
-					<img alt="logo" class="img-fluid" src="/ASM/public/images/logomain.svg" width="60px" height="60px">
+				<a class="navbar-brand fw-bold fs-4 mx-3" href="/ASM/start">
+					<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg" width="70px" height="70px">
 				</a>
 			<ul class="navbar-nav me-auto mt-2 px-5 text-uppercase">
 				<li class="nav-item"><a class="nav-link text-black fw-bold"

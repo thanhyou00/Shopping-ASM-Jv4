@@ -66,77 +66,7 @@
   </div>
   <h3 class="mt-3">Top contribute</h3>
   <hr/>
-  <div class="row table-responsive border border-2">
-  		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>First</th>
-					<th>Last</th>
-					<th>Email</th>
-					<th>Handle</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>	
-				<tr>
-					<td>5</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>	
-				<tr>
-					<td>6</td>
-					<td>Omini</td>
-					<td>Akaba</td>
-					<td>aka@gmail.com</td>
-					<td>Delete</td>
-				</tr>																								
-			</tbody>
-		</table>
-	<div class="row">
-		<div class="col-6 d-flex justify-content-start align-items-center text-secondary">Showing 5 out of 25 entries</div>
-		<div class="col-6 d-flex justify-content-end">
-			<nav aria-label="Page navigation example">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
+
   
   
   

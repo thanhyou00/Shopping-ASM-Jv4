@@ -7,22 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/products")
+import FPOLY.dao.ProductDAO;
+
+@WebServlet({"/admin/products/index","/admin/products/create","/admin/products/update","/admin/products/delete"})
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private ProductDAO DAO; 
     public ProductServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.DAO = new ProductDAO();
     }
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("viewAdmin","/views/admin/product.jsp");
-		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
+    	String uri = request.getRequestURI();
+    	if(uri.contains("index")) {
+    		this.index(request, response);
+    	}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
+		
+	}
+	
+	public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			request.setAttribute("list", DAO.findAll());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		request.setAttribute("viewAdmin","/views/admin/product.jsp");
+		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);		
 	}
 
 }

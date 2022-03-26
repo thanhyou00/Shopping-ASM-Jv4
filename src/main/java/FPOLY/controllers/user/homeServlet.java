@@ -20,7 +20,12 @@ public class HomeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductDAO DAO = new ProductDAO();
-		request.setAttribute("list", DAO.findAll());
+		try {
+			request.setAttribute("list", DAO.findAll());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		request.getRequestDispatcher("/views/home.jsp").forward(request, response);
 	}
 

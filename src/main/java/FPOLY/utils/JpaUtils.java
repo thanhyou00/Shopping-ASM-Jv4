@@ -12,7 +12,7 @@ public class JpaUtils {
 	}
 
 	public static EntityManager getEntityManager() {
-		EntityManager em = getFactory().createEntityManager();
+		EntityManager em = JpaUtils.getFactory().createEntityManager();
 		return em;
 	}
 
