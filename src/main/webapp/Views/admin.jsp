@@ -15,7 +15,7 @@
 <style>
 	
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track { 
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);

@@ -1,14 +1,54 @@
   <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<h3>Manage videos</h3>
+<h3>Manage products</h3>
 <div class="row mt-3">
 	<div class="col-7">
-		<button type="button" class="btn btn-success">
-	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-  		<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  		<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-	</svg>
-	Add a new video
+		<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_add_id">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+		  		<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  		<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+			</svg>
+			Add a new product
 		</button>
+			<!-- Modal add -->
+			<div class="modal fade" id="modal_add_id"
+					tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Alert</h5>
+								<button type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form action="" method="post">
+									<label class="form-label">Name</label>
+									<input type="text" name="name" class="form-control"> 
+									<label class="form-label">Price</label>
+									<input type="text" name="price" class="form-control">
+									<label class="form-label">Image</label>
+									<input type="text" name="image" class="form-control">
+									<label class="form-label">Descriptions</label>
+									<input type="text" name="description" class="form-control">
+									<label class="form-label">Color</label>
+									<input type="text" name="color" class="form-control">
+									<label class="form-label">Size</label>
+									<input type="text" name="size" class="form-control">
+									<label class="form-label">Brand</label>
+									<input type="text" name="brand" class="form-control">																																																					
+								</form>
+							</div>
+								<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancel</button>
+								<button type="button"
+									data-bs-dismiss="modal"
+									class="btn btn-danger">Add</button>
+							</div>
+						</div>
+					</div>
+			</div>				
 	</div>
 	<div class="col-4">
 	<input class="form-control" type="text" placeholder="Type here to search..."/> 
@@ -38,7 +78,7 @@
 				<tr>
 					<td>${ item.id }</td>
 					<th>${ item.name }</th>
-					<th>${ item.price }</th>
+					<th style="color: red">${ item.price }</th>
 					<th>${ item.image }</th>
 					<th>${ item.descriptions }</th>
 					<th>${ item.color }</th>
@@ -60,7 +100,8 @@
 						</svg>
 					Delete
 					</button>
-						<div class="modal fade" id="modal_delete_id"
+					<!-- Modal delete -->
+					<div class="modal fade" id="modal_delete_id"
 							tabindex="-1" aria-hidden="true">
 							<div class="modal-dialog modal-lg">
 								<div class="modal-content">
@@ -83,7 +124,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+					</div>
 				</td>
 				</tr>
 				</c:forEach>																								
