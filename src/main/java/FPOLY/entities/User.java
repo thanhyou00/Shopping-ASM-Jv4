@@ -24,7 +24,7 @@ public class User implements Serializable {
 
 	private String phonenumber;
 
-	private byte role;
+	private int role;
 
 	//bi-directional many-to-one association to Order
 	@OneToMany(mappedBy="user")
@@ -81,7 +81,7 @@ public class User implements Serializable {
 		this.phonenumber = phonenumber;
 	}
 
-	public byte getRole() {
+	public int getRole() {
 		return this.role;
 	}
 

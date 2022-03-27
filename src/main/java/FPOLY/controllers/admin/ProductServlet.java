@@ -32,7 +32,7 @@ public class ProductServlet extends HttpServlet {
 	
 	public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			request.setAttribute("list", DAO.findAll());
+			request.setAttribute("listProduct", DAO.findAll());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

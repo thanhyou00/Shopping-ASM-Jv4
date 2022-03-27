@@ -1,4 +1,4 @@
-  <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <h3>Manage products</h3>
 <div class="row mt-3">
 	<div class="col-7">
@@ -74,16 +74,16 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="item" items="${list}">
+			<c:forEach var="product" items="${listProduct}">
 				<tr>
-					<td>${ item.id }</td>
-					<th>${ item.name }</th>
-					<th style="color: red">${ item.price }</th>
-					<th>${ item.image }</th>
-					<th>${ item.descriptions }</th>
-					<th>${ item.color }</th>
-					<th>${ item.size }</th>
-					<th>${ item.brand }</th>
+					<td>${ product.id }</td>
+					<th>${ product.name }</th>
+					<th style="color: red">${ product.price }</th>
+					<th>${ product.image }</th>
+					<th>${ product.descriptions }</th>
+					<th>${ product.color }</th>
+					<th>${ product.size }</th>
+					<th>${ product.brand }</th>
 					<td class="text-center">
 					<button class="btn btn-primary">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -103,7 +103,7 @@
 					<!-- Modal delete -->
 					<div class="modal fade" id="modal_delete_id"
 							tabindex="-1" aria-hidden="true">
-							<div class="modal-dialog modal-lg">
+							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title">Alert</h5>
