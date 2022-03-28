@@ -41,7 +41,7 @@
 					<div class="row px-3 mt-5">
 						<button type="submit" class="btn btn-primary rounded-pill">LOG IN</button> 
 						<button type="button" class="btn btn-primary rounded-pill mt-3">
-							<a href="/ASM/signup" class="text-decoration-none text-white">SIGN UP</a>
+							<a href="/ASM/signup/index" class="text-decoration-none text-white">SIGN UP</a>
 						</button>
 					</div> <br/>
 					<div class="row text-center">

@@ -1,4 +1,9 @@
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<style>
+.hidetext {
+	-webkit-text-security: disc; /* Default */
+}
+</style>
 <h3>Manage users</h3>
 <div class="row mt-3">
 	<div class="col-7">
@@ -22,30 +27,27 @@
 								aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<form action="" method="post">
+								<form action="/ASM/admin/users/create" method="post">
 									<label class="form-label">Full name</label>
 									<input type="text" name="fullname" class="form-control"> 
 									<label class="form-label">Email</label>
 									<input type="email" name="email" class="form-control">
 									<label class="form-label">Password</label>
-									<input type="text" name="password" class="form-control">
+									<input type="password" name="password" class="form-control">
 									<label class="form-label">Phone number</label>
-									<input type="text" name="phone" class="form-control">
+									<input type="text" name="phonenumber" class="form-control">
 									<label class="form-label">Avatar</label>
 									<input type="text" name="avatar" class="form-control">
 									<label class="form-label">Role</label>
 									<select class="form-control" name="role">
 										<option value="1">Male</option>
 										<option value="0">Female</option>
-									</select>																																																				
+									</select>	
+									<div class="mt-3">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+										<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>	
+									</div>																																																		
 								</form>
-							</div>
-								<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-bs-dismiss="modal">Cancel</button>
-								<button type="button"
-									data-bs-dismiss="modal"
-									class="btn btn-danger">Add</button>
 							</div>
 						</div>
 					</div>
@@ -79,7 +81,7 @@
 					<td>${ user.id }</td>
 					<td>${ user.fullname }</td>
 					<td>${ user.email }</td>
-					<td>${ user.password }</td>
+					<td class="hidetext">${ user.password }</td>
 					<td>${ user.phonenumber }</td>
 					<td>${ user.avatar }</td>
 					<td>${ user.role }</td>

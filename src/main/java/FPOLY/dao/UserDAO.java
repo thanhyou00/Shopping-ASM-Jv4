@@ -27,4 +27,17 @@ public class UserDAO {
 			throw e;
 		}
 	}
+	
+	public User create(User entity) throws Exception {
+		try {
+			this.em.getTransaction().begin();
+			this.em.persist(entity);
+			this.em.getTransaction().commit();
+			return entity;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.em.getTransaction().rollback();
+			throw e;
+		}
+	}
 }

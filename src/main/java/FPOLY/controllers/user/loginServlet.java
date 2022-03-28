@@ -8,14 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import FPOLY.controllers.cookie.CookieUtils;
+import FPOLY.dao.UserDAO;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private UserDAO DAO;
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.DAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

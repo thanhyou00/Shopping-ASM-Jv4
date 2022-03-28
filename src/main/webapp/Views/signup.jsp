@@ -21,25 +21,27 @@
 			</a> 
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">
-			<form>
+			<form action="/ASM/signup/create" method="post">
 				<h1>Sign up</h1>
+				<div class="bg-${ color }">
+					<p class="text-white p-2">${ message }</p>
+				</div>
 				<div class="form-group">
-					<label class="fw-bold">Username</label> <input
-						class="form-control mb-2 mt-1 rounded-pill" type="text"> <label
-						class="fw-bold">Fullname</label> <input
-						class="form-control mb-2 mt-1 rounded-pill" type="text"> <label
-						class="fw-bold">Password</label> <input
-						class="form-control mb-2 mt-1 rounded-pill" type="password">
-					<label class="fw-bold">Repassword</label> <input
-						class="form-control mb-2 mt-1 rounded-pill" type="password">
-					<label class="fw-bold">Email</label> <input
-						class="form-control mb-2 mt-1 rounded-pill" type="email">
+					<label class="fw-bold">Full name</label> 
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="fullname"> 
+					<label class="fw-bold">Email</label> 
+					<input class="form-control mb-2 mt-1 rounded-pill" type="email" name="email"> 
+					<label class="fw-bold">Password</label> 
+					<input class="form-control mb-2 mt-1 rounded-pill" type="password" name="password">
+					<label class="fw-bold">Phone number</label> 
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="phonenumber">
+					<label class="fw-bold">Avatar</label> 
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="avatar">
 					<div class="row text-end text-primary">
 						<a href="/ASM/login" class="text-decoration-none">Log in now ?</a>
 					</div>
 					<div class="row px-3 mt-4">
-						<button type="button" class="btn btn-primary rounded-pill">SIGN
-							UP</button>
+						<button class="btn btn-primary rounded-pill">SIGN UP</button>
 					</div>
 					<br />
 				</div>

@@ -63,9 +63,9 @@
       </div>
     </div>
   </div>
-  <h3 class="mt-3">Top contribute</h3>
+  <h3 class="mt-3">Top sales</h3>
   <hr/>
-  <div class="row bg-dark">
+  <div class="row bg-dark rounded">
   	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

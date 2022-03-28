@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import FPOLY.dao.UserDAO;
+import FPOLY.entities.User;
 
 
 @WebServlet({"/admin/users/index","/admin/users/create","/admin/users/update","/admin/users/delete"})
@@ -28,7 +31,12 @@ public class UserServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
+		String uri = request.getRequestURI();
+		if(uri.contains("create")) {
+			this.create(request, response);
+		} else {
+			//404
+		}
 	}
 	
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +47,20 @@ public class UserServlet extends HttpServlet {
 		}
 		request.setAttribute("viewAdmin","/views/admin/user.jsp");
 		request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
+	}
+
+	private void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		try {
+			User entity = new User();
+			BeanUtils.populate(entity, request.getParameterMap());
+			this.DAO.create(entity);
+			response.sendRedirect("/ASM/admin/users/index");
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("/ASM/admin/users/index");
+		}
 	}
 
 }
