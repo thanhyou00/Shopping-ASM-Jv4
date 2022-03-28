@@ -17,7 +17,29 @@
 <title>Fashion</title>
 </head>
 <style>
-	
+html {
+    scroll-behavior: smooth;
+}
+
+.backTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #0097e6;
+    border: 1px solid #fff;
+    border-radius: 10%;
+    background-size: 40px;
+    cursor: pointer;
+    z-index: 100000;
+    transition: 0.5s;
+    display: none;
+    opacity: 0.5;
+}
+.backTop:hover {
+    opacity: 1;
+}	
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -179,7 +201,38 @@
 		</div>
 		</div>
 	</div>
+	  <!-- Back to top -->
+      <div>
+        <button class="backTop" onclick="topFunction()">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"/>
+</svg>
+        </button>
+      </div>
 	<%-- Footer --%>
 	<%@include file="footer.jsp" %>
+	<script type="text/javascript">
+	var mybutton = document.querySelector(".backTop");
+
+	window.onscroll = function () {
+	  scrollFunction();
+	};
+
+	function scrollFunction() {
+	  if (
+	    document.body.scrollTop > 300 ||
+	    document.documentElement.scrollTop > 300
+	  ) {
+	    mybutton.style.display = "block";
+	  } else {
+	    mybutton.style.display = "none";
+	  }
+	}
+
+	function topFunction() {
+	  document.body.scrollTop = 0;
+	  document.documentElement.scrollTop = 0;
+	}
+	</script>
 </body>
 </html>

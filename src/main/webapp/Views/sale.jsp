@@ -171,6 +171,8 @@
 			</div>
 		</div>
 	</div>
+	<br/>
+	<br/>
 	<%-- Footer --%>
 	<%@include file="footer.jsp" %>
 </body>

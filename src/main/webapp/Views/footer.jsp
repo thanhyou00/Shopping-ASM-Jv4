@@ -1,5 +1,28 @@
-	<div class="container-fluid bg-light mt-5 p-2">
-		<div class="row text-center p-3">
+<hr/>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="J8oQMFnM"></script>
+	<br/>
+	<div class="bg-white mt-5 p-5">
+		<div class="row">
+			<div class="col-3">
+				<img alt="logo" src="/ASM/public/images/logo.svg" width="300px" height="300px">
+			</div>
+			<div class="col-3">
+				<p class="fw-bold text-dark text-uppercase">Ho tro</p>
+				<p class="fw-normal" style="font-size: 15px">Hotline : +84123456789</p>
+				<p class="fw-normal" style="font-size: 15px">Email : thanhyou00@gmail.com</p>
+			</div>
+			<div class="col-3 text-uppercase">
+				<p class="fw-bold text-dark text-uppercase">Dich vu</p>
+				<p class="fw-normal" style="font-size: 15px">Doi tra hang</p>
+				<p class="fw-normal" style="font-size: 15px">Khieu nai</p>
+			</div>
+			<div class="col-3 text-uppercase">
+				<p class="fw-bold text-dark text-uppercase">Fanpage on facebook</p>
+				<div class="fb-page" data-href="https://www.facebook.com/thanhyou00/" data-tabs="timeline" data-width="" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/thanhyou00/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/thanhyou00/">Page này lập ra chỉ để không đăng gì cả</a></blockquote></div>	
+			</div>
+		</div>
+		<div class="row text-center">
 			<p>
 				<span> <a href="https://www.facebook.com/nguoilatime/"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -25,5 +48,5 @@
 				</span>
 			</p>
 		</div>
-		<p class="text-center">� 2022 trucnvph17923. All rights reserved.</p>
+		<p class="text-center"> Made by trucnvph17923. All rights reserved 2022.</p>
 	</div>
