@@ -2,7 +2,7 @@
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="J8oQMFnM"></script>
 	<br/>
-	<div class="bg-white mt-5 p-5">
+	<div class="bg-white mt-2 p-5">
 		<div class="row">
 			<div class="col-3">
 				<img alt="logo" src="/ASM/public/images/logo.svg" width="300px" height="300px">

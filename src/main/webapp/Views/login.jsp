@@ -22,9 +22,10 @@
 		<div class="align-self-center p-5 col-12 col-md-6 mt-5">
 			<form action="./login" method="post">
 			<h1>Login</h1>
+			<p>${ message }</p>
 				<div class="form-group">
-					<label class="fw-bold">Username</label>
-					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="username" value="${ username }">
+					<label class="fw-bold">Email</label>
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="email" value="${ email }">
 					<label class="fw-bold">Password</label>
 					<input class="form-control mb-2 mt-1 rounded-pill" type="password" name="password" value="${ password }">
 					
