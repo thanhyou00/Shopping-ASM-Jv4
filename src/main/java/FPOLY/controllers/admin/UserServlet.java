@@ -16,17 +16,19 @@ import FPOLY.entities.User;
 @WebServlet({"/admin/users/index","/admin/users/create","/admin/users/update","/admin/users/delete"})
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UserDAO DAO;
+	private UserDAO userDAO;
 	
     public UserServlet() {
         super();
-        this.DAO = new UserDAO();
+        this.userDAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
 		if(uri.contains("index")) {
 			this.index(request, response);
+		} else if(uri.contains("delete")) {
+			this.delete(request, response);
 		}
 	}
 
@@ -41,7 +43,7 @@ public class UserServlet extends HttpServlet {
 	
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			request.setAttribute("listUser", DAO.findAll());
+			request.setAttribute("listUser", userDAO.findAll());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,12 +57,29 @@ public class UserServlet extends HttpServlet {
 		try {
 			User entity = new User();
 			BeanUtils.populate(entity, request.getParameterMap());
-			this.DAO.create(entity);
+			this.userDAO.create(entity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}
+	
+	protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			String idStr = request.getParameter("id");
+			try {
+				int id = Integer.parseInt(idStr);
+				User entity = this.userDAO.findById(id);
+				this.userDAO.delete(entity);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			response.sendRedirect("/ASM/admin/users/index");
+	}
 
 }
+
+
+
+
+

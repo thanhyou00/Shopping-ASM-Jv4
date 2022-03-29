@@ -55,10 +55,11 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isCheckLogin==true) {
 			request.setAttribute("message", "Đăng nhập thành công!");
+			response.sendRedirect("/ASM/home");
 		} else {
-			request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
+			response.sendRedirect("/ASM/login");
 		}
-		request.getRequestDispatcher("/views/login.jsp").forward(request, response);
+		request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
 	}
 
 }
