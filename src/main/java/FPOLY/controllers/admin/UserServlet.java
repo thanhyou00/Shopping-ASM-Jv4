@@ -1,6 +1,8 @@
 package FPOLY.controllers.admin;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,8 +38,10 @@ public class UserServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		if(uri.contains("create")) {
 			this.create(request, response);
+		} else if(uri.contains("update")) {
+			this.update(request, response);
 		} else {
-			//404
+			request.getRequestDispatcher("/views/404.jsp").forward(request, response);
 		}
 	}
 	
@@ -75,6 +79,24 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			response.sendRedirect("/ASM/admin/users/index");
+	}
+	
+	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String idStr = request.getParameter("id");
+		try {
+			int id = Integer.parseInt(idStr);
+			User oldEntity = this.userDAO.findById(id);
+			User newEntity = new User();
+			BeanUtils.populate(newEntity, request.getParameterMap());
+			newEntity.setPassword(oldEntity.getPassword());
+			newEntity.setId(oldEntity.getId());
+			this.userDAO.update(newEntity);
+			response.sendRedirect("/ASM/admin/users/index");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Oh no !"+idStr);
+			response.sendRedirect("/ASM/admin/users/index");
+		}
 	}
 
 }

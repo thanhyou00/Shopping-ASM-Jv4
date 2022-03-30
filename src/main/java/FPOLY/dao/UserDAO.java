@@ -18,9 +18,10 @@ public class UserDAO {
 	public List<User> findAll() throws Exception {
 		try {
 			this.em.getTransaction().begin();
-			TypedQuery<User> query = em.createNamedQuery("User.findAll", User.class);
+			String jpql = "SELECT obj FROM User obj";
+			TypedQuery<User> query = this.em.createQuery(jpql, User.class);
 			this.em.getTransaction().commit();
-			return query.getResultList();
+			return query.getResultList();	
 		} catch (Exception e) {
 			e.printStackTrace();
 			this.em.getTransaction().rollback();
@@ -49,6 +50,19 @@ public class UserDAO {
 		try {
 			this.em.getTransaction().begin();
 			this.em.remove(entity);
+			this.em.getTransaction().commit();
+			return entity;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.em.getTransaction().rollback();
+			throw e;
+		}
+	}
+	
+	public User update(User entity) throws Exception {
+		try {
+			this.em.getTransaction().begin();
+			this.em.merge(entity);
 			this.em.getTransaction().commit();
 			return entity;
 		} catch (Exception e) {

@@ -29,28 +29,6 @@
 					href="/ASM/blogs"> <fmt:message key="menu.blog"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/about"> <fmt:message key="menu.about"></fmt:message> </a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link text-black fw-bold"
-					role="button" href="#" id="langDropdown" data-bs-toggle="dropdown"
-					aria-expanded="false"> 
-					<fmt:message key="menu.language"></fmt:message> 
-					<span>
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-  							<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-  							<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-						</svg>
-					</span>
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="langDropdown">
-						<li><a class="dropdown-item text-black" href="?lang=en"> English <span><img
-									src="/ASM/public/images/uk-flag.png"
-									width="24px" height="24px" /></span>
-						</a></li>
-						<li><a class="dropdown-item text-black" href="?lang=vi"> Vietnamese <span><img
-									src="/ASM/public/images/vn-flag.png"
-									width="24px" height="24px" /></span>
-						</a></li>
-					</ul></li>
 			</ul>
 			<form class="d-flex mx-5">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
@@ -97,12 +75,10 @@
 				  </ul>
 				</li>
 				
-				<li class="nav-item dropdown" style="margin-right: 180px">
-					<a class="nav-link text-black fw-bold"
-						role="button" href="#" id="accDropdown" data-bs-toggle="dropdown"
-						aria-expanded="false">
+				<li class="nav-item dropdown">
+					<a class="nav-link text-black fw-bold" role="button" href="#" id="accDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 							<img alt="avt" src="/ASM/public/images/avt.jpg" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
-						</a>
+					</a>
 						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">
 							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
 							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
@@ -111,6 +87,10 @@
 						</ul>
 				</li>
 				</ul>
+				<div class="mt-2" style="margin-right: 140px">					
+					<a class="px-1" href="?lang=en"><span><img src="/ASM/public/images/uk-flag.png" width="24px" height="24px" /></span></a>
+					<a class="px-1" href="?lang=vi"><span><img src="/ASM/public/images/vn-flag.png" width="24px" height="24px" /></span></a>
+				</div>	
 			</form>
 		</div>
 		</div>
