@@ -71,6 +71,17 @@ html {
     overflow: hidden !important;
     text-overflow: ellipsis;
 }
+
+a.active {
+	color: white;
+	font-weight: bold;
+	background-color: black;
+}
+a.unactive {
+	color: black;
+	font-weight: normal;
+	background-color: white;
+}
 	
 </style>
 <body class="container-fluid font-monospace">
@@ -129,16 +140,13 @@ html {
 			</button>
 		</div>
 	</div>
-	<div class="container-fluid mt-5">
+	<div class="container mt-5">
 		<div class="row">
-		<div class="col-3 mt-5 px-5">
-		<nav class="navbar navbar-light">
-				<form class="d-flex">
-					<input style="padding-right: 100px" class="form-control me-2"
-						type="search" placeholder="Search..." aria-label="Search">
-					<button class="btn btn-primary" type="submit">Search</button>
+		<div class="col-3 mt-5" style="padding-right: 50px">
+				<form action="" method="post">
+					<input class="form-control" type="search" placeholder="Search..." aria-label="Search"> 
+					<div class="row mt-3 mx-2"><button class="btn btn-primary">Search</button></div>
 				</form>
-		</nav>
 		<br/>
 		<p class="fw-bold fs-5">Danh mục sản phẩm</p>
 		<ul class="list-group text-uppercase border shadow-sm">
@@ -165,15 +173,15 @@ html {
 		<div class="col-9">
 		<h4 class="fw-bold">Sản phẩm mới nhất</h4>
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
-		<c:forEach var="item" items="${list}">
+		<c:forEach var="item" items="${listPagination}">
 			<div class="col">
-				<div class="card h-90 border-0 shadow rounded" style="min-height: 26rem">
+				<div class="card h-90 border-0 shadow-sm rounded" style="min-height: 23rem">
 					<img src="${ item.image }" class="card-img-top scale"
 						alt="${ item.descriptions }">
 					<div class="card-body">
-						<h5 class="card-title">
+						<h6 class="card-title fw-bold">
 							<a href="/ASM/detail" class="text-black text-decoration-none">${ item.name }</a>
-						</h5>
+						</h6>
 					</div>
 					<div class="card-footer bg-white">
 						<p class="card-text text-red fs-5 fw-bold">${item.price } VNĐ</p>
@@ -186,14 +194,22 @@ html {
 		<div class="row mt-5">
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-center">
-			    <li class="page-item disabled">
-			      <a class="page-link">Previous</a>
+			    <li class="page-item px-1 disabled">
+			      <a class="page-link">
+			      	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  						<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+					</svg>
+			      </a>
 			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#">Next</a>
+			    <c:forEach begin="1" end="${endPage}" var="i">
+			    	<li class="page-item px-1"><a class="page-link ${isActive==i?"active":"unactive"}" href="/ASM/home?index=${i}">${i}</a></li>
+			    </c:forEach>
+			    <li class="page-item px-1">
+			      <a class="page-link" href="/ASM/home?index=${index+1}">
+			      	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  						<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+			      </a>
 			    </li>
 			  </ul>
 			</nav>
@@ -204,9 +220,9 @@ html {
 	  <!-- Back to top -->
       <div>
         <button class="backTop" onclick="topFunction()">
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"/>
-</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-90deg-up" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"/>
+			</svg>
         </button>
       </div>
 	<%-- Footer --%>

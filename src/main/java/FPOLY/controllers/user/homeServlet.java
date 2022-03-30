@@ -12,26 +12,42 @@ import FPOLY.dao.ProductDAO;
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private ProductDAO productDAO;  
     public HomeServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.productDAO = new ProductDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductDAO DAO = new ProductDAO();
-		try {
-			request.setAttribute("list", DAO.findAll());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String uri = request.getRequestURI();
+		if(uri.contains("home")) {
+			this.pagination(request, response);
 		}
 		request.getRequestDispatcher("/views/home.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+	}
+	
+	protected void pagination(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String indexStr = request.getParameter("index");
+		if(indexStr==null) {
+			indexStr ="1";
+		}
+		try {
+			int index = Integer.parseInt(indexStr);
+			long count = this.productDAO.getTotalProduct();
+			long endPage = count/8;
+			if(count%8!=0) {
+				endPage++;
+			}
+			request.setAttribute("isActive", index);
+			request.setAttribute("endPage", endPage);
+			request.setAttribute("listPagination", this.productDAO.pagination(index));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
