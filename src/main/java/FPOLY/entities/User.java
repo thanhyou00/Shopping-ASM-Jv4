@@ -4,6 +4,11 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
+
+/**
+ * The persistent class for the users database table.
+ * 
+ */
 @Entity
 @Table(name="users")
 @NamedQuery(name="User.findAll", query="SELECT u FROM User u")

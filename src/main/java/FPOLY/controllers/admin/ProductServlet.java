@@ -11,7 +11,6 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import FPOLY.dao.ProductDAO;
 import FPOLY.entities.Product;
-import FPOLY.entities.User;
 
 @WebServlet({"/admin/products/index","/admin/products/create","/admin/products/update","/admin/products/delete"})
 public class ProductServlet extends HttpServlet {
@@ -80,10 +79,9 @@ public class ProductServlet extends HttpServlet {
 	}
 	
 	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idStr = request.getParameter("id");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		try {
-			int id = Integer.parseInt(idStr);
-			Product oldEntity = this.productDAO.findById(id);
 			Product newEntity = new Product();
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			this.productDAO.update(newEntity);

@@ -3,6 +3,11 @@ package FPOLY.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
+/**
+ * The persistent class for the products_categories database table.
+ * 
+ */
 @Entity
 @Table(name="products_categories")
 @NamedQuery(name="ProductsCategory.findAll", query="SELECT p FROM ProductsCategory p")

@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.util.List;
 
 
+/**
+ * The persistent class for the orders database table.
+ * 
+ */
 @Entity
 @Table(name="orders")
 @NamedQuery(name="Order.findAll", query="SELECT o FROM Order o")
@@ -21,18 +25,18 @@ public class Order implements Serializable {
 	private String orderDate;
 
 	@Column(name="order_status")
-	private byte orderStatus;
+	private int orderStatus;
 
 	@Column(name="shipping_address")
 	private String shippingAddress;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	private User user;
-
 	//bi-directional many-to-one association to OrderDetail
 	@OneToMany(mappedBy="order")
 	private List<OrderDetail> orderDetails;
+
+	//bi-directional many-to-one association to User
+	@ManyToOne
+	private User user;
 
 	public Order() {
 	}
@@ -61,7 +65,7 @@ public class Order implements Serializable {
 		this.orderDate = orderDate;
 	}
 
-	public byte getOrderStatus() {
+	public int getOrderStatus() {
 		return this.orderStatus;
 	}
 
@@ -75,14 +79,6 @@ public class Order implements Serializable {
 
 	public void setShippingAddress(String shippingAddress) {
 		this.shippingAddress = shippingAddress;
-	}
-
-	public User getUser() {
-		return this.user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public List<OrderDetail> getOrderDetails() {
@@ -105,6 +101,14 @@ public class Order implements Serializable {
 		orderDetail.setOrder(null);
 
 		return orderDetail;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

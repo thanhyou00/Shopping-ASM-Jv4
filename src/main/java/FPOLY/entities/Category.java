@@ -4,6 +4,11 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
+
+/**
+ * The persistent class for the categories database table.
+ * 
+ */
 @Entity
 @Table(name="categories")
 @NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
