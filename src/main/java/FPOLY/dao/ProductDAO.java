@@ -64,4 +64,17 @@ public class ProductDAO {
 		}
 	}
 	
+	public Product update(Product entity) throws Exception{
+		try {
+			this.em.getTransaction().begin();
+			this.em.merge(entity);
+			this.em.getTransaction().commit();
+			return entity;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.em.getTransaction().rollback();
+			throw e;
+		}
+	}
+	
 }

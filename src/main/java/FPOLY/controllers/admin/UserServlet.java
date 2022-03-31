@@ -89,7 +89,6 @@ public class UserServlet extends HttpServlet {
 			User newEntity = new User();
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			newEntity.setPassword(oldEntity.getPassword());
-			newEntity.setId(oldEntity.getId());
 			this.userDAO.update(newEntity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {

@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import FPOLY.dao.ProductDAO;
 import FPOLY.entities.Product;
+import FPOLY.entities.User;
 
 @WebServlet({"/admin/products/index","/admin/products/create","/admin/products/update","/admin/products/delete"})
 public class ProductServlet extends HttpServlet {
@@ -34,8 +35,12 @@ public class ProductServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
 		if(uri.contains("create")) {
-    		this.create(request, response);
-    	}
+			this.create(request, response);
+		} else if(uri.contains("update")) {
+			this.update(request, response);
+		} else {
+			request.getRequestDispatcher("/views/404.jsp").forward(request, response);
+		}
 	}
 	
 	public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -72,6 +77,21 @@ public class ProductServlet extends HttpServlet {
 			e.printStackTrace();
 		}	
 		response.sendRedirect("/ASM/admin/products/index");
+	}
+	
+	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String idStr = request.getParameter("id");
+		try {
+			int id = Integer.parseInt(idStr);
+			Product oldEntity = this.productDAO.findById(id);
+			Product newEntity = new Product();
+			BeanUtils.populate(newEntity, request.getParameterMap());
+			this.productDAO.update(newEntity);
+			response.sendRedirect("/ASM/admin/products/index");
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("/ASM/admin/products/index");
+		}
 	}
 
 }
