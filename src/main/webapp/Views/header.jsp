@@ -84,6 +84,9 @@
 							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
 							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
 							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
+							<c:if test="${ sessionScope.role ==1 }">
+								<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.admin"></fmt:message> </a></li>
+							</c:if>
 						</ul>
 				</li>
 				</ul>

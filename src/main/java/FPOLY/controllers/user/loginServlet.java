@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import FPOLY.controllers.cookie.CookieUtils;
 import FPOLY.dao.UserDAO;
@@ -49,7 +50,9 @@ public class LoginServlet extends HttpServlet {
 					CookieUtils.add("email", email, hours, response);
 					CookieUtils.add("password", password, hours, response);
 					request.setAttribute("message", "Đăng nhập thành công!");
-					response.sendRedirect("/ASM/home?auth="+userDAO.findAll().get(i).getRole()+"&id="+userDAO.findAll().get(i).getId());
+					HttpSession session = request.getSession();
+					session.setAttribute("role", userDAO.findAll().get(i).getRole());
+					response.sendRedirect("/ASM/home");
 				} else {
 					request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
 				}
