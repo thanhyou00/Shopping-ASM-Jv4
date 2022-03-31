@@ -94,7 +94,6 @@ public class UserServlet extends HttpServlet {
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Oh no !"+idStr);
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}

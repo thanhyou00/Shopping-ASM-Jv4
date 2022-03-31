@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="/views/bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logomain.svg"
+<link rel="shortcut icon" href="/ASM/public/images/logo.svg"
 	type="image/x-icon">
 <title>Fashion</title>
 </head>

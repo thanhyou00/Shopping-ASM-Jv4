@@ -38,11 +38,11 @@
 									<input type="text" name="phonenumber" class="form-control">
 									<label class="form-label">Avatar</label>
 									<input type="text" name="avatar" class="form-control">
-									<label class="form-label">Role</label>
-									<select class="form-control" name="role">
-										<option value="1">Male</option>
-										<option value="0">Female</option>
-									</select>	
+									<label class="form-check-label">Role</label>
+									<div>
+										<input type="radio" class="form-check-input" name="role"> Admin
+										<input type="radio" class="form-check-input" name="role"> User
+									</div>	
 									<div class="mt-3">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 										<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>	
@@ -82,7 +82,7 @@
 					<td class="hidetext">${ user.password }</td>
 					<td>${ user.phonenumber }</td>
 					<td>${ user.avatar }</td>
-					<td>${ user.role }</td>
+					<td>${ user.role==1?"Admin":"User" }</td>
 					<td class="text-center">
 					<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_update_${ user.id }">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -109,7 +109,12 @@
 											<label class="label-control mt-1">Phone number</label>
 											<input class="form-control" type="text" name="phonenumber" value="${user.phonenumber}" />		
 											<label class="label-control mt-1">Avatar</label>
-											<input class="form-control" type="text" name="avatar" value="${user.avatar}" />																											
+											<input class="form-control" type="text" name="avatar" value="${user.avatar}" />		
+											<label class="form-check-label">Role</label>
+											<div>
+												<input type="radio" class="form-check-input" name="role" value="1" ${user.role==1?"checked":""}> Admin
+												<input type="radio" class="form-check-input" name="role" value="0" ${user.role==0?"checked":""}> User
+											</div>																									
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
