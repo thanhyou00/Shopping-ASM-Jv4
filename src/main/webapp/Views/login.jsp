@@ -20,7 +20,7 @@
 			</a>
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6 mt-5">
-			<form action="./login" method="post">
+			<form action="/ASM/login" method="post">
 			<h1>Login</h1>
 			<p>${ message }</p>
 				<div class="form-group">

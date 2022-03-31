@@ -16,10 +16,10 @@ import FPOLY.entities.User;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private UserDAO DAO;
+    private UserDAO userDAO;
     public LoginServlet() {
         super();
-        this.DAO = new UserDAO();
+        this.userDAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 		// chuyển sang login.jsp để hiển thị lên form
 		request.setAttribute("email", email);
 		request.setAttribute("password", password);
+		
 		request.getRequestDispatcher("/views/login.jsp").forward(request, response);
 	}
 
@@ -40,26 +41,23 @@ public class LoginServlet extends HttpServlet {
 		// kiểm tra tài khoản đăng nhập
 		boolean isCheckLogin=false;
 		try {
-			for (int  i=0; i< DAO.findAll().size();i++) {
-				if (email.equals(DAO.findAll().get(i).getEmail()) && password.equals(DAO.findAll().get(i).getPassword())) {
+			for (int  i=0; i< userDAO.findAll().size();i++) {
+				if (email.equals(userDAO.findAll().get(i).getEmail()) && password.equals(userDAO.findAll().get(i).getPassword())) {
 					isCheckLogin = true;
 					// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
 					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
 					CookieUtils.add("email", email, hours, response);
 					CookieUtils.add("password", password, hours, response);
+					request.setAttribute("message", "Đăng nhập thành công!");
+					response.sendRedirect("/ASM/home?auth="+userDAO.findAll().get(i).getRole()+"&id="+userDAO.findAll().get(i).getId());
+				} else {
+					request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		if(isCheckLogin==true) {
-			request.setAttribute("message", "Đăng nhập thành công!");
-			response.sendRedirect("/ASM/home");
-		} else {
-			response.sendRedirect("/ASM/login");
-		}
-		request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
 	}
 
 }
