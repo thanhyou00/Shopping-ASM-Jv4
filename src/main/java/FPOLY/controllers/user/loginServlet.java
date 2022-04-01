@@ -44,11 +44,10 @@ public class LoginServlet extends HttpServlet {
 		// kiểm tra tài khoản đăng nhập
 		boolean isCheckLogin=false;
 		// references : https://stackjava.com/demo/bcrypt-la-gi-code-vi-du-bcrypt-bang-java-jbcrypt.html
-		boolean valuate = BCrypt.checkpw(password,BCrypt.hashpw(password, BCrypt.gensalt()));
-		System.out.println(valuate);
+//		boolean valuate = BCrypt.checkpw(password,BCrypt.hashpw(password, BCrypt.gensalt()));
 		try {
 			for (int  i=0; i< userDAO.findAll().size();i++) {
-				if (email.equals(userDAO.findAll().get(i).getEmail()) && valuate) {
+				if (email.equals(userDAO.findAll().get(i).getEmail()) && password.equals(userDAO.findAll().get(i).getPassword())) {
 					isCheckLogin = true;
 					// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
 					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
@@ -56,10 +55,12 @@ public class LoginServlet extends HttpServlet {
 					CookieUtils.add("password", password, hours, response);
 					request.setAttribute("message", "Đăng nhập thành công!");
 					HttpSession session = request.getSession();
-					session.setAttribute("role", userDAO.findAll().get(i).getRole());
-					session.setAttribute("fullname", userDAO.findAll().get(i).getFullname());
+					session.setAttribute("roleLg", userDAO.findAll().get(i).getRole());
+					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
+					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
 					response.sendRedirect("/ASM/home");
-				} else {
+				} 
+				else {
 					request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
 				}
 			}

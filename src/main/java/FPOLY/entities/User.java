@@ -90,7 +90,7 @@ public class User implements Serializable {
 		return this.role;
 	}
 
-	public void setRole(byte role) {
+	public void setRole(int role) {
 		this.role = role;
 	}
 
