@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="align-self-center p-5 col-12 col-md-6">
 			<a class="navbar-brand fw-bold fs-2" href="#">
-				<img alt="logo" class="img-fluid" src="/ASM/public/images/logomain.svg">
+				<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg">
 			</a> 
 		</div>
 		<div class="align-self-center p-5 col-12 col-md-6">

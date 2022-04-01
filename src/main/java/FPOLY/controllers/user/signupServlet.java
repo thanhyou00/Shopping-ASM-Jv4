@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.mindrot.jbcrypt.BCrypt;
 
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.User;
@@ -57,6 +58,8 @@ public class SignupServlet extends HttpServlet {
 		try {
 			User entity = new User();
 			BeanUtils.populate(entity, request.getParameterMap());
+			entity.setPassword(BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()));
+			entity.setRole(0);
 			this.DAO.create(entity);
 			isSignup = true;
 			response.sendRedirect("/ASM/signup/index");
