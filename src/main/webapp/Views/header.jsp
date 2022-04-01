@@ -80,15 +80,21 @@
 							<img alt="avt" src="${sessionScope.avatarLg}" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
 					</a>
 						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">
-							<c:if test="${ sessionScope.roleLg ==1 }">
+							<c:if test="${ sessionScope.roleLg ==1 &&  !empty sessionScope.emailLg }">
 								<li><a class="dropdown-item" href="/ASM/my-account"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
 								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
 								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
 								<li><a class="dropdown-item" href="/ASM/admin"> <fmt:message key="menu.admin"></fmt:message> </a></li>
 								<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
 							</c:if>
-							<c:if test="${ sessionScope.roleLg !=1 }">
-							<li><a class="dropdown-item" href="/ASM/start"> <fmt:message key="menu.login"></fmt:message> </a></li>
+							<c:if test="${ sessionScope.roleLg !=1 &&  !empty sessionScope.emailLg }">
+								<li><a class="dropdown-item" href="/ASM/my-account"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
+								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
+								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
+								<li><a class="dropdown-item" href="/ASM/logout"> <fmt:message key="menu.logout"></fmt:message> </a></li>							
+							</c:if>
+							<c:if test="${ sessionScope.roleLg !=1  && empty sessionScope.emailLg}">
+							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.login"></fmt:message> </a></li>
 							</c:if>
 						</ul>
 				</li>

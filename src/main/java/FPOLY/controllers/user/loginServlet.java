@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("messageLg", "Đăng nhập thành công !");
 					session.setAttribute("roleLg", userDAO.findAll().get(i).getRole());
 					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
+					session.setAttribute("emailLg", userDAO.findAll().get(i).getEmail());
 					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
 				} else {
 					HttpSession session = request.getSession();
