@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import FPOLY.controllers.cookie.CookieUtils;
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.User;
@@ -41,9 +43,12 @@ public class LoginServlet extends HttpServlet {
 		String remember = request.getParameter("remember");
 		// kiểm tra tài khoản đăng nhập
 		boolean isCheckLogin=false;
+		// references : https://stackjava.com/demo/bcrypt-la-gi-code-vi-du-bcrypt-bang-java-jbcrypt.html
+		boolean valuate = BCrypt.checkpw(password,BCrypt.hashpw(password, BCrypt.gensalt()));
+		System.out.println(valuate);
 		try {
 			for (int  i=0; i< userDAO.findAll().size();i++) {
-				if (email.equals(userDAO.findAll().get(i).getEmail()) && password.equals(userDAO.findAll().get(i).getPassword())) {
+				if (email.equals(userDAO.findAll().get(i).getEmail()) && valuate) {
 					isCheckLogin = true;
 					// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
 					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
