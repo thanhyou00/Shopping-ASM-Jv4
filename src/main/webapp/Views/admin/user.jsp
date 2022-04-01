@@ -1,9 +1,4 @@
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<style>
-.hidetext {
-	-webkit-text-security: disc; /* Default */
-}
-</style>
 <h3>Manage users</h3>
 <div class="row mt-3">
 	<div class="col-7">
@@ -79,7 +74,7 @@
 				<tr>
 					<td>${ user.fullname }</td>
 					<td>${ user.email }</td>
-					<td class="hidetext">${ user.password }</td>
+					<td>${ user.password }</td>
 					<td>${ user.phonenumber }</td>
 					<td>${ user.avatar }</td>
 					<td>${ user.role==1?"Admin":"User" }</td>

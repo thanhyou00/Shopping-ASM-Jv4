@@ -59,8 +59,6 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
 					session.setAttribute("emailLg", userDAO.findAll().get(i).getEmail());
 					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
-					System.out.println("BC pass: " + BCrypt.hashpw(password, BCrypt.gensalt()));
-					System.out.println("check : " + valuate);
 				} else {
 					HttpSession session = request.getSession();
 					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
