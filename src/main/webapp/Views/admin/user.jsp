@@ -7,8 +7,8 @@
   		<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   		<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 	</svg>
-	Add a new user
-		</button>
+	Add a new user 
+		</button> 
 			<!-- Modal add -->
 			<div class="modal fade" id="modal_add_id"
 					tabindex="-1" aria-hidden="true">
@@ -40,8 +40,8 @@
 									</div>	
 									<div class="mt-3">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-										<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>	
-									</div>																																																		
+										<button class="btn btn-primary">Add</button>
+							</div>																																																		
 								</form>
 							</div>
 						</div>
@@ -113,8 +113,8 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-											<button class="btn btn-primary">Update</button>
-										</div>
+											<button class="btn btn-primary" >Update</button>								
+										</div>	
 									</form>
 								</div>
 							</div>
@@ -143,7 +143,7 @@
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-										<a type="button" class="btn btn-danger" href="/ASM/admin/users/delete?id=${ user.id }">Delete</a>
+										<a type="button" class="btn btn-danger"  href="/ASM/admin/users/delete?id=${ user.id }">Delete</a>							
 									</div>
 								</div>
 							</div>
@@ -168,3 +168,13 @@
 		</div>
 	</div>
 </div>
+	<div class="alert alert-success ${sessionScope.display=='show'?'':'d-none'}" role="alert" style="right: 30px; bottom: 30px;width: auto;position: absolute">
+		<span>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+  				<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+			</svg>
+		</span>
+  			${sessionScope.messageupdateSuccess}
+	</div>
+	
+	

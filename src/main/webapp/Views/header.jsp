@@ -20,8 +20,6 @@
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/home"> <fmt:message key="menu.home"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
-					href="/ASM/sales"> <fmt:message key="menu.sale"></fmt:message> </a></li>
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/feedback"><fmt:message key="menu.feedback"></fmt:message></a></li>
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/services">Services</a></li>

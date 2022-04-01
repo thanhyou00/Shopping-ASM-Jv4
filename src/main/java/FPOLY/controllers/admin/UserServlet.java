@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.mindrot.jbcrypt.BCrypt;
@@ -58,26 +59,36 @@ public class UserServlet extends HttpServlet {
 	private void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
 		try {
 			User entity = new User();
 			BeanUtils.populate(entity, request.getParameterMap());
 			entity.setPassword(BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()));
 			entity.setRole(0);
+			session.setAttribute("messageSuccess", "Your account have been saved !");
+			session.setAttribute("statusSuccess", "success");
 			this.userDAO.create(entity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("messageSuccess", "Your account dont have been saved !");
+			session.setAttribute("statusSuccess", "danger");
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}
 	
 	protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String idStr = request.getParameter("id");
+			HttpSession session = request.getSession();
 			try {
 				int id = Integer.parseInt(idStr);
 				User entity = this.userDAO.findById(id);
+				session.setAttribute("messagedeleteSuccess", "Your account have been deleted !");
+				session.setAttribute("statusdeleteSuccess", "danger");
 				this.userDAO.delete(entity);
 			} catch (Exception e) {
+				session.setAttribute("messagedeleteSuccess", "Your account dont have been deleted !");
+				session.setAttribute("statusdeleteSuccess", "danger");
 				e.printStackTrace();
 			}
 			response.sendRedirect("/ASM/admin/users/index");
@@ -87,16 +98,23 @@ public class UserServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		String idStr = request.getParameter("id");
+		HttpSession session = request.getSession();
 		try {
 			int id = Integer.parseInt(idStr);
 			User oldEntity = this.userDAO.findById(id);
 			User newEntity = new User();
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			newEntity.setPassword(oldEntity.getPassword());
+			session.setAttribute("messageupdateSuccess", "Your account has been updated ! !");
+			session.setAttribute("display", "show");
+			session.setMaxInactiveInterval(3);
 			this.userDAO.update(newEntity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("messageupdateSuccess", "Your account doesnt have been updated !");
+			session.setAttribute("display", "hide");
+			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}
