@@ -44,10 +44,10 @@ public class LoginServlet extends HttpServlet {
 		// kiểm tra tài khoản đăng nhập
 		boolean isCheckLogin=false;
 		// references : https://stackjava.com/demo/bcrypt-la-gi-code-vi-du-bcrypt-bang-java-jbcrypt.html
-//		boolean valuate = BCrypt.checkpw(password,BCrypt.hashpw(password, BCrypt.gensalt()));
 		try {
 			for (int  i=0; i< userDAO.findAll().size();i++) {
-				if (email.equals(userDAO.findAll().get(i).getEmail()) && password.equals(userDAO.findAll().get(i).getPassword())) {
+				boolean valuate = BCrypt.checkpw(password, userDAO.findAll().get(i).getPassword());
+				if (email.equals(userDAO.findAll().get(i).getEmail()) && valuate) {
 					isCheckLogin = true;
 					// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
 					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
@@ -59,6 +59,8 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
 					session.setAttribute("emailLg", userDAO.findAll().get(i).getEmail());
 					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
+					System.out.println("BC pass: " + BCrypt.hashpw(password, BCrypt.gensalt()));
+					System.out.println("check : " + valuate);
 				} else {
 					HttpSession session = request.getSession();
 					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
