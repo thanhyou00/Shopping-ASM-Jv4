@@ -53,16 +53,22 @@ public class LoginServlet extends HttpServlet {
 					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
 					CookieUtils.add("email", email, hours, response);
 					CookieUtils.add("password", password, hours, response);
-					request.setAttribute("message", "Đăng nhập thành công!");
 					HttpSession session = request.getSession();
+					session.setAttribute("messageLg", "Đăng nhập thành công !");
 					session.setAttribute("roleLg", userDAO.findAll().get(i).getRole());
 					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
 					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
-					response.sendRedirect("/ASM/home");
-				} 
-				else {
-					request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
+				} else {
+					HttpSession session = request.getSession();
+					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
 				}
+
+			}
+			
+			if(isCheckLogin) {
+				response.sendRedirect("/ASM/home");
+			}else {
+				response.sendRedirect("/ASM/login");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
