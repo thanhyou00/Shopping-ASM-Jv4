@@ -77,15 +77,18 @@
 				
 				<li class="nav-item dropdown">
 					<a class="nav-link text-black fw-bold" role="button" href="#" id="accDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-							<img alt="avt" src="/ASM/public/images/avt.jpg" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
+							<img alt="avt" src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
 					</a>
 						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">
-							<li><a class="dropdown-item" href="#"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
-							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
-							<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
-							<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
 							<c:if test="${ sessionScope.role ==1 }">
+								<li><a class="dropdown-item" href="/ASM/my-account"> <fmt:message key="menu.myaccount"></fmt:message> </a></li>
+								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#passwordModal"> <fmt:message key="menu.changepassword"></fmt:message> </a></li>
+								<li><a class="dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#forgotModal"> <fmt:message key="menu.forgotpassword"></fmt:message> </a></li>
 								<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.admin"></fmt:message> </a></li>
+								<li><a class="dropdown-item" href="/ASM/login"> <fmt:message key="menu.logout"></fmt:message> </a></li>
+							</c:if>
+							<c:if test="${ sessionScope.role !=1 }">
+							<li><a class="dropdown-item" href="/ASM/start"> <fmt:message key="menu.login"></fmt:message> </a></li>
 							</c:if>
 						</ul>
 				</li>

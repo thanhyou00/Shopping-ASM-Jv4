@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%-- Library bootstrap --%>
 	<%@include file="bootstrap.jsp"%>
-<link rel="shortcut icon" href="/ASM/public/images/logomain.svg" type="image/x-icon">
+<link rel="shortcut icon" href="/ASM/public/images/logo.svg" type="image/x-icon">
 <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
 
 

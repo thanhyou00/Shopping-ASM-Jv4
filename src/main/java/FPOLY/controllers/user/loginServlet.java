@@ -52,6 +52,7 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("message", "Đăng nhập thành công!");
 					HttpSession session = request.getSession();
 					session.setAttribute("role", userDAO.findAll().get(i).getRole());
+					session.setAttribute("fullname", userDAO.findAll().get(i).getFullname());
 					response.sendRedirect("/ASM/home");
 				} else {
 					request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu !");
