@@ -101,17 +101,17 @@ label.star:before {
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 	</svg>
-	 <span>Nike Jordan 1 Low Xanh Dương REP</span> 
+	 <span>${ sessionScope.product.name }</span> 
 	 </span>
 	 </div>
 	<div class="row p-5">
 			<div class="col-6 overflow-hidden border border-1">
-				<img src="https://giayxshop.vn/wp-content/uploads/2021/04/z2437535556835_fec0d759c28542683684d8da8826f2e5-scaled.jpg" 
+				<img src="${ sessionScope.product.image }" 
 				class="card-img-top scale" alt="product">
 			</div>
 			<div class="col-6 px-5">
-				<h5 class="fw-bold">Nike Jordan 1 Low Xanh Dương REP</h5>
-				<p>Chất liệu cao cấp, bền đẹp theo thời gian. Thiết kế thời trang. Kiểu dáng phong cách. Độ bền cao. Dễ phối đồ.</p>
+				<h5 class="fw-bold">${ sessionScope.product.name }</h5>
+				<p>${ sessionScope.product.descriptions }</p>
 				<h5 class="fw-bold">Màu sắc : Blue</h5> 
 				<h5 class="fw-bold">Kích thước : </h5>
 				<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -133,7 +133,7 @@ label.star:before {
 				<h5 class="fw-bold mt-2">Số lượng : </h5>
 				<input type="number" class="form-control" min="1"/>
 				<h5 class="fw-bold mt-2">Đơn giá : </h5>
-				<p class="card-text text-red fs-5 fw-bold">550.000 VNĐ</p>
+				<p class="card-text text-red fs-5 fw-bold">${ sessionScope.product.price } VNĐ</p>
 				
 				<div class="row px-3"><button class="btn btn-dark">Thêm vào giỏ hàng</button></div>
 				<div class="row px-3 mt-3"><button class="btn btn-dark">Mua ngay</button></div>

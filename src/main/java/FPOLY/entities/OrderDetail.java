@@ -20,7 +20,7 @@ public class OrderDetail implements Serializable {
 
 	private double price;
 
-	private String quantity;
+	private int quantity;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -49,11 +49,11 @@ public class OrderDetail implements Serializable {
 		this.price = price;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return this.quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
