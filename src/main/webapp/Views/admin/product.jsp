@@ -70,7 +70,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="product" items="${listProduct}">
+			<c:forEach var="product" items="${listPagination}">
 				<tr>
 					<th>${ product.name }</th>
 					<th style="color: red">${ product.price }</th>
@@ -157,16 +157,28 @@
 			</tbody>
 		</table>
 	<div class="row">
-		<div class="col-6 d-flex justify-content-start align-items-center text-secondary">Showing 5 out of 25 entries</div>
+		<div class="col-6 d-flex justify-content-start align-items-center text-secondary">Showing 5 out of ${ total } entries</div>
 		<div class="col-6 d-flex justify-content-end">
 			<nav aria-label="Page navigation example">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
-				</ul>
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item px-1 disabled">
+			      <a class="page-link">
+			      	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  						<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+					</svg>
+			      </a>
+			    </li>
+			    <c:forEach begin="1" end="${endPage}" var="i">
+			    	<li class="page-item px-1"><a class="page-link ${isActive==i?"active":"unactive"}" href="/ASM/admin/products/index?index=${i}">${i}</a></li>
+			    </c:forEach>
+			    <li class="page-item px-1">
+			      <a class="page-link" href="/ASM/home?index=${index+1}">
+			      	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  						<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+			      </a>
+			    </li>
+			  </ul>
 			</nav>
 		</div>
 	</div>

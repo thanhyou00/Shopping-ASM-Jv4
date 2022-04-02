@@ -21,9 +21,9 @@ public class ProductDAO {
 			return query.getResultList();
 	}
 	
-	public List<Product> pagination(int index) {
+	public List<Product> pagination(int index,int n) {
 		String jpql = "SELECT obj FROM Product obj ORDER BY obj.id";
-		TypedQuery<Product> query = this.em.createQuery(jpql, Product.class).setMaxResults(8).setFirstResult((index-1)*8); // 1 trang se co toi da 8 san pham
+		TypedQuery<Product> query = this.em.createQuery(jpql, Product.class).setMaxResults(n).setFirstResult((index-1)*n); // 1 trang se co toi da n san pham
 		//other ways : https://thorben-janssen.com/hibernate-tips-use-pagination-jpql
 		return query.getResultList(); 
 	}

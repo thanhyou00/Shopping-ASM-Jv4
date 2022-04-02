@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import FPOLY.entities.Category;
+import FPOLY.entities.Product;
 import FPOLY.utils.JpaUtils;
 
 public class CategoryDAO {
@@ -27,6 +28,19 @@ public class CategoryDAO {
 			this.em.getTransaction().rollback();
 			throw e;
 		}
+	}
+	
+	public List<Category> pagination(int index,int n) {
+		String jpql = "SELECT obj FROM Category obj ORDER BY obj.id";
+		TypedQuery<Category> query = this.em.createQuery(jpql, Category.class).setMaxResults(n).setFirstResult((index-1)*n); // 1 trang se co toi da n san pham
+		//other ways : https://thorben-janssen.com/hibernate-tips-use-pagination-jpql
+		return query.getResultList(); 
+	}
+	
+	public long getTotalCategory() {
+		String jpql = "SELECT count(obj.id) FROM Category obj";
+		TypedQuery<Long> query = this.em.createQuery(jpql, Long.class);
+		return query.getSingleResult();
 	}
 	
 	public Category findById(int id) {

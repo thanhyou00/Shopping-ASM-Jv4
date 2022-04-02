@@ -45,8 +45,21 @@ public class CategoryServlet extends HttpServlet {
 	}
 	
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String indexStr = request.getParameter("index");
+		if(indexStr==null) {
+			indexStr ="1";
+		}
 		try {
-			request.setAttribute("listCategory", categoryDAO.findAll());
+			int index = Integer.parseInt(indexStr);
+			long count = this.categoryDAO.getTotalCategory();
+			long endPage = count/5;
+			if(count%5!=0) {
+				endPage++;
+			}
+			request.setAttribute("isActive", index);
+			request.setAttribute("endPage", endPage);
+			request.setAttribute("total", count);
+			request.setAttribute("listPagination", this.categoryDAO.pagination(index,5));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

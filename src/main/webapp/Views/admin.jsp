@@ -27,6 +27,16 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: #0abde3;
 }
+a.active {
+	color: white;
+	font-weight: bold;
+	background-color: black;
+}
+a.unactive {
+	color: black;
+	font-weight: normal;
+	background-color: white;
+}
 	
 </style>
 <body class="container-fluid font-monospace">

@@ -44,7 +44,7 @@ public class HomeServlet extends HttpServlet {
 			}
 			request.setAttribute("isActive", index);
 			request.setAttribute("endPage", endPage);
-			request.setAttribute("listPagination", this.productDAO.pagination(index));
+			request.setAttribute("listPagination", this.productDAO.pagination(index,8));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
