@@ -33,44 +33,13 @@
 							
 				<li class="dropdown m-2">
 				<span class="badge rounded-pill bg-danger">6</span>
-				<span role="button" id="dropdownCart" data-bs-toggle="dropdown" aria-expanded="false">
+				<a href="/ASM/detail">
+				<span role="button">
     				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-cart4" viewBox="0 0 16 16">
   						<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 					</svg>
   				</span>
-				  <ul class="dropdown-menu mt-3 shadow-sm" aria-labelledby="dropdownCart" style="width: 330px">
-				  <span class="text-secondary fw-bold px-1">New products</span>
-				    <li class="dropdown-item">
-				    	<div class="row">
-				    		<div class="col-2">
-				    		<img src="https://giayxshop.vn/wp-content/uploads/2021/04/z2437535556835_fec0d759c28542683684d8da8826f2e5-scaled.jpg" 
-							class="" alt="product" width="40px" height="40px">
-				    		</div>
-				    		<div class="col-5">
-				    		<span class="ell">Nike Jordan 1 Low Xanh</span>
-				    		</div>
-				    		<div class="col-3"> <span class="text-red">1250.000 VND</span> </div>
-				    	</div>
-				    </li>
-				    <li class="dropdown-item">
-				    	<div class="row">
-				    		<div class="col-2">
-				    		<img src="https://giayxshop.vn/wp-content/uploads/2021/04/z2437535556835_fec0d759c28542683684d8da8826f2e5-scaled.jpg" 
-							class="" alt="product" width="40px" height="40px">
-				    		</div>
-				    		<div class="col-5">
-				    		<span class="ell">Nike Jordan 1 Low Xanh</span>
-				    		</div>
-				    		<div class="col-3"> <span class="text-red">1250.000 VND</span> </div>
-				    	</div>
-				    </li>				    
-				    <hr/>
-				    <div class="row px-3">
-				    	<button class="btn btn-primary">
-				    		<a href="/ASM/cart" class="text-decoration-none text-white">See now !</a>
-				    	</button>
-				    </div>
-				  </ul>
+				</a>
 				</li>
 				
 				<li class="nav-item dropdown">

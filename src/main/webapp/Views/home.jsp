@@ -180,7 +180,7 @@ a.unactive {
 						alt="${ item.descriptions }">
 					<div class="card-body">
 						<h6 class="card-title fw-bold">
-							<a href="/ASM/cart?productId=${item.id}" class="text-black text-decoration-none">${ item.name }</a>
+							<a href="/ASM/cart?id=${item.id}" class="text-black text-decoration-none">${ item.name }</a>
 						</h6>
 					</div>
 					<div class="card-footer bg-white">

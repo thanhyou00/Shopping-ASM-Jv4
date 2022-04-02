@@ -29,8 +29,8 @@ public class DetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int quantity = 1;
 		int id;
-		if(request.getParameter("productId")!=null) {
-			id = Integer.parseInt(request.getParameter("productId"));
+		if(request.getParameter("prid")!=null) {
+			id = Integer.parseInt(request.getParameter("prid"));
 			Product product = productDAO.findById(id);
 			if(product!=null) {
 				quantity = Integer.parseInt(request.getParameter("quantity"));
