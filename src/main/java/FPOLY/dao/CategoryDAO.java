@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import FPOLY.entities.Category;
-import FPOLY.entities.Product;
 import FPOLY.utils.JpaUtils;
 
 public class CategoryDAO {

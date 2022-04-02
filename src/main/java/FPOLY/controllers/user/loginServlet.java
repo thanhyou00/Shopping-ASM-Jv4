@@ -1,7 +1,6 @@
 package FPOLY.controllers.user;
 
 import java.io.IOException;
-import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +13,6 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import FPOLY.controllers.cookie.CookieUtils;
 import FPOLY.dao.UserDAO;
-import FPOLY.entities.User;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {

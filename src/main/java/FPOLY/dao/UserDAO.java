@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import FPOLY.utils.JpaUtils;
-import FPOLY.entities.Product;
 import FPOLY.entities.User;
 
 public class UserDAO {
