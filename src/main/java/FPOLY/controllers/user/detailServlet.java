@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import FPOLY.dao.OrderDetailDAO;
 import FPOLY.dao.ProductDAO;
 import FPOLY.entities.Order;
 import FPOLY.entities.OrderDetail;
@@ -21,9 +22,11 @@ import FPOLY.entities.Product;
 public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO;
+	private OrderDetailDAO orderDetailDAO;
     public DetailServlet() {
         super();
         this.productDAO = new ProductDAO();
+        this.orderDetailDAO = new OrderDetailDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

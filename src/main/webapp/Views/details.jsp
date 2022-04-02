@@ -80,9 +80,11 @@
 						<p class="fw-bold text-black">${ order.product.name }</p>
 					</td>
 					<td>
-						<p class="text-red fs-5 fw-bold">${ order.product.name } VND</p>
+						<p class="text-red fs-5 fw-bold">${ order.product.price } VND</p>
 					</td>
-					<td>5</td>
+					<td>
+						<input type="number" class="form-control"  min="1"  value="${order.quantity}" >
+					</td>
 					<td><button class="btn btn-danger">Delete</button></td>
 				</tr>	
 				</c:forEach>			
