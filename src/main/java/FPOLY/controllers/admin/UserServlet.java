@@ -65,14 +65,16 @@ public class UserServlet extends HttpServlet {
 			BeanUtils.populate(entity, request.getParameterMap());
 			entity.setPassword(BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()));
 			entity.setRole(0);
-			session.setAttribute("messageSuccess", "Your account have been saved !");
-			session.setAttribute("statusSuccess", "success");
+			session.setAttribute("messageupdateSuccess", "Your account has been created !");
+			session.setAttribute("display", "show");
+			session.setMaxInactiveInterval(3);
 			this.userDAO.create(entity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
-			session.setAttribute("messageSuccess", "Your account dont have been saved !");
-			session.setAttribute("statusSuccess", "danger");
+			session.setAttribute("messageupdateSuccess", "Your account doesnt have been created !");
+			session.setAttribute("display", "show");
+			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}
@@ -83,12 +85,14 @@ public class UserServlet extends HttpServlet {
 			try {
 				int id = Integer.parseInt(idStr);
 				User entity = this.userDAO.findById(id);
-				session.setAttribute("messagedeleteSuccess", "Your account have been deleted !");
-				session.setAttribute("statusdeleteSuccess", "danger");
+				session.setAttribute("messageupdateSuccess", "Your account has been deleted !");
+				session.setAttribute("display", "show");
+				session.setMaxInactiveInterval(3);
 				this.userDAO.delete(entity);
 			} catch (Exception e) {
-				session.setAttribute("messagedeleteSuccess", "Your account dont have been deleted !");
-				session.setAttribute("statusdeleteSuccess", "danger");
+				session.setAttribute("messageupdateSuccess", "Your account doesnt have been deleted !");
+				session.setAttribute("display", "show");
+				session.setMaxInactiveInterval(3);
 				e.printStackTrace();
 			}
 			response.sendRedirect("/ASM/admin/users/index");
@@ -105,7 +109,7 @@ public class UserServlet extends HttpServlet {
 			User newEntity = new User();
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			newEntity.setPassword(oldEntity.getPassword());
-			session.setAttribute("messageupdateSuccess", "Your account has been updated ! !");
+			session.setAttribute("messageupdateSuccess", "Your account has been updated !");
 			session.setAttribute("display", "show");
 			session.setMaxInactiveInterval(3);
 			this.userDAO.update(newEntity);
