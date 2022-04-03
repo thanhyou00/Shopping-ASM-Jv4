@@ -150,24 +150,11 @@ a.unactive {
 		<br/>
 		<p class="fw-bold fs-5">Danh mục sản phẩm</p>
 		<ul class="list-group text-uppercase border shadow-sm">
+		<c:forEach items="${listCategory}" var="category">
 		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày nam</a>
+		  	<a href="/ASM/home?ctid=${category.id}" class="text-black text-decoration-none">${category.name}</a>
 		  </li>
-		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày nữ</a>
-		  </li>
-		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày adidas</a>
-		  </li>
-		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày nike</a>
-		  </li>
-		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày vans</a>
-		  </li>
-		  <li class="list-group-item border-0">
-		  	<a href="#" class="text-black text-decoration-none">Giày đôi</a>
-		  </li>
+		  </c:forEach>
 		</ul>
 		</div>
 		<div class="col-9">

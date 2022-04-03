@@ -28,6 +28,14 @@ public class ProductDAO {
 		return query.getResultList(); 
 	}
 	
+	public List<Product> paginationHome(int index,int n, int ctId) {
+		String jpql = "SELECT * FROM `products` JOIN `products_categories`ON `products_categories`.`product_id` = `products`.`id` JOIN `categories`ON `categories`.`id`=`products_categories`.`category_id` WHERE `categories`.`id`=" +ctId;
+		TypedQuery<Product> query = (TypedQuery<Product>) this.em.createNativeQuery(jpql, Product.class).setMaxResults(n).setFirstResult((index-1)*n); // 1 trang se co toi da n san pham
+		//other ways : https://thorben-janssen.com/hibernate-tips-use-pagination-jpql
+		return query.getResultList(); 
+	}
+	
+	
 	public long getTotalProduct() {
 		String jpql = "SELECT count(obj.id) FROM Product obj";
 		TypedQuery<Long> query = this.em.createQuery(jpql, Long.class);
