@@ -41,13 +41,20 @@ public class DetailServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			if(session.getAttribute("order")==null) {
 				Order order = new Order();
-				ArrayList<OrderDetail> listDetails = new ArrayList<OrderDetail>();
+				ArrayList<OrderDetail> listDetails = new ArrayList<OrderDetail>();				
 				OrderDetail listDetail = new OrderDetail();
 				listDetail.setQuantity(quantity);
-				listDetail.setProduct(product);
-				listDetail.setPrice(product.getPrice());
+				listDetail.setProduct(product);	
 				listDetails.add(listDetail);
 				order.setOrderDetails(listDetails);
+				listDetail.setOrder(order);
+//				try {
+//					this.orderDetailDAO.create(listDetail);
+//					System.out.println("oke done:))");
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//					System.out.println("oh no");
+//				}
 				session.setAttribute("order", order);
 			}else { // repeat add to cart 
 				Order order = (Order) session.getAttribute("order");
@@ -63,7 +70,6 @@ public class DetailServlet extends HttpServlet {
 					OrderDetail orderDetail = new OrderDetail();
 					orderDetail.setQuantity(quantity);
 					orderDetail.setProduct(product);
-					orderDetail.setPrice(product.getPrice());
 					listDetails.add(orderDetail);
 				}
 				session.setAttribute("order", order);

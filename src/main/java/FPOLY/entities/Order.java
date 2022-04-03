@@ -19,8 +19,6 @@ public class Order implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private int amount;
-
 	@Column(name="order_date")
 	private String orderDate;
 
@@ -49,13 +47,6 @@ public class Order implements Serializable {
 		this.id = id;
 	}
 
-	public int getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
 
 	public String getOrderDate() {
 		return this.orderDate;

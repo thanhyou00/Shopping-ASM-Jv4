@@ -17,9 +17,7 @@ public class OrderDetail implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	private double price;
-
+	
 	private int quantity;
 
 	//bi-directional many-to-one association to Product
@@ -39,14 +37,6 @@ public class OrderDetail implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public double getPrice() {
-		return this.price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
 	}
 
 	public int getQuantity() {
