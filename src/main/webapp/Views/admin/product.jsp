@@ -34,7 +34,13 @@
 									<label class="form-label">Color</label>
 									<input type="text" name="color" class="form-control">
 									<label class="form-label">Size</label>
-									<input type="text" name="size" class="form-control">
+									<select class="form-select" name="size">
+										<option value="XS">XS</option>
+										<option value="S">S</option>
+										<option value="M">M</option>
+										<option value="L">L</option>
+										<option value="XL">XL</option>
+									</select>
 									<label class="form-label">Brand</label>
 									<input type="text" name="brand" class="form-control">
 								<div class="mt-3">

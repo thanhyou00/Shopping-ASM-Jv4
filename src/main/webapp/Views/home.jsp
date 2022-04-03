@@ -162,8 +162,8 @@ a.unactive {
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
 		<c:forEach var="item" items="${listPagination}">
 			<div class="col">
-				<div class="card h-90 border-0 shadow-sm rounded" style="min-height: 23rem">
-					<img src="${ item.image }" class="card-img-top scale"
+				<div class="card h-90 border-0 shadow-sm rounded" style="min-height: 22rem">
+					<img src="${ item.image }" class="card-img-top scale" height="220px"
 						alt="${ item.descriptions }">
 					<div class="card-body">
 						<h6 class="card-title fw-bold">

@@ -35,7 +35,7 @@
 									<label class="form-label">User ID</label>
 									<select name="userId" class="form-select">  
 										<c:forEach items="${listUser}" var="user">
-										<option>${ user.id }</option>
+										<option value="${ user.id }">${ user.id }</option>
 										</c:forEach>
 									</select>
 									<div class="mt-3">
@@ -98,7 +98,7 @@
 											<label class="label-control mt-1">User ID</label>
 											<select name="userId" class="form-select">  
 												<c:forEach items="${listUser}" var="user">
-													<option ${category.userId==user.id?"selected":""}>${ user.id }</option>
+													<option value="${ user.id }" ${category.userId==user.id?"selected":""}>${ user.id }</option>
 												</c:forEach>
 											</select>																										
 										</div>
