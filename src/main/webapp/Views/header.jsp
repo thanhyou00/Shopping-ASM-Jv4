@@ -24,7 +24,7 @@
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/services">Services</a></li>
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
-					href="/ASM/blogs"> <fmt:message key="menu.blog"></fmt:message> </a></li>
+					href="/ASM/history"> <fmt:message key="menu.history"></fmt:message> </a></li>
 				<li class="nav-item"><a class="nav-link text-black fw-bold"
 					href="/ASM/about"> <fmt:message key="menu.about"></fmt:message> </a></li>
 			</ul>

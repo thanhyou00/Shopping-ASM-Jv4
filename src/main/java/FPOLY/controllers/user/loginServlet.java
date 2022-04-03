@@ -60,6 +60,7 @@ public class LoginServlet extends HttpServlet {
 				} else {
 					HttpSession session = request.getSession();
 					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
+					session.removeAttribute("order");
 				}
 
 			}
