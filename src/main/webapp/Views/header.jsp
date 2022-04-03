@@ -32,7 +32,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
 							
 				<li class="dropdown m-2">
-				<span class="badge rounded-pill bg-danger">6</span>
+				<span class="badge rounded-pill bg-danger">${sessionScope.order.orderDetails.size()}</span>
 				<a href="/ASM/detail">
 				<span role="button">
     				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-cart4" viewBox="0 0 16 16">

@@ -93,7 +93,7 @@
 						<p class="fw-bold fs-3">Total : <span class="text-red">1.100.000 VND</span> </p>
 					</td>
 					<td>
-						<button class="btn btn-success">Check out</button>
+						<a class="btn btn-success" href="/ASM/checkout">Check out</a>
 					</td>
 				</tr>			
 			</tbody>
