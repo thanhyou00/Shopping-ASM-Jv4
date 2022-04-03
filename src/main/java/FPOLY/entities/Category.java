@@ -2,7 +2,6 @@ package FPOLY.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -23,11 +22,8 @@ public class Category implements Serializable {
 
 	private String name;
 
-	private double price;
-
-	//bi-directional many-to-one association to ProductsCategory
-	@OneToMany(mappedBy="category")
-	private List<ProductsCategory> productsCategories;
+	@Column(name="user_id")
+	private int userId;
 
 	public Category() {
 	}
@@ -56,34 +52,12 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public double getPrice() {
-		return this.price;
+	public int getUserId() {
+		return this.userId;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public List<ProductsCategory> getProductsCategories() {
-		return this.productsCategories;
-	}
-
-	public void setProductsCategories(List<ProductsCategory> productsCategories) {
-		this.productsCategories = productsCategories;
-	}
-
-	public ProductsCategory addProductsCategory(ProductsCategory productsCategory) {
-		getProductsCategories().add(productsCategory);
-		productsCategory.setCategory(this);
-
-		return productsCategory;
-	}
-
-	public ProductsCategory removeProductsCategory(ProductsCategory productsCategory) {
-		getProductsCategories().remove(productsCategory);
-		productsCategory.setCategory(null);
-
-		return productsCategory;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

@@ -32,8 +32,12 @@
 									<input type="text" name="name" class="form-control"> 
 									<label class="form-label">Descriptions</label>
 									<input type="text" name="description" class="form-control">
-									<label class="form-label">Price</label>
-									<input type="text" name="price" class="form-control">
+									<label class="form-label">User ID</label>
+									<select name="userId" class="form-select">  
+										<c:forEach items="${listUser}" var="user">
+										<option>${ user.id }</option>
+										</c:forEach>
+									</select>
 									<div class="mt-3">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 										<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>	
@@ -58,7 +62,7 @@
 				<tr>
 					<th>Name</th>
 					<th>Descriptions</th>
-					<th>Price</th>
+					<th>User ID</th>
 					<th colspan="2">Handle</th>
 				</tr>
 			</thead>
@@ -67,7 +71,7 @@
 				<tr>
 					<td>${ category.name }</td>
 					<td>${ category.description }</td>
-					<td>${ category.price }</td>
+					<td>${ category.userId }</td>
 					<td class="text-center">
 					<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_update_${ category.id }">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -91,8 +95,12 @@
 											<input class="form-control" type="text" name="name" value="${category.name}" />
 											<label class="label-control mt-1">Descriptions</label>
 											<input class="form-control" type="text" name="description" value="${category.description}" />	
-											<label class="label-control mt-1">Price</label>
-											<input class="form-control" type="text" name="price" value="${category.price}" />																										
+											<label class="label-control mt-1">User ID</label>
+											<select name="userId" class="form-select">  
+												<c:forEach items="${listUser}" var="user">
+													<option ${category.userId==user.id?"selected":""}>${ user.id }</option>
+												</c:forEach>
+											</select>																										
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

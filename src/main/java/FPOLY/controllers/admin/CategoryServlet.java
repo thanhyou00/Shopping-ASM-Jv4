@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.beanutils.BeanUtils;
 
 import FPOLY.dao.CategoryDAO;
+import FPOLY.dao.UserDAO;
 import FPOLY.entities.Category;
 
 
@@ -18,10 +19,12 @@ import FPOLY.entities.Category;
 public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CategoryDAO categoryDAO;
+	private UserDAO userDAO;
 	
     public CategoryServlet() {
         super();
         this.categoryDAO = new CategoryDAO();
+        this.userDAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,6 +49,11 @@ public class CategoryServlet extends HttpServlet {
 	
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String indexStr = request.getParameter("index");
+		try {
+			request.setAttribute("listUser", this.userDAO.findAll());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		if(indexStr==null) {
 			indexStr ="1";
 		}
