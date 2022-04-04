@@ -84,9 +84,11 @@
 						<p class="text-red fs-5 fw-bold">${ order.product.price } VND</p>
 					</td>
 					<td>
-						<span><button>-</button></span>
-						<p>${order.quantity}</p>
-						<span><button>+</button></span>
+					<span class="input-group">
+						<span><a class="btn btn-primary" href="/ASM/detail/quantity?action=dec&id=${order.product.id}">-</a></span>
+						<input type="number" min="1" class="form-control mx-2 rounded" disabled name="quantity" value="${order.quantity}">
+						<span><a class="btn btn-primary" href="/ASM/detail/quantity?action=inc&id=${order.product.id}">+</a></span>
+					</span>	
 					</td>
 					<td><button class="btn btn-danger">Delete</button></td>
 				</tr>	

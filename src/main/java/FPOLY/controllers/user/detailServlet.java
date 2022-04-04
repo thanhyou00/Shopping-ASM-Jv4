@@ -22,11 +22,12 @@ import FPOLY.entities.OrderDetail;
 import FPOLY.entities.Product;
 
 
-@WebServlet("/detail")
+@WebServlet({"/detail/index","/detail/quantity"})
 public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO;
 	private OrderDetailDAO orderDetailDAO;
+	private ArrayList<OrderDetail> listDetails;
     public DetailServlet() {
         super();
         this.productDAO = new ProductDAO();
@@ -34,6 +35,18 @@ public class DetailServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String uri = request.getRequestURI();
+		if(uri.contains("index")) {
+			this.index(request, response);
+		} else if(uri.contains("quantity")) {
+			this.quantity(request, response);
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
+	}
+	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int quantity = 1;
 		int id;
 		ArrayList<OrderDetail> listDetails;
@@ -75,11 +88,39 @@ public class DetailServlet extends HttpServlet {
 				session.setAttribute("order", order);
 			}
 		}
-		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/details.jsp").forward(request, response);		
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
+	protected void quantity(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		int id = Integer.parseInt(request.getParameter("id"));
+		HttpSession session = request.getSession();
+		Order order = (Order) session.getAttribute("order");
+		listDetails = (ArrayList<OrderDetail>) order.getOrderDetails();
+			if(action.equals("inc")) {
+				for (OrderDetail orderDetail : listDetails) {
+					if(orderDetail.getProduct().getId()==id) {
+						int quantity = orderDetail.getQuantity();
+						quantity++;
+						orderDetail.setQuantity(quantity);
+						response.sendRedirect("/ASM/detail/index");
+					}
+				}
+			} else {
+				for (OrderDetail orderDetail : listDetails) {
+					if(orderDetail.getProduct().getId()==id) {
+						int quantity = orderDetail.getQuantity();
+						if(quantity==1) {
+							orderDetail.setQuantity(quantity);
+							response.sendRedirect("/ASM/detail/index");							
+						} else {
+							quantity--;
+							orderDetail.setQuantity(quantity);
+							response.sendRedirect("/ASM/detail/index");	
+						}
+					}
+				}
+			}
 	}
+	
 
 }

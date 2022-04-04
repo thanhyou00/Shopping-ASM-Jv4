@@ -130,12 +130,10 @@ label.star:before {
 						<input type="radio" class="btn-check" name="btnradio" id="xl" autocomplete="off"> 
 						<label class="btn btn-outline-dark mx-2" for="xl">XL</label>
 				</div>
-				<h5 class="fw-bold mt-2">Số lượng : </h5>
-				<input type="number" class="form-control" min="1"/>
 				<h5 class="fw-bold mt-2">Đơn giá : </h5>
 				<p class="card-text text-red fs-5 fw-bold">${ sessionScope.product.price } VNĐ</p>
 				
-				<div class="row px-3"><a class="btn btn-dark" href="/ASM/detail?prid=${sessionScope.product.id}&quantity=1" >Thêm vào giỏ hàng</a></div>
+				<div class="row px-3"><a class="btn btn-dark" href="/ASM/detail/index?prid=${sessionScope.product.id}&quantity=1" >Thêm vào giỏ hàng</a></div>
 				<div class="row px-3 mt-3"><button class="btn btn-dark">Mua ngay</button></div>
 			</div>
 	</div>
