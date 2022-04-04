@@ -64,6 +64,7 @@
 				<tr>
 					<th>Image</th>
 					<th>Name</th>
+					<th>ID Product</th>
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Handle</th>
@@ -81,7 +82,11 @@
 						<p class="fw-bold text-black">${ order.product.name }</p>
 					</td>
 					<td>
-						<p class="text-red fs-5 fw-bold">${ order.product.price } VND</p>
+						<p class="fw-bold text-black">${ order.product.id }</p>
+					</td>
+					<td>
+						<p class="text-red fs-5 fw-bold">
+						<fmt:formatNumber value="${ order.product.price }" pattern="#,###.00"></fmt:formatNumber> VND</p>
 					</td>
 					<td>
 					<span class="input-group">
@@ -92,17 +97,17 @@
 					</td>
 					<td><button class="btn btn-danger">Delete</button></td>
 				</tr>	
-				</c:forEach>			
-				<tr>
-					<td colspan="4">
-						<p class="fw-bold fs-3">Total : <span class="text-red">${total} VND</span> </p>
-					</td>
-					<td>
-						<a class="btn btn-success" href="/ASM/checkout">Check out</a>
-					</td>
-				</tr>			
+				</c:forEach>					
 			</tbody>
 		</table>
+		<div class="row mt-3">
+			<div class="col-10">
+				<p class="fw-bold fs-3">
+					Total : <span class="text-red"><fmt:formatNumber value="${ total }" pattern="#,###.00"></fmt:formatNumber> VND</span>
+				</p>
+			</div>
+			<div class="col-2"><a class="btn btn-success" href="/ASM/checkout">Checkout</a></div>
+		</div>
 	</div>
 	<%-- Footer --%>
 	<%@include file="footer.jsp" %>	

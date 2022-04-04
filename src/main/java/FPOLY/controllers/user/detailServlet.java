@@ -74,8 +74,6 @@ public class DetailServlet extends HttpServlet {
 				boolean check = false;
 				for (OrderDetail orderDetail : listDetails) {
 					if(orderDetail.getProduct().getId()==product.getId()) {
-//						orderDetail.setQuantity(orderDetail.getQuantity()+quantity);
-						System.out.println("DRY !");
 						check = true;
 					}
 				}
