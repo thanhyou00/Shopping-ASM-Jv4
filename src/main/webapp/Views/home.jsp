@@ -84,7 +84,7 @@ a.unactive {
 }
 	
 </style>
-<body class="container-fluid font-monospace">
+<body class="container-fluid font-monospace" >
 	<%-- Header --%>
 	<%@include file="header.jsp" %>
 	<%-- Slider --%>
@@ -140,7 +140,7 @@ a.unactive {
 			</button>
 		</div>
 	</div>
-	<div class="container mt-5">
+	<div class="px-5 mt-5">
 		<div class="row">
 		<div class="col-3 mt-5" style="padding-right: 50px">
 				<form action="" method="post">
