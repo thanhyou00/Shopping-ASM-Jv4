@@ -1,10 +1,12 @@
 package FPOLY.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import FPOLY.entities.OrderDetail;
 import FPOLY.entities.Product;
 import FPOLY.utils.JpaUtils;
 
@@ -41,7 +43,7 @@ public class ProductDAO {
 		TypedQuery<Long> query = this.em.createQuery(jpql, Long.class);
 		return query.getSingleResult();
 	}
-	
+
 	public Product findById(int id) {
 		return this.em.find(Product.class, id);
 	}

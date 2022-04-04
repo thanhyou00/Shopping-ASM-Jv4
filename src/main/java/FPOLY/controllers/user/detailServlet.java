@@ -54,13 +54,15 @@ public class DetailServlet extends HttpServlet {
 				order.setOrderDetails(listDetails);
 				listDetail.setOrder(order);
 				session.setAttribute("order", order);
-			}else { // repeat add to cart 
+			}
+			else { // repeat add to cart 
 				Order order = (Order) session.getAttribute("order");
 				listDetails = (ArrayList<OrderDetail>) order.getOrderDetails();
 				boolean check = false;
 				for (OrderDetail orderDetail : listDetails) {
 					if(orderDetail.getProduct().getId()==product.getId()) {
-						orderDetail.setQuantity(orderDetail.getQuantity()+quantity);
+//						orderDetail.setQuantity(orderDetail.getQuantity()+quantity);
+						System.out.println("DRY !");
 						check = true;
 					}
 				}
@@ -72,7 +74,6 @@ public class DetailServlet extends HttpServlet {
 				}
 				session.setAttribute("order", order);
 			}
-			
 		}
 		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
 	}

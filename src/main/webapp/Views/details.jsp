@@ -71,6 +71,7 @@
 			</thead>
 			<tbody>
 			<c:forEach items="${sessionScope.order.orderDetails}" var="order">
+			<c:set var="total" value="${total + order.product.price * order.quantity }"></c:set>
 				<tr>
 					<td>
 						<img src="${order.product.image}" 
@@ -83,14 +84,16 @@
 						<p class="text-red fs-5 fw-bold">${ order.product.price } VND</p>
 					</td>
 					<td>
-						<input type="number" class="form-control"  min="1"  value="${order.quantity}" >
+						<span><button>-</button></span>
+						<p>${order.quantity}</p>
+						<span><button>+</button></span>
 					</td>
 					<td><button class="btn btn-danger">Delete</button></td>
 				</tr>	
 				</c:forEach>			
 				<tr>
 					<td colspan="4">
-						<p class="fw-bold fs-3">Total : <span class="text-red">1.100.000 VND</span> </p>
+						<p class="fw-bold fs-3">Total : <span class="text-red">${total} VND</span> </p>
 					</td>
 					<td>
 						<a class="btn btn-success" href="/ASM/checkout">Check out</a>
