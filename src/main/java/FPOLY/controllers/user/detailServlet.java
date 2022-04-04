@@ -22,7 +22,7 @@ import FPOLY.entities.OrderDetail;
 import FPOLY.entities.Product;
 
 
-@WebServlet({"/detail/index","/detail/quantity"})
+@WebServlet({"/detail/index","/detail/quantity","/detail/remove"})
 public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO;
@@ -40,6 +40,8 @@ public class DetailServlet extends HttpServlet {
 			this.index(request, response);
 		} else if(uri.contains("quantity")) {
 			this.quantity(request, response);
+		}else if(uri.contains("remove")) {
+			this.remove(request, response);
 		}
 	}
 
@@ -119,6 +121,18 @@ public class DetailServlet extends HttpServlet {
 				}
 			}
 	}
-	
+	protected void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		HttpSession session = request.getSession();
+		Order order = (Order) session.getAttribute("order");
+		listDetails = (ArrayList<OrderDetail>) order.getOrderDetails();	
+		for (OrderDetail orderDetail : listDetails) {
+			if(orderDetail.getProduct().getId()==id) {
+				listDetails.remove(listDetails.indexOf(orderDetail));
+				break;
+			}
+		}
+		response.sendRedirect("/ASM/detail/index");
+	}
 
 }

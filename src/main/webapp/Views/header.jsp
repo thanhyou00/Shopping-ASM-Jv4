@@ -17,15 +17,17 @@
 					<img alt="logo" class="img-fluid" src="/ASM/public/images/logo.svg" width="70px" height="70px">
 				</a>
 			<ul class="navbar-nav me-auto mt-2 px-5 text-uppercase">
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
+				<li class="nav-item"><a class="nav-link text-black"
 					href="/ASM/home"> <fmt:message key="menu.home"></fmt:message> </a></li>
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
+				<li class="nav-item"><a class="nav-link text-black "
 					href="/ASM/feedback"><fmt:message key="menu.feedback"></fmt:message></a></li>
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
+				<li class="nav-item"><a class="nav-link text-black "
 					href="/ASM/services">Services</a></li>
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
+				<li class="nav-item"><a class="nav-link text-black "
 					href="/ASM/history"> <fmt:message key="menu.history"></fmt:message> </a></li>
-				<li class="nav-item"><a class="nav-link text-black fw-bold"
+				<li class="nav-item"><a class="nav-link text-black "
+					href="/ASM/system"> <fmt:message key="menu.shop-system"></fmt:message> </a></li>					
+				<li class="nav-item"><a class="nav-link text-black "
 					href="/ASM/about"> <fmt:message key="menu.about"></fmt:message> </a></li>
 			</ul>
 			<form class="d-flex mx-5">
@@ -43,7 +45,7 @@
 				</li>
 				
 				<li class="nav-item dropdown">
-					<a class="nav-link text-black fw-bold" role="button" href="#" id="accDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+					<a class="nav-link text-black " role="button" href="#" id="accDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 							<img alt="avt" src="${sessionScope.avatarLg}" class="border border-2 border-dark rounded-circle" style="object-fit: contain;width: 30px; height: 30px">
 					</a>
 						<ul class="dropdown-menu px-2 mt-3" aria-labelledby="accDropdown">

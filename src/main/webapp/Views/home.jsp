@@ -143,11 +143,6 @@ a.unactive {
 	<div class="px-5 mt-5">
 		<div class="row">
 		<div class="col-3 mt-5" style="padding-right: 50px">
-				<form action="" method="post">
-					<input class="form-control" type="search" placeholder="Search..." aria-label="Search"> 
-					<div class="row mt-3 mx-2"><button class="btn btn-primary">Search</button></div>
-				</form>
-		<br/>
 		<p class="fw-bold fs-5">Danh mục sản phẩm</p>
 		<ul class="list-group text-uppercase border shadow-sm">
 		<c:forEach items="${listCategory}" var="category">

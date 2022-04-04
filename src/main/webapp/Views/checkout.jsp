@@ -120,7 +120,7 @@ a.unactive {
 				<c:set var="total" value="${total + order.product.price * order.quantity }"></c:set>
 					<tr>
 						<td>${ order.product.name }</td>
-						<td>${ order.quantity }</td>
+						<td>x ${ order.quantity }</td>
 						<td>${order.quantity*order.product.price}</td>
 					</tr>
 				</c:forEach>
@@ -130,19 +130,19 @@ a.unactive {
 			<p class="fw-bold">Phương thức thanh toán</p>
 			<div class="list-group">
 			  <label class="list-group-item bg-light border-0">
-			    <input class="form-check-input me-1" type="radio" value="">
+			    <input class="form-check-input me-1" name="payment" type="radio" value="">
 			    Thanh toán qua Momo
 			  </label>
 			  <label class="list-group-item bg-light border-0">
-			    <input class="form-check-input me-1" type="radio" value="">
+			    <input class="form-check-input me-1" name="payment" type="radio" value="">
 			    Thanh toán qua Paypal
 			  </label>
 			  <label class="list-group-item bg-light border-0">
-			    <input class="form-check-input me-1" type="radio" value="">
+			    <input class="form-check-input me-1" name="payment" type="radio" value="">
 			    Thanh toán qua Zalo Pay
 			  </label>
 			  <label class="list-group-item bg-light border-0">
-			    <input class="form-check-input me-1" type="radio" value="">
+			    <input class="form-check-input me-1" name="payment" type="radio" value="">
 			    Thanh toán qua thẻ 
 			  </label>
 			</div>

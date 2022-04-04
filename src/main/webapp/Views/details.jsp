@@ -95,7 +95,7 @@
 						<span><a class="btn btn-primary" href="/ASM/detail/quantity?action=inc&id=${order.product.id}">+</a></span>
 					</span>	
 					</td>
-					<td><button class="btn btn-danger">Delete</button></td>
+					<td><a class="btn btn-danger" href="/ASM/detail/remove?id=${order.product.id}">Delete</a></td>
 				</tr>	
 				</c:forEach>					
 			</tbody>
