@@ -5,10 +5,6 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the orders database table.
- * 
- */
 @Entity
 @Table(name="orders")
 @NamedQuery(name="Order.findAll", query="SELECT o FROM Order o")
@@ -60,7 +56,7 @@ public class Order implements Serializable {
 		return this.orderStatus;
 	}
 
-	public void setOrderStatus(byte orderStatus) {
+	public void setOrderStatus(int orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 

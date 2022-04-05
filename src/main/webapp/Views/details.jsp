@@ -67,7 +67,7 @@
 					<th>ID Product</th>
 					<th>Price</th>
 					<th>Quantity</th>
-					<th>Handle</th>
+					<th colspan="2">Handle</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -96,6 +96,7 @@
 					</span>	
 					</td>
 					<td><a class="btn btn-danger" href="/ASM/detail/remove?id=${order.product.id}">Delete</a></td>
+					<td><a class="btn btn-success" href="/ASM/detail/order-now?id=${order.product.id}&quantity=${order.quantity}">Buy now</a></td>
 				</tr>	
 				</c:forEach>					
 			</tbody>

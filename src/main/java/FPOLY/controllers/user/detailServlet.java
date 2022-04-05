@@ -1,10 +1,9 @@
 package FPOLY.controllers.user;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,25 +12,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.beanutils.BeanUtils;
-
+import FPOLY.dao.OrderDAO;
 import FPOLY.dao.OrderDetailDAO;
 import FPOLY.dao.ProductDAO;
+import FPOLY.dao.UserDAO;
 import FPOLY.entities.Order;
 import FPOLY.entities.OrderDetail;
 import FPOLY.entities.Product;
+import FPOLY.entities.User;
 
 
-@WebServlet({"/detail/index","/detail/quantity","/detail/remove"})
+@WebServlet({"/detail/index","/detail/quantity","/detail/remove","/detail/order-now"})
 public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO;
 	private OrderDetailDAO orderDetailDAO;
+	private OrderDAO orderDAO;
+	private UserDAO userDAO;
 	private ArrayList<OrderDetail> listDetails;
     public DetailServlet() {
         super();
         this.productDAO = new ProductDAO();
         this.orderDetailDAO = new OrderDetailDAO();
+        this.orderDAO = new OrderDAO();
+        this.userDAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,6 +46,8 @@ public class DetailServlet extends HttpServlet {
 			this.quantity(request, response);
 		}else if(uri.contains("remove")) {
 			this.remove(request, response);
+		}else if(uri.contains("order-now")) {
+			this.orderNow(request, response);
 		}
 	}
 
@@ -134,5 +140,38 @@ public class DetailServlet extends HttpServlet {
 		}
 		response.sendRedirect("/ASM/detail/index");
 	}
+	protected void orderNow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+		HttpSession session = request.getSession();
+		int productId = Integer.parseInt(request.getParameter("id"));
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+		SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = new Date();
+		if(session.getAttribute("idLg")!=null) {
+			Order order = new Order();
+			User user = this.userDAO.findById((int) session.getAttribute("idLg"));
+			order.setUser(user);
+			order.setOrderStatus(0);
+			order.setShippingAddress("Phu Tho");
+			order.setOrderDate(formater.format(date));
+			this.orderDAO.create(order);
+			if(this.orderDAO.create(order)!=null) {
+				Order orde = (Order) session.getAttribute("order");
+				listDetails = (ArrayList<OrderDetail>) orde.getOrderDetails();	
+				for (OrderDetail orderDetail : listDetails) {
+					if(orderDetail.getProduct().getId()==productId) {
+						listDetails.remove(listDetails.indexOf(orderDetail));
+						break;
+					}
+				}
+				response.sendRedirect("/ASM/detail/index");
+			} 
+		} else {
+			response.sendRedirect("/ASM/login");
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}		
+	}
 
-}
