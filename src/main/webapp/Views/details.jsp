@@ -96,7 +96,104 @@
 					</span>	
 					</td>
 					<td><a class="btn btn-danger" href="/ASM/detail/remove?id=${order.product.id}">Delete</a></td>
-					<td><a class="btn btn-success" href="/ASM/detail/order-now?id=${order.product.id}&quantity=${order.quantity}">Buy now</a></td>
+					<td><a class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#modal_buy_id">Buy now</a>
+											<!-- Modal add -->
+			<div class="modal fade" id="modal_buy_id"
+					tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Alert</h5>
+								<button type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							<form action="/ASM/detail/order-now?id=${order.product.id}&quantity=${order.quantity}" method="post">
+									<label class="form-label">Họ và tên</label>
+									<input type="text" class="form-control" value="${ sessionScope.fullnameLg }"> 
+									<label class="form-label">Email</label>
+									<input type="email" class="form-control" value="${sessionScope.emailLg }">
+									<label class="form-label">Số điện thoại</label>
+									<input type="number"  class="form-control" value="${ sessionScope.phoneLg }">
+									<label class="form-label">Your address</label>
+									<select name="address" class="form-select">  
+										<option value="An Giang">An Giang</option>
+										<option value="Bac Giang">Bac Giang</option>
+										<option value="Bac Kan">Bac Kan</option>
+										<option value="Bac Lieu">Bac Lieu</option>
+										<option value="Bac Ninh">Bac Ninh</option>
+										<option value="Ba Ria-Vung Tau">Ba Ria-Vung Tau</option>
+										<option value="Ben Tre">Ben Tre</option>
+										<option value="Binh Dinh">Binh Dinh</option>
+										<option value="Binh Duong">Binh Duong</option>
+										<option value="Binh Phuoc">Binh Phuoc</option>
+										<option value="Binh Thuan">Binh Thuan</option>
+										<option value="Ca Mau">Ca Mau</option>
+										<option value="Cao Bang">Cao Bang</option>
+										<option value="Dac Lak">Dac Lak</option>
+										<option value="Dac Nong">Dac Nong</option>
+										<option value="Dien Bien">Dien Bien</option>
+										<option value="Dong Nai">Dong Nai</option>
+										<option value="Dong Thap">Dong Thap</option>
+										<option value="Gia Lai">Gia Lai</option>
+										<option value="Ha Giang">Ha Giang</option>
+										<option value="Hai Duong">Hai Duong</option>
+										<option value="Ha Nam">Ha Nam</option>
+										<option value="Ha Tay">Ha Tay</option>
+										<option value="Ha Tinh">Ha Tinh</option>
+										<option value="Hau Giang">Hau Giang</option>
+										<option value="Hoa Binh">Hoa Binh</option>
+										<option value="Hung Yen">Hung Yen</option>
+										<option value="Khanh Hoa">Khanh Hoa</option>
+										<option value="Kien Giang">Kien Giang</option>
+										<option value="Kon Tum">Kon Tum</option>
+										<option value="Lai Chau">Lai Chau</option>
+										<option value="Lam Dong">Lam Dong</option>
+										<option value="Lang Son">Lang Son</option>
+										<option value="Lao Cai">Lao Cai</option>
+										<option value="Long An">Long An</option>
+										<option value="Nam Dinh">Nam Dinh</option>
+										<option value="Nghe An">Nghe An</option>
+										<option value="Ninh Binh">Ninh Binh</option>
+										<option value="Ninh Thuan">Ninh Thuan</option>
+										<option value="Phu Tho">Phu Tho</option>
+										<option value="Phu Yen">Phu Yen</option>
+										<option value="Quang Binh">Quang Binh</option>
+										<option value="Quang Nam">Quang Nam</option>
+										<option value="Quang Ngai">Quang Ngai</option>
+										<option value="Quang Ninh">Quang Ninh</option>
+										<option value="Quang Tri">Quang Tri</option>
+										<option value="Soc Trang">Soc Trang</option>
+										<option value="Son La">Son La</option>
+										<option value="Tay Ninh">Tay Ninh</option>
+										<option value="Thai Binh">Thai Binh</option>
+										<option value="Thai Nguyen">Thai Nguyen</option>
+										<option value="Thanh Hoa">Thanh Hoa</option>
+										<option value="Thua Thien-Hue">Thua Thien-Hue</option>
+										<option value="Tien Giang">Tien Giang</option>
+										<option value="Tra Vinh">Tra Vinh</option>
+										<option value="Tuyen Quang">Tuyen Quang</option>
+										<option value="Vinh Long">Vinh Long</option>
+										<option value="Vinh Phuc">Vinh Phuc</option>
+										<option value="Yen Bai">Yen Bai</option>
+										<option value="Can Tho">Can Tho</option>
+										<option value="Da Nang">Da Nang</option>
+										<option value="Hai Phong">Hai Phong</option>
+										<option value="Hanoi">Hanoi</option>
+										<option value="Ho Chi Minh">Ho Chi Minh</option>
+									</select>
+									<div class="mt-3">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+										<button class="btn btn-primary" >Buy now</button>	
+									</div>	
+									</form>																																																	
+							</div>
+						</div>
+					</div>
+			</div>	
+					</td>
 				</tr>	
 				</c:forEach>					
 			</tbody>

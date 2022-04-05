@@ -52,7 +52,10 @@ public class DetailServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/details.jsp").forward(request, response);
+		String uri = request.getRequestURI();
+		if(uri.contains("order-now")) {
+			this.orderNow(request, response);
+		}
 	}
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int quantity = 1;
@@ -152,7 +155,7 @@ public class DetailServlet extends HttpServlet {
 			User user = this.userDAO.findById((int) session.getAttribute("idLg"));
 			order.setUser(user);
 			order.setOrderStatus(0);
-			order.setShippingAddress("Phu Tho");
+			order.setShippingAddress(request.getParameter("address"));
 			order.setOrderDate(formater.format(date));
 			this.orderDAO.create(order);
 			if(this.orderDAO.create(order)!=null) {

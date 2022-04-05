@@ -23,6 +23,7 @@
 			<form action="/ASM/login" method="post">
 			<h1>Login</h1>
 			<p>${ sessionScope.messageLg }</p>
+			<c:remove var="messageLg" scope="session" />
 				<div class="form-group">
 					<label class="fw-bold">Email</label>
 					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="email" value="${ email }">
