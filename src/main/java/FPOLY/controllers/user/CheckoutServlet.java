@@ -35,14 +35,14 @@ public class CheckoutServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		if(uri.contains("index")) {
 			this.index(request, response);
-		} else if(uri.contains("payment")) {
-			this.payment(request, response);
 		}
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/checkout.jsp").forward(request, response);
+		String uri = request.getRequestURI();
+		if(uri.contains("payment")) {
+			this.payment(request, response);
+		}
 	}
 	protected void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/views/checkout.jsp").forward(request, response);
@@ -50,6 +50,7 @@ public class CheckoutServlet extends HttpServlet {
 	protected void payment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			HttpSession session = request.getSession();
+			String address = request.getParameter("address");
 			SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
 			Date date = new Date();
 			if (session.getAttribute("idLg") != null) {
@@ -57,7 +58,7 @@ public class CheckoutServlet extends HttpServlet {
 				User user = this.userDAO.findById((int) session.getAttribute("idLg"));
 				order.setUser(user);
 				order.setOrderStatus(0);
-				order.setShippingAddress("Tay Nguyen");
+				order.setShippingAddress(address);
 				order.setOrderDate(formater.format(date));
 				this.orderDAO.create(order);
 				if (this.orderDAO.create(order) != null) {

@@ -93,6 +93,7 @@ a.unactive {
 		<div class="col-6 p-5">
 			<h3>BILLING DETAILS</h3>
 			<hr/>
+			<form action="/ASM/checkout/payment" method="post">
 			<p class="fw-bold"> > Thông tin khách hàng</p>
 			<label class="form-label mt-1">Họ và tên <span class="text-danger">*</span></label>
 			<input type="text" class="form-control" />
@@ -101,9 +102,11 @@ a.unactive {
 			<label class="form-label mt-1">Số điện thoại <span class="text-danger">*</span></label>
 			<input type="text" class="form-control" />
 			<label class="form-label mt-1">Địa chỉ giao hàng <span class="text-danger">*</span></label>
-			<input type="text" class="form-control" />									
+			<input type="text" class="form-control" name="address"/>									
 			<label class="form-label mt-1">Ghi chú</label>
 			<textarea class="form-control" rows="5"></textarea>
+			<div class="row mt-5"> <button type="submit" class="btn btn-dark">Hoàn tất đơn hàng</buttton> </div>
+			</form>
 		</div>
 		<div class="col-6 p-5 bg-light rounded">
 			<h3>YOUR ORDER</h3>
@@ -150,7 +153,6 @@ a.unactive {
 			<p class="fw-bold fs-3">
 				Total : <span class="text-red"><fmt:formatNumber value="${ total }" pattern="#,###.00"></fmt:formatNumber> VND</span>
 			</p>
-			<div class="row"> <a class="btn btn-dark" href="/ASM/checkout/payment">Hoàn tất đơn hàng</a> </div>
 		</div>
 	</div>
 	</div>
