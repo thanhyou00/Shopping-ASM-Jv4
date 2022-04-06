@@ -87,7 +87,6 @@ public class OrderServlet extends HttpServlet {
 			} else {
 				Order oldEntity = this.orderDAO.findById(id);
 				Order newEntity = new Order();
-				BeanUtils.populate(newEntity, request.getParameterMap());
 				newEntity.setOrderDate(formater.format(date));
 				newEntity.setOrderStatus(0);
 				newEntity.setUser(oldEntity.getUser());

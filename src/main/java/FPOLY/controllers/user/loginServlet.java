@@ -59,6 +59,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
 					session.setAttribute("phoneLg", userDAO.findAll().get(i).getPhonenumber());
 					session.setAttribute("idLg", userDAO.findAll().get(i).getId());
+					session.setMaxInactiveInterval(7200);
 				} else {
 					HttpSession session = request.getSession();
 					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
