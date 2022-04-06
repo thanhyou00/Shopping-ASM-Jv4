@@ -150,8 +150,8 @@ public class DetailServlet extends HttpServlet {
 
 	protected void orderNow(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		try {
-			HttpSession session = request.getSession();
 			int productId = Integer.parseInt(request.getParameter("id"));
 //			int quantity = Integer.parseInt(request.getParameter("quantity"));
 			SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
@@ -173,10 +173,14 @@ public class DetailServlet extends HttpServlet {
 							break;
 						}
 					}
+					session.setAttribute("messageSuccess", "Your orded to this cart successful !");
+					session.setAttribute("display", "show");
 					response.sendRedirect("/ASM/detail/index");
 				}
 			} else {
 				response.sendRedirect("/ASM/login");
+				session.setAttribute("messageSuccess", "Your orded to this cart faild !");
+				session.setAttribute("display", "show");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -64,11 +64,15 @@ public class CheckoutServlet extends HttpServlet {
 				if (this.orderDAO.create(order) != null) {
 					Order orde = (Order) session.getAttribute("order");
 					listDetails = (ArrayList<OrderDetail>) orde.getOrderDetails();
-					listDetails.clear();;
+					listDetails.clear();
+					session.setAttribute("messageSuccess", "Your orded to this cart successful !");
+					session.setAttribute("display", "show");
 					response.sendRedirect("/ASM/detail/index");
 				}
 			} else {
 				response.sendRedirect("/ASM/login");
+				session.setAttribute("messageSuccess", "Your orded to this cart faild !");
+				session.setAttribute("display", "show");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -197,3 +197,4 @@
 	</span>
  			${sessionScope.messageupdateSuccess}
 </div>
+<c:remove var="display" scope="session" />

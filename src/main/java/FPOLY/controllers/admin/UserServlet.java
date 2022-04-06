@@ -124,14 +124,12 @@ public class UserServlet extends HttpServlet {
 			newEntity.setPassword(oldEntity.getPassword());
 			session.setAttribute("messageupdateSuccess", "Your account has been updated !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.userDAO.update(newEntity);
 			response.sendRedirect("/ASM/admin/users/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your account doesnt have been updated !");
 			session.setAttribute("display", "hide");
-			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/users/index");
 		}
 	}

@@ -115,14 +115,12 @@ public class ProductServlet extends HttpServlet {
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			session.setAttribute("messageupdateSuccess", "Your product has been updated !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.productDAO.update(newEntity);
 			response.sendRedirect("/ASM/admin/products/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your product doesnt have been updated !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/products/index");
 		}
 	}
