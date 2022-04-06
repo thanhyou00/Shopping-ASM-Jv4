@@ -97,7 +97,7 @@
 					</td>
 					<td><a class="btn btn-danger" href="/ASM/detail/remove?id=${order.product.id}">Delete</a></td>
 					<td><a class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#modal_buy_id">Buy now</a>
-											<!-- Modal add -->
+			<!-- Modal add -->
 			<div class="modal fade" id="modal_buy_id"
 					tabindex="-1" aria-hidden="true">
 					<div class="modal-dialog">
@@ -181,7 +181,7 @@
 										<option value="Can Tho">Can Tho</option>
 										<option value="Da Nang">Da Nang</option>
 										<option value="Hai Phong">Hai Phong</option>
-										<option value="Hanoi">Hanoi</option>
+										<option value="Hanoi">Ha noi</option>
 										<option value="Ho Chi Minh">Ho Chi Minh</option>
 									</select>
 									<div class="mt-3">
@@ -204,7 +204,7 @@
 					Total : <span class="text-red"><fmt:formatNumber value="${ total }" pattern="#,###.00"></fmt:formatNumber> VND</span>
 				</p>
 			</div>
-			<div class="col-2"><a class="btn btn-success" href="/ASM/checkout">Checkout</a></div>
+			<div class="col-2"><a class="btn btn-success" href="/ASM/checkout/index">Checkout</a></div>
 		</div>
 	</div>
 	<%-- Footer --%>

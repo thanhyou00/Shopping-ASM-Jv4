@@ -28,43 +28,14 @@
 					<td>${ order.user.id }</td>
 					<td>${ order.shippingAddress }</td>
 					<td>${ order.orderDate }</td>
-					<td> <span class="badge bg-secondary">${ order.orderStatus==1?"Verified":"Unverify" }</span> </td>
+					<td> <span class="badge bg-${ order.orderStatus==1?"success":"secondary" }">${ order.orderStatus==1?"Verified":"Unverify" }</span> </td>
 					<td class="text-center">
-					<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_update_1">
+					<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_verify_${ order.id }">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
 						  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
 						</svg>
 					</button>
-					<div class="modal fade" id="modal_update_1"
-							tabindex="-1" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title">Alert</h5>
-										<button type="button"
-										class="btn-close"
-										data-bs-dismiss="modal"
-										aria-label="Close"></button>
-									</div>
-									<form action="/ASM/admin/users/update?id=1" method="post">
-
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-											<button class="btn btn-primary" >Update</button>								
-										</div>	
-									</form>
-								</div>
-							</div>
-						</div>
-					</td>
-					<td class="text-center">
-					<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_delete_1">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
-						  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-						  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-						</svg>
-					</button>
-						<div class="modal fade" id="modal_delete_1"
+					<div class="modal fade" id="modal_verify_${ order.id }"
 							tabindex="-1" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -76,11 +47,40 @@
 										aria-label="Close"></button>
 									</div>
 									<div class="modal-body">
-									<h4>Do you want to delete it ?</h4>
+									<h4>Verify to this order ?</h4>
+									</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+											<button class="btn btn-primary" >Verified</button>								
+										</div>	
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="text-center">
+					<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_unverify_${ order.id }">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+						  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+						  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+						</svg>
+					</button>
+						<div class="modal fade" id="modal_unverify_${ order.id }"
+							tabindex="-1" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Alert</h5>
+										<button type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+									<h4>Unverified to this order ?</h4>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-										<a type="button" class="btn btn-danger"  href="/ASM/admin/users/delete?id=1">Delete</a>							
+										<a type="button" class="btn btn-danger">Unverified</a>							
 									</div>
 								</div>
 							</div>
@@ -103,7 +103,7 @@
 			      </a>
 			    </li>
 			    <c:forEach begin="1" end="${endPage}" var="i">
-			    	<li class="page-item px-1"><a class="page-link ${isActive==i?"active":"unactive"}" href="/ASM/admin/products/index?index=${i}">${i}</a></li>
+			    	<li class="page-item px-1"><a class="page-link ${isActive==i?"active":"unactive"}" href="/ASM/admin/orders/index?index=${i}">${i}</a></li>
 			    </c:forEach>
 			    <li class="page-item px-1">
 			      <a class="page-link" href="/ASM/home?index=${index+1}">

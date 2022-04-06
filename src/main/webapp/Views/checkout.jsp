@@ -150,7 +150,7 @@ a.unactive {
 			<p class="fw-bold fs-3">
 				Total : <span class="text-red"><fmt:formatNumber value="${ total }" pattern="#,###.00"></fmt:formatNumber> VND</span>
 			</p>
-			<div class="row"> <button class="btn btn-dark">Hoàn tất đơn hàng</button> </div>
+			<div class="row"> <a class="btn btn-dark" href="/ASM/checkout/payment">Hoàn tất đơn hàng</a> </div>
 		</div>
 	</div>
 	</div>
