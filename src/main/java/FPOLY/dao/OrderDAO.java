@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import FPOLY.entities.Order;
-import FPOLY.entities.Product;
-import FPOLY.entities.User;
 import FPOLY.utils.JpaUtils;
 
 public class OrderDAO {

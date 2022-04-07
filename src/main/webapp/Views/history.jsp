@@ -112,13 +112,17 @@ a.unactive {
 					  	</tr>
 					  </thead>
 					  <tbody>
+					  <c:forEach items="${ historyUser }" var="his">
 					  	<tr>
-					  		<td>Sản phẩm</td>
-					  		<td>Tên sản phẩm</td>
-					  		<td>Giá sản phẩm</td>
-					  		<td>Số lượng</td>
-					  		<td>Trạng thái</td>
-					  	</tr>					  
+					  		<td>
+					  			<img alt="${ his.name }" src="${ his.image }" height="50px" width="50px">
+					  		</td>
+					  		<td>${ his.name }</td>
+					  		<td>${ his.price }</td>
+					  		<td>${ his.quantity }</td>
+					  		<td>${ his.status }</td>
+					  	</tr>
+					  	</c:forEach>					  
 					  </tbody>
 				  </table>
 				  </div>

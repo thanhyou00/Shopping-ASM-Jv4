@@ -1,12 +1,10 @@
 package FPOLY.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import FPOLY.entities.OrderDetail;
 import FPOLY.entities.Product;
 import FPOLY.utils.JpaUtils;
 

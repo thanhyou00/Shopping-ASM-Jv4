@@ -3,11 +3,6 @@ package FPOLY.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the order_detail database table.
- * 
- */
 @Entity
 @Table(name="order_detail")
 @NamedQuery(name="OrderDetail.findAll", query="SELECT o FROM OrderDetail o")

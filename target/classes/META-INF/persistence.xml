@@ -7,11 +7,13 @@
 		<class>FPOLY.entities.ProductsCategory</class>
 		<class>FPOLY.entities.User</class>
 		<class>FPOLY.entities.Category</class>
+		<class>FPOLY.entities.History</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sof3011"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value="123456"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="eclipselink.jpa.uppercase-column-names" value="true"/> 
 		</properties>
 	</persistence-unit>
 </persistence>

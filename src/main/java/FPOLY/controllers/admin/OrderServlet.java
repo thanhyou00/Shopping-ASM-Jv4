@@ -14,19 +14,15 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.beanutils.BeanUtils;
 
 import FPOLY.dao.OrderDAO;
-import FPOLY.dao.UserDAO;
 import FPOLY.entities.Order;
-import FPOLY.entities.User;
 
 @WebServlet({"/admin/orders/index","/admin/orders/status"})
 public class OrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private OrderDAO orderDAO; 
-    private UserDAO userDAO;
     public OrderServlet() {
         super();
         this.orderDAO = new OrderDAO();
-        this.userDAO = new UserDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -84,9 +80,11 @@ public class OrderServlet extends HttpServlet {
 				newEntity.setOrderDetails(oldEntity.getOrderDetails());
 				newEntity.setShippingAddress(oldEntity.getShippingAddress());
 				this.orderDAO.update(newEntity);
-			} else {
+			} 	
+			if(request.getParameter("act").equals("unverify")) {
 				Order oldEntity = this.orderDAO.findById(id);
 				Order newEntity = new Order();
+				BeanUtils.populate(newEntity, request.getParameterMap());
 				newEntity.setOrderDate(formater.format(date));
 				newEntity.setOrderStatus(0);
 				newEntity.setUser(oldEntity.getUser());
