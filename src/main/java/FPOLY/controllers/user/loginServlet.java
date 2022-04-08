@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 import FPOLY.controllers.cookie.CookieUtils;
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.User;
@@ -41,8 +39,6 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String remember = request.getParameter("remember");
-		// kiểm tra tài khoản đăng nhập
-		boolean isCheckLogin=false;
 		// references : https://stackjava.com/demo/bcrypt-la-gi-code-vi-du-bcrypt-bang-java-jbcrypt.html
 		HttpSession session = request.getSession();
 		try {

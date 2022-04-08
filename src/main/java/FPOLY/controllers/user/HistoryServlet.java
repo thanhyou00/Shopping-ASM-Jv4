@@ -2,7 +2,6 @@ package FPOLY.controllers.user;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,24 +30,16 @@ public class HistoryServlet extends HttpServlet {
 		try {
 			User user = (User) session.getAttribute("user");
 			list = this.historyDAO.history(user.getId());
-			   ArrayList<History> hisList = null;
-			   Integer quantity = null,status = null;
-			   String name = null, image = null;
-			   Double price = null;
+			   ArrayList<History> hisList;
+			   hisList = new ArrayList<History>();
 			   for (Object[] obj : list) {
-				    quantity = (Integer) obj[0];
-				    name = (String) obj[1];
-				    image = (String) obj[2];
-				    price = (Double) obj[3];
-				    status = (Integer) obj[4];
-				    hisList = new ArrayList<History>();
+				    Integer quantity = (Integer) obj[0];
+				    String name = (String) obj[1];
+				    String image = (String) obj[2];
+				    Double price = (Double) obj[3];
+				    Integer status = (Integer) obj[4];
 				    hisList.add(new History(quantity,name,image,price,status));
-				    System.out.println("quantity : "+ quantity );
-				    System.out.println("list : "+ hisList );
 				}
-			   for (History history : hisList) {
-				System.out.println("check : "+ history.getName());
-			}
 			   request.setAttribute("historyUser", hisList);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -57,7 +48,6 @@ public class HistoryServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
