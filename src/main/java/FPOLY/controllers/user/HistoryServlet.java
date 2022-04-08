@@ -38,7 +38,7 @@ public class HistoryServlet extends HttpServlet {
 				    String image = (String) obj[2];
 				    Double price = (Double) obj[3];
 				    Integer status = (Integer) obj[4];
-				    hisList.add(new History(quantity,name,image,price,status));
+				    hisList.add(new History(quantity,name,image,price,status)); // 8/4/2022 9:35 AM problem is solved
 				}
 			   request.setAttribute("historyUser", hisList);
 		} catch (Exception e) {

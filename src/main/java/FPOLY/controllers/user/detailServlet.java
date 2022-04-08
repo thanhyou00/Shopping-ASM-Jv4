@@ -156,9 +156,10 @@ public class DetailServlet extends HttpServlet {
 //			int quantity = Integer.parseInt(request.getParameter("quantity"));
 			SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
 			Date date = new Date();
-			if (session.getAttribute("idLg") != null) {
+			User usId = (User) session.getAttribute("user");
+			if (usId != null) {
 				Order order = new Order();
-				User user = this.userDAO.findById((int) session.getAttribute("idLg"));
+				User user = this.userDAO.findById(usId.getId());
 				order.setUser(user);
 				order.setOrderStatus(0);
 				order.setShippingAddress(request.getParameter("address"));

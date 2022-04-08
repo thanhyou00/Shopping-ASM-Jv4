@@ -54,13 +54,15 @@ public class CheckoutServlet extends HttpServlet {
 			SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
 			Date date = new Date();
 			User userId = (User) session.getAttribute("user");
-			if (session.getAttribute("idLg") != null) {
+			if (userId != null) {
 				Order order = new Order();
 				User user = this.userDAO.findById(userId.getId());
 				order.setUser(user);
 				order.setOrderStatus(0);
 				order.setShippingAddress(address);
 				order.setOrderDate(formater.format(date));
+//				OrderDetail od = new OrderDetail();
+//				od.setOrder(order);
 				this.orderDAO.create(order);
 				if (this.orderDAO.create(order) != null) {
 					Order orde = (Order) session.getAttribute("order");

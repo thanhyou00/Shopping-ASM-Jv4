@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
-import org.mindrot.jbcrypt.BCrypt;
 
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.User;
+import FPOLY.utils.EncryptUtil;
 
 
 @WebServlet({"/admin/users/index","/admin/users/create","/admin/users/update","/admin/users/delete"})
@@ -76,7 +76,8 @@ public class UserServlet extends HttpServlet {
 		try {
 			User entity = new User();
 			BeanUtils.populate(entity, request.getParameterMap());
-			entity.setPassword(BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()));
+//			entity.setPassword(BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()));
+			entity.setPassword(EncryptUtil.encrypt(request.getParameter("password")));
 			entity.setRole(0);
 			session.setAttribute("messageupdateSuccess", "Your account has been created !");
 			session.setAttribute("display", "show");
