@@ -14,12 +14,13 @@ import javax.servlet.http.HttpSession;
 
 import FPOLY.dao.HistoryDAO;
 import FPOLY.entities.History;
+import FPOLY.entities.User;
 
 @WebServlet("/history")
 public class HistoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HistoryDAO historyDAO;
-	private List<Object[]> list;
+	private static List<Object[]> list;
     public HistoryServlet() {
         super();
         this.historyDAO=new HistoryDAO();
@@ -28,21 +29,23 @@ public class HistoryServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		try {
-			int iduser =Integer.valueOf(session.getAttribute("idLg").toString());
-			list = this.historyDAO.history(iduser);
-//			request.setAttribute("historyUser", list);
+			User user = (User) session.getAttribute("user");
+			list = this.historyDAO.history(user.getId());
 			   ArrayList<History> hisList = null;
+			   Integer quantity = null,status = null;
+			   String name = null, image = null;
+			   Double price = null;
 			   for (Object[] obj : list) {
-				    Integer quantity = (Integer) obj[0];
-				    String name = (String) obj[1];
-				    String image = (String) obj[2];
-				    Double price = (Double) obj[3];
-				    Integer status = (Integer) obj[4];
-
+				    quantity = (Integer) obj[0];
+				    name = (String) obj[1];
+				    image = (String) obj[2];
+				    price = (Double) obj[3];
+				    status = (Integer) obj[4];
 				    hisList = new ArrayList<History>();
 				    hisList.add(new History(quantity,name,image,price,status));
+				    System.out.println("quantity : "+ quantity );
+				    System.out.println("list : "+ hisList );
 				}
-			   System.out.println("list : "+ hisList );
 			   for (History history : hisList) {
 				System.out.println("check : "+ history.getName());
 			}

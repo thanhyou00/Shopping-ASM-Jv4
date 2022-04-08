@@ -13,6 +13,8 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import FPOLY.controllers.cookie.CookieUtils;
 import FPOLY.dao.UserDAO;
+import FPOLY.entities.User;
+import FPOLY.utils.EncryptUtil;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -42,36 +44,23 @@ public class LoginServlet extends HttpServlet {
 		// kiểm tra tài khoản đăng nhập
 		boolean isCheckLogin=false;
 		// references : https://stackjava.com/demo/bcrypt-la-gi-code-vi-du-bcrypt-bang-java-jbcrypt.html
+		HttpSession session = request.getSession();
 		try {
-			for (int  i=0; i< userDAO.findAll().size();i++) {
-				boolean valuate = BCrypt.checkpw(password, userDAO.findAll().get(i).getPassword());
-				if (email.equals(userDAO.findAll().get(i).getEmail()) && valuate) {
-					isCheckLogin = true;
-					// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
-					int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
-					CookieUtils.add("email", email, hours, response);
-					CookieUtils.add("password", password, hours, response);
-					HttpSession session = request.getSession();
-					session.setAttribute("messageLg", "Đăng nhập thành công !");
-					session.setAttribute("roleLg", userDAO.findAll().get(i).getRole());
-					session.setAttribute("fullnameLg", userDAO.findAll().get(i).getFullname());
-					session.setAttribute("emailLg", userDAO.findAll().get(i).getEmail());
-					session.setAttribute("avatarLg", userDAO.findAll().get(i).getAvatar());
-					session.setAttribute("phoneLg", userDAO.findAll().get(i).getPhonenumber());
-					session.setAttribute("idLg", userDAO.findAll().get(i).getId());
-					session.setMaxInactiveInterval(7200);
-				} else {
-					HttpSession session = request.getSession();
-					session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
-					session.removeAttribute("order");
-				}
-
-			}
-			
-			if(isCheckLogin) {
+			User user = this.userDAO.findByEmail(email);
+			boolean check = EncryptUtil.check(password,user.getPassword());
+			if (check == true) {
+				session.setAttribute("messageLg", "Đăng nhập thành công !");
+				// ghi nhớ hoặc xóa tài khoản đã ghi nhớ bằng cookie
+				int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
+				CookieUtils.add("email", email, hours, response);
+				CookieUtils.add("password", password, hours, response);
+				session.setAttribute("user", user);
+				session.setMaxInactiveInterval(7200);
 				response.sendRedirect("/ASM/home");
-			}else {
-				response.sendRedirect("/ASM/login");
+			} else {
+				session = request.getSession();
+				session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
+				response.sendRedirect("/ASM/login");		
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
