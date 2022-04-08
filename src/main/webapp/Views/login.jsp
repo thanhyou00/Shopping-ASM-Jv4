@@ -22,13 +22,25 @@
 		<div class="align-self-center p-5 col-12 col-md-6 mt-5">
 			<form action="/ASM/login" method="post">
 			<h1>Login</h1>
-			<p>${ sessionScope.messageLg }</p>
-			<c:remove var="messageLg" scope="session" />
+				<c:if test="${ !empty sessionScope.messageLg }">
+					<div class="text-danger">${ sessionScope.messageLg }</div>
+					<c:remove var="messageLg" scope="session" />
+				</c:if>
 				<div class="form-group">
 					<label class="fw-bold">Email</label>
-					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="email" value="${ email }">
+					<input class="form-control mb-2 mt-1 rounded-pill" type="text" name="emailLogin" value="${ email }" required="required" 
+					oninvalid="this.setCustomValidity('Không được để trống email')"
+					oninput="this.setCustomValidity('')"
+					/>
+					<c:if test="${ !empty sessionScope.isEmail }">
+						<div class="text-danger">${ sessionScope.isEmail }</div>
+						<c:remove var="isEmail" scope="session" />
+					</c:if>
 					<label class="fw-bold">Password</label>
-					<input class="form-control mb-2 mt-1 rounded-pill" type="password" name="password" value="${ password }">
+					<input class="form-control mb-2 mt-1 rounded-pill" type="password" name="passwordLogin" value="${ password }" required="required" 
+					oninvalid="this.setCustomValidity('Không được để trống password')"
+					oninput="this.setCustomValidity('')"					
+					/>
 					
 					<div class="row p-2">
 					<div class="form-check col-6">

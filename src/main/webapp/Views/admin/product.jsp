@@ -24,15 +24,30 @@
 							<div class="modal-body">
 								<form action="/ASM/admin/products/create" method="post">
 									<label class="form-label">Name</label>
-									<input type="text" name="name" class="form-control"> 
+									<input type="text" name="name" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống name')"
+									oninput="this.setCustomValidity('')"									
+									/> 
 									<label class="form-label">Price</label>
-									<input type="text" name="price" class="form-control">
+									<input type="text" name="price" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống price')"
+									oninput="this.setCustomValidity('')"									
+									/>
 									<label class="form-label">Image</label>
-									<input type="text" name="image" class="form-control">
+									<input type="text" name="image" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống image')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">Descriptions</label>
-									<input type="text" name="descriptions" class="form-control">
+									<input type="text" name="descriptions" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống descriptions')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">Color</label>
-									<input type="text" name="color" class="form-control">
+									<input type="text" name="color" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống color')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">Size</label>
 									<select class="form-select" name="size">
 										<option value="XS">XS</option>
@@ -42,7 +57,10 @@
 										<option value="XL">XL</option>
 									</select>
 									<label class="form-label">Brand</label>
-									<input type="text" name="brand" class="form-control">
+									<input type="text" name="brand" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống brand')"
+									oninput="this.setCustomValidity('')"									
+									/>
 								<div class="mt-3">
 									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 									<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>

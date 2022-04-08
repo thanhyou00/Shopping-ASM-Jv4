@@ -1,6 +1,7 @@
 package FPOLY.controllers.admin;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,6 +74,14 @@ public class UserServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
+        // Start check email
+        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"; // check regex email 
+        boolean matchFound = Pattern.matches(regex, request.getParameter("email"));
+        if (!matchFound) {
+            session.setAttribute("isEmail", "Nhập sai định dạng email");
+            response.sendRedirect("/ASM/login");
+            return;
+        }
 		try {
 			User entity = new User();
 			BeanUtils.populate(entity, request.getParameterMap());

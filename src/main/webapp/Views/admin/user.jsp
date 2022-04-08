@@ -1,3 +1,5 @@
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <h3>Manage users</h3>
 <div class="row mt-3">
@@ -24,19 +26,38 @@
 							<div class="modal-body">
 								<form action="/ASM/admin/users/create" method="post">
 									<label class="form-label">Full name</label>
-									<input type="text" name="fullname" class="form-control"> 
+									<input type="text" name="fullname" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống fullname')"
+									oninput="this.setCustomValidity('')"
+									/> 
 									<label class="form-label">Email</label>
-									<input type="email" name="email" class="form-control">
+									<input type="email" name="email" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống email')"
+									oninput="this.setCustomValidity('')"									
+									/>
+									<c:if test="${ !empty sessionScope.isEmail }">
+										<div class="text-danger">${ sessionScope.isEmail }</div>
+										<c:remove var="isEmail" scope="session" />
+									</c:if>
 									<label class="form-label">Password</label>
-									<input type="password" name="password" class="form-control">
+									<input type="password" name="password" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống password')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">Phone number</label>
-									<input type="text" name="phonenumber" class="form-control">
+									<input type="text" name="phonenumber" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống phonenumber')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">Avatar</label>
-									<input type="text" name="avatar" class="form-control">
+									<input type="text" name="avatar" class="form-control" required="required" 
+									oninvalid="this.setCustomValidity('Không được để trống avatar')"
+									oninput="this.setCustomValidity('')"									
+									/>
 									<label class="form-check-label">Role</label>
 									<div>
 										<input type="radio" class="form-check-input" name="role"> Admin
-										<input type="radio" class="form-check-input" name="role"> User
+										<input type="radio" class="form-check-input" name="role" checked> User
 									</div>	
 									<div class="mt-3">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
