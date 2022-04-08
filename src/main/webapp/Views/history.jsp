@@ -94,8 +94,7 @@ a.unactive {
 		<div class="row mt-5 p-5 border rounded">
 				<nav>
 				  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-				    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-verify" type="button" role="tab" aria-controls="nav-verify" aria-selected="true">Đã thanh toán</button>
-				    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Chờ xác nhận</button>
+				    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-verify" type="button" role="tab" aria-controls="nav-verify" aria-selected="true">Đơn hàng đã đặt</button>
 				    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Phản hồi</button>
 				  </div>
 				</nav>
@@ -126,8 +125,9 @@ a.unactive {
 					  </tbody>
 				  </table>
 				  </div>
-				  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-				  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+				  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+				  	<p class="alert alert-primary m-3">No notications</p>
+				  </div>
 				</div>			
 			</div>
 	</div>

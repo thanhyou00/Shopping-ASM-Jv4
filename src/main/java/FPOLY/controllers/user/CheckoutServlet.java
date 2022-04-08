@@ -13,9 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import FPOLY.dao.OrderDAO;
+import FPOLY.dao.OrderDetailDAO;
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.Order;
 import FPOLY.entities.OrderDetail;
+import FPOLY.entities.Product;
 import FPOLY.entities.User;
 
 @WebServlet({"/checkout/index","/checkout/payment"})
@@ -23,12 +25,14 @@ public class CheckoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private OrderDAO orderDAO;
 	private UserDAO userDAO;
+	private OrderDetailDAO orderDetailDAO;
 	private ArrayList<OrderDetail> listDetails;
 	
     public CheckoutServlet() {
         super();
         this.userDAO = new UserDAO();
         this.orderDAO = new OrderDAO();
+        this.orderDetailDAO = new OrderDetailDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -56,14 +60,18 @@ public class CheckoutServlet extends HttpServlet {
 			User userId = (User) session.getAttribute("user");
 			if (userId != null) {
 				Order order = new Order();
+				OrderDetail odetail = new OrderDetail();
 				User user = this.userDAO.findById(userId.getId());
+//				Product product = this.productDAO.findById(productId);
 				order.setUser(user);
 				order.setOrderStatus(0);
 				order.setShippingAddress(address);
 				order.setOrderDate(formater.format(date));
-//				OrderDetail od = new OrderDetail();
-//				od.setOrder(order);
+				odetail.setOrder(order);
+//				odetail.setProduct(product);
+//				odetail.setQuantity(quantity);
 				this.orderDAO.create(order);
+				this.orderDetailDAO.create(odetail);
 				if (this.orderDAO.create(order) != null) {
 					Order orde = (Order) session.getAttribute("order");
 					listDetails = (ArrayList<OrderDetail>) orde.getOrderDetails();

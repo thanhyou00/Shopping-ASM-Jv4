@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import FPOLY.dao.OrderDAO;
+import FPOLY.dao.OrderDetailDAO;
 import FPOLY.dao.ProductDAO;
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.Order;
@@ -25,6 +26,7 @@ public class DetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO;
 	private OrderDAO orderDAO;
+	private OrderDetailDAO orderDetailDAO;
 	private UserDAO userDAO;
 	private ArrayList<OrderDetail> listDetails;
 
@@ -33,6 +35,7 @@ public class DetailServlet extends HttpServlet {
 		this.productDAO = new ProductDAO();
 		this.orderDAO = new OrderDAO();
 		this.userDAO = new UserDAO();
+		this.orderDetailDAO = new OrderDetailDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -153,18 +156,24 @@ public class DetailServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		try {
 			int productId = Integer.parseInt(request.getParameter("id"));
-//			int quantity = Integer.parseInt(request.getParameter("quantity"));
+			int quantity = Integer.parseInt(request.getParameter("quantity"));
 			SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
 			Date date = new Date();
 			User usId = (User) session.getAttribute("user");
 			if (usId != null) {
 				Order order = new Order();
+				OrderDetail odetail = new OrderDetail();
 				User user = this.userDAO.findById(usId.getId());
+				Product product = this.productDAO.findById(productId);
 				order.setUser(user);
 				order.setOrderStatus(0);
 				order.setShippingAddress(request.getParameter("address"));
 				order.setOrderDate(formater.format(date));
+				odetail.setOrder(order);
+				odetail.setProduct(product);
+				odetail.setQuantity(quantity);
 				this.orderDAO.create(order);
+				this.orderDetailDAO.create(odetail);
 				if (this.orderDAO.create(order) != null) {
 					Order orde = (Order) session.getAttribute("order");
 					listDetails = (ArrayList<OrderDetail>) orde.getOrderDetails();
