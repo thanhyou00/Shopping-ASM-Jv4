@@ -69,7 +69,8 @@ public class CheckoutServlet extends HttpServlet {
 				order.setOrderDate(formater.format(date));
 				odetail.setOrder(order);
 //				odetail.setProduct(product);
-//				odetail.setQuantity(quantity);
+//				odetail.setQuantity(Integer.parseInt(request.getParameter("quantityCheckout")));
+//				System.out.println("quantity : "+request.getParameter("quantityCheckout"));
 				this.orderDAO.create(order);
 				this.orderDetailDAO.create(odetail);
 				if (this.orderDAO.create(order) != null) {

@@ -93,19 +93,31 @@ a.unactive {
 		<div class="col-6 p-5">
 			<h3>BILLING DETAILS</h3>
 			<hr/>
-			<form action="/ASM/checkout/payment" method="post">
+			<form action="/ASM/checkout/payment?quantitycheckout=${ quantityCheckout }" method="post">
 			<p class="fw-bold"> > Thông tin khách hàng</p>
 			<label class="form-label mt-1">Họ và tên <span class="text-danger">*</span></label>
-			<input type="text" class="form-control" />
+			<input type="text" class="form-control" name="fullname" required="required"
+			oninvalid="this.setCustomValidity('Không được để trống fullname')"
+			oninput="this.setCustomValidity('')"			
+			 />
 			<label class="form-label mt-1">Email</label>
-			<input type="email" class="form-control" />
+			<input type="email" class="form-control" name="email" required="required"
+			oninvalid="this.setCustomValidity('Không được để trống email')"
+			oninput="this.setCustomValidity('')"					
+			 />
 			<label class="form-label mt-1">Số điện thoại <span class="text-danger">*</span></label>
-			<input type="text" class="form-control" />
+			<input type="text" class="form-control" required="required"
+			oninvalid="this.setCustomValidity('Không được để trống phone number')"
+			oninput="this.setCustomValidity('')"					
+			 />
 			<label class="form-label mt-1">Địa chỉ giao hàng <span class="text-danger">*</span></label>
-			<input type="text" class="form-control" name="address"/>									
+			<input type="text" class="form-control" name="address" required="required"
+			oninvalid="this.setCustomValidity('Không được để trống address')"
+			oninput="this.setCustomValidity('')"					
+			 />									
 			<label class="form-label mt-1">Ghi chú</label>
 			<textarea class="form-control" rows="5"></textarea>
-			<div class="row mt-5"> <button type="submit" class="btn btn-dark">Hoàn tất đơn hàng</buttton> </div>
+			<div class="row mt-5"> <button type="submit" class="btn btn-dark">Hoàn tất đơn hàng</button> </div>
 			</form>
 		</div>
 		<div class="col-6 p-5 bg-light rounded">
@@ -121,6 +133,7 @@ a.unactive {
 				<tbody>
 				<c:forEach items="${sessionScope.order.orderDetails}" var="order">
 				<c:set var="total" value="${total + order.product.price * order.quantity }"></c:set>
+				<c:set var="quantityCheckout" value="${order.quantity }"></c:set>
 					<tr>
 						<td>${ order.product.name }</td>
 						<td>x ${ order.quantity }</td>

@@ -21,7 +21,7 @@
       <div class="p-3 border bg-white rounded-3">
       		<div class="row">
       			<div class="col-8">
-      				<p>Total shoes</p>
+      				<p>Total products</p>
       				<span class="text-primary">120.000</span>
       			</div>
       			<div class="col-4 d-flex justify-content-center align-items-center">

@@ -29,9 +29,15 @@
 							<div class="modal-body">
 								<form action="/ASM/admin/categories/create" method="post">
 									<label class="form-label">Name</label>
-									<input type="text" name="name" class="form-control"> 
+									<input type="text" name="name" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống name')"
+									oninput="this.setCustomValidity('')"									
+									 /> 
 									<label class="form-label">Descriptions</label>
-									<input type="text" name="description" class="form-control">
+									<input type="text" name="description" class="form-control" required="required"
+									oninvalid="this.setCustomValidity('Không được để trống descriptions')"
+									oninput="this.setCustomValidity('')"									
+									 />
 									<label class="form-label">User ID</label>
 									<select name="userId" class="form-select">  
 										<c:forEach items="${listUser}" var="user">
