@@ -119,7 +119,7 @@ a.unactive {
 					  		<td>${ his.name }</td>
 					  		<td>${ his.price }</td>
 					  		<td>${ his.quantity }</td>
-					  		<td>${ his.status }</td>
+					  		<td class="${ his.status==1?"text-primary":"text-danger" }">${ his.status==1?"Đã thanh toán":"Chưa thanh toán" }</td>
 					  	</tr>
 					  	</c:forEach>					  
 					  </tbody>

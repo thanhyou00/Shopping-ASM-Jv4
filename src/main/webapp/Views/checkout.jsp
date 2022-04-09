@@ -93,7 +93,7 @@ a.unactive {
 		<div class="col-6 p-5">
 			<h3>BILLING DETAILS</h3>
 			<hr/>
-			<form action="/ASM/checkout/payment?quantitycheckout=${ quantityCheckout }" method="post">
+			<form action="/ASM/checkout/payment?proId=${ sessionScope.proId }&quantityCheckout=${ sessionScope.quantityCheckout }" method="post">
 			<p class="fw-bold"> > Thông tin khách hàng</p>
 			<label class="form-label mt-1">Họ và tên <span class="text-danger">*</span></label>
 			<input type="text" class="form-control" name="fullname" required="required"
@@ -133,7 +133,8 @@ a.unactive {
 				<tbody>
 				<c:forEach items="${sessionScope.order.orderDetails}" var="order">
 				<c:set var="total" value="${total + order.product.price * order.quantity }"></c:set>
-				<c:set var="quantityCheckout" value="${order.quantity }"></c:set>
+				<c:set var="quantityCheckout" value="${order.quantity}" scope="session"></c:set>
+				<c:set var="proId" value="${order.product.id }" scope="session"></c:set>
 					<tr>
 						<td>${ order.product.name }</td>
 						<td>x ${ order.quantity }</td>

@@ -154,6 +154,8 @@ public class DetailServlet extends HttpServlet {
 	protected void orderNow(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		try {
 			int productId = Integer.parseInt(request.getParameter("id"));
 			int quantity = Integer.parseInt(request.getParameter("quantity"));

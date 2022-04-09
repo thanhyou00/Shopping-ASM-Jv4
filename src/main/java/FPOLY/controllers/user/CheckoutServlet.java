@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import FPOLY.dao.OrderDAO;
 import FPOLY.dao.OrderDetailDAO;
+import FPOLY.dao.ProductDAO;
 import FPOLY.dao.UserDAO;
 import FPOLY.entities.Order;
 import FPOLY.entities.OrderDetail;
@@ -25,6 +26,7 @@ public class CheckoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private OrderDAO orderDAO;
 	private UserDAO userDAO;
+	private ProductDAO productDAO;
 	private OrderDetailDAO orderDetailDAO;
 	private ArrayList<OrderDetail> listDetails;
 	
@@ -33,6 +35,7 @@ public class CheckoutServlet extends HttpServlet {
         this.userDAO = new UserDAO();
         this.orderDAO = new OrderDAO();
         this.orderDetailDAO = new OrderDetailDAO();
+        this.productDAO = new ProductDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,6 +55,8 @@ public class CheckoutServlet extends HttpServlet {
 		request.getRequestDispatcher("/views/checkout.jsp").forward(request, response);
 	}
 	protected void payment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		try {
 			HttpSession session = request.getSession();
 			String address = request.getParameter("address");
@@ -62,15 +67,14 @@ public class CheckoutServlet extends HttpServlet {
 				Order order = new Order();
 				OrderDetail odetail = new OrderDetail();
 				User user = this.userDAO.findById(userId.getId());
-//				Product product = this.productDAO.findById(productId);
+				Product product = this.productDAO.findById((int) session.getAttribute("proId"));
 				order.setUser(user);
 				order.setOrderStatus(0);
 				order.setShippingAddress(address);
 				order.setOrderDate(formater.format(date));
 				odetail.setOrder(order);
-//				odetail.setProduct(product);
-//				odetail.setQuantity(Integer.parseInt(request.getParameter("quantityCheckout")));
-//				System.out.println("quantity : "+request.getParameter("quantityCheckout"));
+				odetail.setProduct(product);
+				odetail.setQuantity((int)session.getAttribute("quantityCheckout"));
 				this.orderDAO.create(order);
 				this.orderDetailDAO.create(odetail);
 				if (this.orderDAO.create(order) != null) {

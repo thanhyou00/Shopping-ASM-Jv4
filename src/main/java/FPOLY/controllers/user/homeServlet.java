@@ -50,7 +50,7 @@ public class HomeServlet extends HttpServlet {
 		try {
 			int index = Integer.parseInt(indexStr);
 			int cateid = Integer.parseInt(cateId);
-			long count = this.productDAO.getTotalProduct();
+			long count = this.productDAO.paginationHome(index,8,cateid).size();
 			long endPage = count/8;
 			if(count%8!=0) {
 				endPage++;
