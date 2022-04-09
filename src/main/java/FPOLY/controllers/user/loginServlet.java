@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 				CookieUtils.add("email", email, hours, response);
 				CookieUtils.add("password", password, hours, response);
 				session.setAttribute("user", user);
-				session.setMaxInactiveInterval(7200);
+//				session.setMaxInactiveInterval(7200);
 				response.sendRedirect("/ASM/home");
 			} else {
 				session = request.getSession();
