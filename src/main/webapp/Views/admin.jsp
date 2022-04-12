@@ -37,6 +37,27 @@ a.unactive {
 	font-weight: normal;
 	background-color: white;
 }
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile, .lb {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #54a0ff;
+    display: inline-block;
+}
+.inputfile:focus, .lb:focus,
+.inputfile:hover, .lb:hover {
+    background-color: red;
+}
 	
 </style>
 <body class="container-fluid font-monospace">
@@ -121,6 +142,5 @@ a.unactive {
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

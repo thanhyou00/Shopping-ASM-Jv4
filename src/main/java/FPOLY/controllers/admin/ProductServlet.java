@@ -13,7 +13,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import FPOLY.dao.ProductDAO;
 import FPOLY.entities.Product;
 
-@WebServlet({"/admin/products/index","/admin/products/create","/admin/products/update","/admin/products/delete"})
+@WebServlet({"/admin/products/index","/admin/products/create","/admin/products/update","/admin/products/delete","/admin/products/excel"})
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProductDAO productDAO; 
@@ -38,7 +38,9 @@ public class ProductServlet extends HttpServlet {
 			this.create(request, response);
 		} else if(uri.contains("update")) {
 			this.update(request, response);
-		} else {
+		} else if(uri.contains("excel")) {
+			this.excel(request, response);
+		}else {
 			request.getRequestDispatcher("/views/404.jsp").forward(request, response);
 		}
 	}
@@ -75,14 +77,12 @@ public class ProductServlet extends HttpServlet {
 			BeanUtils.populate(product, request.getParameterMap());
 			session.setAttribute("messageupdateSuccess", "Your product has been created !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.productDAO.create(product);
 			response.sendRedirect("/ASM/admin/products/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your product doesnt have been created !");
-			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);			
+			session.setAttribute("display", "show");		
 			response.sendRedirect("/ASM/admin/products/index");
 		}	
 	}
@@ -106,7 +106,7 @@ public class ProductServlet extends HttpServlet {
 		response.sendRedirect("/ASM/admin/products/index");
 	}
 	
-	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
@@ -123,6 +123,12 @@ public class ProductServlet extends HttpServlet {
 			session.setAttribute("display", "show");
 			response.sendRedirect("/ASM/admin/products/index");
 		}
+	}
+	public void excel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		System.out.println("name file : "+ request.getParameter("file"));
 	}
 
 }

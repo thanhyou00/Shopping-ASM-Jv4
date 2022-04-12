@@ -1,9 +1,14 @@
 package FPOLY.dao;
 
+import java.io.FileInputStream;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+
+import org.apache.poi.sl.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import FPOLY.entities.Product;
 import FPOLY.utils.JpaUtils;
@@ -20,7 +25,7 @@ public class ProductDAO {
 			TypedQuery<Product> query = this.em.createNamedQuery("Product.findAll", Product.class);
 			return query.getResultList();
 	}
-	
+
 	public List<Product> pagination(int index,int n) {
 		String jpql = "SELECT obj FROM Product obj ORDER BY obj.id";
 		TypedQuery<Product> query = this.em.createQuery(jpql, Product.class).setMaxResults(n).setFirstResult((index-1)*n); // 1 trang se co toi da n san pham
