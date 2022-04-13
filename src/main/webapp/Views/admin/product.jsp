@@ -86,8 +86,9 @@
 								aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<form action="/ASM/admin/products/excel" method="post">
-								<input class="form-control bg-primary text-white" type="file" id="formFile" name="file">
+								<form action="/ASM/admin/products/excel" method="post" enctype="multipart/form-data">
+								<input class="form-control bg-primary text-white" type="file" id="formFile" 
+								name="excelfile">
 								<div class="mt-3">
 									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 									<button data-bs-dismiss="modal" class="btn btn-danger">Add</button>
