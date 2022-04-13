@@ -146,12 +146,10 @@ public class ProductServlet extends HttpServlet {
 		try {
 			String excelFileName = this.uploadFile(request, response);
 			importExcel = new ImportExcelUtil("excel/"+excelFileName);
-			Part filePart = request.getPart("excelfile");
-//			String fileName = getFileName(filePart);
 			String applicationPath = request.getServletContext().getRealPath("");
 			String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
-			System.out.println("1 : "+excelFileName);
 			importExcel.readData(basePath+"\\" +excelFileName);
+			response.sendRedirect("/ASM/admin/products/index");
 		} catch (Exception e) {
 			System.out.println("error");
 			e.printStackTrace();
