@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -111,13 +110,11 @@ public class ProductServlet extends HttpServlet {
 			Product entity = this.productDAO.findById(id);
 			session.setAttribute("messageupdateSuccess", "Your product has been deleted !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.productDAO.delete(entity);
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your product doesnt have been deleted !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 		}	
 		response.sendRedirect("/ASM/admin/products/index");
 	}
@@ -160,7 +157,7 @@ public class ProductServlet extends HttpServlet {
 	
 	private String getFileName(Part part) {
 		final String partHeader  = part.getHeader("content-disposition");
-		for (String  content : part.getHeader("content-disposition").split(";")) {
+		for (String  content : partHeader.split(";")) {
 			if(content.trim().startsWith("filename")) {
 				return content.substring(content.indexOf('=')+1).trim().replace("\"", "");
 			}

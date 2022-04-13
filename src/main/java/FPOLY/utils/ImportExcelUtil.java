@@ -13,6 +13,9 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 public class ImportExcelUtil {
+	//references 
+	// https://www.youtube.com/watch?v=gbtXpXHomlA
+	// https://www.codejava.net/coding/java-code-example-to-import-data-from-excel-to-database
 	private String workbookName = "";
 
 	public ImportExcelUtil(String workbookName) {

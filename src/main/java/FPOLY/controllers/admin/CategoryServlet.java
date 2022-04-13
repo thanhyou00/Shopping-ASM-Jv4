@@ -84,14 +84,12 @@ public class CategoryServlet extends HttpServlet {
 			BeanUtils.populate(entity, request.getParameterMap());
 			session.setAttribute("messageupdateSuccess", "Your category has been created !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.categoryDAO.create(entity);
 			response.sendRedirect("/ASM/admin/categories/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your category doesnt have been created !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/categories/index");
 		}
 	}
@@ -104,13 +102,11 @@ public class CategoryServlet extends HttpServlet {
 				Category entity = this.categoryDAO.findById(id);
 				session.setAttribute("messageupdateSuccess", "Your category has been deleted !");
 				session.setAttribute("display", "show");
-				session.setMaxInactiveInterval(3);
 				this.categoryDAO.delete(entity);
 			} catch (Exception e) {
 				e.printStackTrace();
 				session.setAttribute("messageupdateSuccess", "Your category doesnt have been deleted !");
 				session.setAttribute("display", "show");
-				session.setMaxInactiveInterval(3);
 			}
 			response.sendRedirect("/ASM/admin/categories/index");
 	}
@@ -124,14 +120,12 @@ public class CategoryServlet extends HttpServlet {
 			BeanUtils.populate(newEntity, request.getParameterMap());
 			session.setAttribute("messageupdateSuccess", "Your category has been updated !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			this.categoryDAO.update(newEntity);
 			response.sendRedirect("/ASM/admin/categories/index");
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.setAttribute("messageupdateSuccess", "Your category doesnt have been updated !");
 			session.setAttribute("display", "show");
-			session.setMaxInactiveInterval(3);
 			response.sendRedirect("/ASM/admin/categories/index");
 		}
 	}
