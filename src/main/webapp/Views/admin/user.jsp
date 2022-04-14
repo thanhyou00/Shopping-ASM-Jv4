@@ -83,7 +83,6 @@
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
-					<th>Password</th>
 					<th>Phone</th>
 					<th>Avatar</th>
 					<th>Role</th>
@@ -95,7 +94,6 @@
 				<tr>
 					<td>${ user.fullname }</td>
 					<td>${ user.email }</td>
-					<td>${ user.password }</td>
 					<td>${ user.phonenumber }</td>
 					<td>${ user.avatar }</td>
 					<td>${ user.role==1?"Admin":"User" }</td>

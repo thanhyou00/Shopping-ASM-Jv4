@@ -32,11 +32,16 @@ public class Authentications extends HttpFilter implements Filter {
 		HttpServletRequest httpReq = (HttpServletRequest) request;
 		HttpServletResponse httpRes = (HttpServletResponse) response;
 		HttpSession session = httpReq.getSession();
-		User user = (User) session.getAttribute("user");// lấy từ login
+		String uri = httpReq.getRequestURI();
+		User user = (User) session.getAttribute("user");
 		if (user == null) { 
 			httpRes.sendRedirect("/ASM/login");
 			return;
-		}
+		} 
+		if((user.getRole()==0)&&uri.contains("/admin/*")) {
+			httpRes.sendRedirect("/ASM/home");	
+			return;
+		} 
 		chain.doFilter(request, response);
 	}
 

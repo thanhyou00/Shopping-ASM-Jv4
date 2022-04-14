@@ -47,8 +47,9 @@ public class ImportExcelUtil {
 			String sql = "INSERT INTO products (name, price, image, descriptions, color, size, brand) VALUES (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement statement = (PreparedStatement) connection.prepareStatement(sql);
 			int count = 0;
-			rowIterator.next(); // skip the header row
+
 			while (rowIterator.hasNext()) {
+				rowIterator.next(); // skip the header row
 				Row nextRow = rowIterator.next();
 				Iterator<Cell> cellIterator = nextRow.cellIterator();
 				while (cellIterator.hasNext()) {

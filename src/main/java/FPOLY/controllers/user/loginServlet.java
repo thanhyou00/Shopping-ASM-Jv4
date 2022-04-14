@@ -58,8 +58,7 @@ public class LoginServlet extends HttpServlet {
 				int hours = (remember == null) ? 0 : 30 * 24; // 0 = xóa
 				CookieUtils.add("email", email, hours, response);
 				CookieUtils.add("password", password, hours, response);
-				session.setAttribute("user", user); // có đối tượng user
-//				session.setMaxInactiveInterval(7200);
+				session.setAttribute("user", user); 
 				response.sendRedirect("/ASM/home");
 			} else {
 				session = request.getSession();

@@ -140,15 +140,17 @@ public class ProductServlet extends HttpServlet {
 	public void excel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
 		try {
 			String excelFileName = this.uploadFile(request, response);
 			importExcel = new ImportExcelUtil("excel/"+excelFileName);
 			String applicationPath = request.getServletContext().getRealPath("");
 			String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
 			importExcel.readData(basePath+"\\" +excelFileName);
+			session.setAttribute("messageupdateSuccess", "Your product has been created !");
+			session.setAttribute("display", "show");
 			response.sendRedirect("/ASM/admin/products/index");
 		} catch (Exception e) {
-			System.out.println("error");
 			e.printStackTrace();
 			response.sendRedirect("/ASM/admin/products/index");
 		};
