@@ -21,6 +21,7 @@ public class UserDAO {
 			String jpql = "SELECT obj FROM User obj";
 			TypedQuery<User> query = this.em.createQuery(jpql, User.class);
 			this.em.getTransaction().commit();
+			this.em.flush();
 			return query.getResultList();	
 		} catch (Exception e) {
 			e.printStackTrace();

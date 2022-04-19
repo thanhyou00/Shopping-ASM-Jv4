@@ -67,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			session = request.getSession();
+//			session = request.getSession();
 			session.setAttribute("messageLg", "Sai tên đăng nhập hoặc mật khẩu !");
 			response.sendRedirect("/ASM/login");	
 		}

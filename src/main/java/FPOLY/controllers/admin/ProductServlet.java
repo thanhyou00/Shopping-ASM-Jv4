@@ -146,7 +146,7 @@ public class ProductServlet extends HttpServlet {
 			importExcel = new ImportExcelUtil("excel/"+excelFileName);
 			String applicationPath = request.getServletContext().getRealPath("");
 			String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
-			importExcel.readData(basePath+"\\" +excelFileName);
+			importExcel.readData(basePath+"\\" +excelFileName);//
 			session.setAttribute("messageupdateSuccess", "Your product has been created !");
 			session.setAttribute("display", "show");
 			response.sendRedirect("/ASM/admin/products/index");
